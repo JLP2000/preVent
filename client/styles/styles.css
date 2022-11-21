@@ -4,19 +4,32 @@ lightblue: 506872
 yellow: #e9cd00 
 orange: #f4a902
 */
+body{
+    width:100%;
+    margin:0;
+}
 
+/* header {
+    background-color: #e9cd00;
+    padding: 20px;
+    text-align: center;
+  } */
+.within{
+    width: 100%;
+}
 /* Navbar container */
 .navbar {
     overflow: hidden;
-    /* background-color: rgba(212, 226, 19, 0.541); */
+    background-color: #e9cd00;
     font-family: Arial;
   }
   
   /* Links inside the navbar */
   .navbar a {
     float: left;
+    display: block;
     font-size: 16px;
-    color: rgb(142, 134, 201);
+    color: #182633;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -33,7 +46,7 @@ orange: #f4a902
     font-size: 16px;
     border: none;
     outline: none;
-    color: rgb(103, 25, 25);
+    color: #182633;
     padding: 14px 16px;
     background-color: inherit;
     font-family: inherit; /* Important for vertical align on mobile phones */
@@ -42,7 +55,7 @@ orange: #f4a902
   
   /* Add a red background color to navbar links on hover */
   .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    background-color: #506872;
   }
   
   /* Dropdown content (hidden by default) */
@@ -75,9 +88,16 @@ orange: #f4a902
     display: block;
   }
 
+  /* .sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+} */
+
 .smalllogo {
-    width: 80px;
-    height: 40px;
+    margin-left: 10px;
+    width: 55px;
+    height: 20px;
     background: url("../img/logosmall.png");
     background-size: cover;                     
     background-repeat: no-repeat;
@@ -90,7 +110,14 @@ orange: #f4a902
     background-position: center center; 
 }
 
+.biglogo{
+    margin: auto;
+    width: 50%;
+    padding: 10px 10px 10px 10px;
+    margin-top: 10px;
+}
 .biglogo img{
     width: 400px;
     height: 100px;
+
 }
