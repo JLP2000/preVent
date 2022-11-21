@@ -3,7 +3,6 @@ body {
   }
   
 .container{
-    border: 1px solid red;
     column-count: 3;
     column-gap: 3%;
     margin: 0px;

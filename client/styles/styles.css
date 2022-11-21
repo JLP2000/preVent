@@ -82,6 +82,7 @@
 	cursor: pointer;
 }
 
+
 .comment {
     border-radius: 5px;
     margin: 15px;
@@ -90,10 +91,19 @@
     background-color: var(--snow);
 }
 
-#writeComment input{
+.form {
+    width: 100%;
+}
+
+#blog {
+    width: 100%;
+}
+
+.writeComment input{
     float: right;
 }
 
-#writeComment {
+.writeComment {
     display: none;
+    margin-bottom: 35px;
 }
