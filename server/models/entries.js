@@ -15,6 +15,15 @@ class Entry{
         return allEntries
     }
 
+    static findById(id){
+        const entryID = entries.filter((entry) => entry.id === id)[0]
+        if(!id){
+            return;
+        }
+        const foundEntry = new Entry(entryID)
+        return foundEntry;
+    }
+
     static findByCategory(target){
         const category = entries.filter((entry) => entry.category === target)
         if(!category){
@@ -32,19 +41,27 @@ class Entry{
         return newEntry;
     }
 
-    static updateComments(comment){
-        const targetEntry = entries.find((entry) => entry.id === this.id)
-        targetEntry.comments.push(comment)
+    static update(EntryData){
+        const changingEntry = entries.find((entry) => this.id === entry.id)
+        const entryID = changingEntry.id;
+        const updatedEntry = new Entry({id: entryID, ...EntryData})
+        entries.splice(entries.indexOf(changingEntry), 1 , updatedEntry)
+        return updatedEntry
+    }
+
+    // static updateComments(comment){
+    //     const targetEntry = entries.find((entry) => entry.id === this.id)
+    //     targetEntry.comments.push(comment)
         
-        return targetEntry;
-    }
+    //     return targetEntry;
+    // }
 
-    static updateEmojiCount(emojiType){
-        const targetEntry = entries.find((entry) => entry.id === this.id)
-        targetEntry.emoji[emojiType]++;
+    // static updateEmojiCount(emojiType){
+    //     const targetEntry = entries.find((entry) => entry.id === this.id)
+    //     targetEntry.emoji[emojiType]++;
 
-        return targetEntry;
-    }
+    //     return targetEntry;
+    // }
 }
 
 module.exports = Entry;
