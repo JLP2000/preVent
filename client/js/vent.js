@@ -1,28 +1,27 @@
 const body = document.querySelector("body");
-const postButton = document.querySelector("#post-button");
-const form = document.getElementById("post-form");
+const postButton = document.querySelector("#buttonpost");
+const form = document.getElementById("formpost");
 const cover = document.querySelector("main.inner");
 // const exitButton = document.querySelector('#exit-button');
 // const sendButton = document.querySelector('#send-button');
-const gifButton = document.querySelector("#btn-gif");
+const gifButton = document.querySelector("#giphygetbutton");
 let apiKey = `a1Gm9f8gJX62owmzVfR5PddN5zDlklJ5`;
 let search = document.querySelector("#search");
-let gifChange = document.querySelector("#btn-remove");
+let gifChange = document.querySelector("#btnremove");
 
 
-gifChange.style.display = 'none';
-
+// gifChange.style.display = 'none';
 gifButton.addEventListener('click', (e) =>{
     e.preventDefault()
     // gifChange.style.display ='block'
-    gettingGiphy();
+    giphyapipleasework();
 })
 
-function gettingGiphy(){
-
-    fetch(`https://api.giphy.com/v1/gifs/search?q=${search.value}&api_key=${apiKey}&rating=pg&limit=5`)
+function giphyapipleasework(){
+    fetch(`https://api.giphy.com/v1/gifs/search?q=${search.value}&api_key=${apiKey}&rating=pg&limit=8`)
     .then((response) => response.json())
     .then((data) => {
+        console.log(data);
         let results = document.querySelector("#results");
         let result = document.querySelector("#result");
         data.data.forEach((obj) =>{
@@ -45,7 +44,7 @@ function gettingGiphy(){
             
             img.addEventListener('click', addGif)
 
-            let remove = document.querySelector('#btn-remove')
+            let remove = document.querySelector('#btnremove')
 
             remove.addEventListener('click', (e) =>{
                 e.preventDefault()
