@@ -5,6 +5,7 @@ lightblue: 506872
 yellow: #e9cd00 
 orange: #f4a902
 white: rgb(245, 245, 245);
+red: e93d3d;
 */
 body{
     width:100%;
@@ -23,16 +24,16 @@ body{
 
 
 #topbar {
-	height:			10px;
+	height:			20px;
   background-color: #e9cd00;
   margin-left: 0;
-  
-	/* background: 	linear-gradient(to bottom right, rgb(200, 200, 200), rgb(100, 100, 100)); */
+	
+
 }
 
 .smalllogo {
-	width:	100px;
-	height:	50px;
+	width:	95px;
+	height:	70px;
 	float:	left;
   margin-left: 10px;
 }
@@ -72,12 +73,16 @@ li {
 
 li a, .dropbtn {
     display:			inline-block;
-    color:				rgb(217, 224, 0);
+    color:				#e9cd00;
     text-align:			center;
     padding:			15px 15px;
     text-decoration:	none;
 	width:				100px;
     font-size: initial;
+
+}
+.dropbtn{
+  color: #e93d3d;
 }
 
 li a:hover, .dropdown:hover .dropbtn {
@@ -88,6 +93,7 @@ li a:hover, .dropdown:hover .dropbtn {
 .dropdown {
     display:	inline-block;
 	position:	relative;
+  
 }
 
 .dropdown-content {
@@ -101,7 +107,7 @@ li a:hover, .dropdown:hover .dropbtn {
 }
 
 .dropdown-content a {
-    color: black;
+    color: #e93d3d;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -111,9 +117,9 @@ li a:hover, .dropdown:hover .dropbtn {
 }
 
 .dropdown-content a:hover {
-	background-color: 	#50687281;
+	background-color: 	#e9ce00de;
   transition: 0.6s;
-  color: #e9cd00;
+  color: #e93d3d;
 }
 
 .dropdown:hover .dropdown-content {
@@ -126,8 +132,8 @@ li a:hover, .dropdown:hover .dropbtn {
   top: 0;
   width: 100%;
   transition: 0.3s;
-  overflow:hidden;
 
+  /* opacity: 0.86; */
   
 }
 
