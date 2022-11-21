@@ -54,11 +54,8 @@ function giphyapipleasework(){
                     results.style.display = 'flex'
                     results.append(img)
                 }  
-               
             })
-            
         })
-        
         search.value = ''
     })
 }
