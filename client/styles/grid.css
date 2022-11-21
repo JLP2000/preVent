@@ -15,7 +15,6 @@ body {
 .container .card {
     width: 90%;
     break-inside: avoid; /* this is important!! */
-    padding: 5%;
     margin-bottom: 5%;
     display: grid;
 }
