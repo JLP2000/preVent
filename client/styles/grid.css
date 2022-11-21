@@ -1,0 +1,32 @@
+body {
+    padding: 5%;
+  }
+  
+.container{
+    border: 1px solid red;
+    column-count: 3;
+    column-gap: 3%;
+    margin: 0px;
+    width: 100%;
+    padding:0px;
+    justify-content: center;
+  }
+
+.container .card {
+    border: 1px solid red;
+    width: 90%;
+    break-inside: avoid; /* this is important!! */
+    padding: 5%;
+    margin-bottom: 5%;
+}
+
+@media  (max-width: 1030px) {
+	.container {
+        column-count: 2;
+	}
+  }
+@media (max-width: 650px){
+	.container {
+        column-count: 1;
+	}
+  }
