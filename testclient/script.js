@@ -110,6 +110,41 @@ async function updateComment(e){
     })
 }
 
+let emojiArray = document.querySelectorAll(".emojiBtn");
+console.log(emojiArray);
+
+emojiArray.forEach((element) => {
+    element.addEventListener("click", updateEmoji)
+})
+
+async function updateEmoji(e){
+    e.preventDefault();
+    const addedEmoji = this.value;
+    const id = document.getElementById("entryID").textContent;
+
+    const original = await originalData(id);
+    original.emoji[addedEmoji]++;
+
+    fetch(baseURL + id, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            gif: original.gif,
+            category: original.category,
+            entry: original.entry,
+            emoji: original.emoji,
+            dnt: original.dnt,
+            comments: original.comments
+        })
+        
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+    })
+}
 
 async function originalData(id) {
     const data = await fetch(baseURL + id)
