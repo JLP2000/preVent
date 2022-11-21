@@ -81,4 +81,28 @@ describe("Testing the entries API", () => {
             .expect(updatedEntry, done);
     });
 
+    it("testing the catagories route expect 200 and catagories in general", (done) => {
+        request(api)
+            .get("/entries/category/general")
+            .expect(200)
+            .expect([
+                {
+                  id: 1,
+                  category: 'general',
+                  entry: 'I work on weekends',
+                  emoji: { happy: 0, laughing: 0, unhappy: 0 },
+                  dnt: '',
+                  comments: [ 'Thats so unlucky, could never be me tho hahahahaha' ]
+                },
+                {
+                  id: 2,
+                  category: 'general',
+                  entry: 'I dislike the flavour of carrots',
+                  emoji: { happy: 0, laughing: 2, unhappy: 1 },
+                  dnt: '',
+                  comments: []
+                }
+              ], done);
+    })
+
 })
