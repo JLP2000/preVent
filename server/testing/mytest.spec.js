@@ -4,7 +4,7 @@ const request = require("supertest");
 describe("Testing the entries API", () => {
     let api;
     let testEntry = {
-        id: "2",
+        id: 2,
         category: "general",
         entry: "I dislike the flavour of carrots",
         emoji: {
@@ -17,7 +17,7 @@ describe("Testing the entries API", () => {
     };
 
     let updatedEntry = {
-        id: "1",
+        id: 1,
         category: "general",
         entry: "I work on weekends",
         emoji: {
@@ -51,8 +51,8 @@ describe("Testing the entries API", () => {
         request(api)
             .get("/entries")
             .expect(200)
-            .expect({
-                id: "1",
+            .expect([{
+                id: 1,
                 category: "general",
                 entry: "I work on weekends",
                 emoji: {
@@ -62,7 +62,7 @@ describe("Testing the entries API", () => {
                 },
                 dnt: "",
                 comments: []
-            }, done);
+            }], done);
     });
 
     it("testing posting to /entries expect code 201 and test entry", (done) => {

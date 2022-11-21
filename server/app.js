@@ -15,4 +15,4 @@ app.listen(port, () => {
 app.use(bodyParser.json());
 app.use("/entries", entryRoutes)
 
-module.exports = entryRoutes;
+module.exports = app;

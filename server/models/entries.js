@@ -16,7 +16,7 @@ class Entry{
     }
 
     static findById(id){
-        const entryID = entries.filter((entry) => entry.id === id)[0]
+        const entryID = entries.filter((entry) => entry.id == id)[0]
         if(!id){
             return;
         }
@@ -25,12 +25,12 @@ class Entry{
     }
 
     static findByCategory(target){
-        const category = entries.filter((entry) => entry.category === target)
+        const category = entries.filter((entry) => entry.category == target)
         if(!category){
             return;
         }
-        const entries = category.map((entry) => new Entry(entry))
-        return entries;
+        const entries1 = category.map((entry) => new Entry(entry))
+        return entries1;
     }
 
     static createEntry(entry){
@@ -41,8 +41,8 @@ class Entry{
         return newEntry;
     }
 
-    static update(EntryData){
-        const changingEntry = entries.find((entry) => this.id === entry.id)
+    update(EntryData){
+        const changingEntry = entries.find((entry) => this.id == entry.id)
         const entryID = changingEntry.id;
         const updatedEntry = new Entry({id: entryID, ...EntryData})
         entries.splice(entries.indexOf(changingEntry), 1 , updatedEntry)
