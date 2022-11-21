@@ -3,6 +3,7 @@ const entries = require("../data")
 class Entry{   
     constructor(data){
         this.id = data.id
+        this.gif = data.gif
         this.category = data.category
         this.entry = data.entry
         this.emoji = data.emoji

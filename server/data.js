@@ -1,6 +1,7 @@
 userEntries = [
     {
         id: 1,
+        gif: "",
         category: "general",
         entry: "I work on weekends",
         emoji: {
