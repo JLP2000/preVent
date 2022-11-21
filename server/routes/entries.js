@@ -37,4 +37,11 @@ router.put('/:id', (req, res) => {
     res.status(200).send(changedEntry);
 })
 
+router.delete('/:id', (req, res) => {
+    const id = parseInt(req.params.id)
+    const targetEntry = Entry.findById(id)
+    targetEntry.delete()
+    res.status(204).send();
+})
+
 module.exports = router;

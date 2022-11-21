@@ -104,4 +104,21 @@ describe("Testing the entries API", () => {
                 }
               ], done);
     })
+
+    it("Deletes an entry", async() => {
+        await request(api)
+                .delete("/entries/1")
+                .expect(204);
+
+        const updatedEntries = await request(api).get("/entries")
+        expect(updatedEntries.body.length).toBe(1)
+    })
+
+    it("testing posting to /entries expect code 201 and test entry", (done) => {
+        request(api)
+            .post("/entries")
+            .send(testEntry)
+            .expect(201)
+            .expect({id:3, ...testEntry}, done);
+    });
 })

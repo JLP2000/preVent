@@ -34,7 +34,7 @@ class Entry{
     }
 
     static createEntry(entry){
-        const EntryID = entry.length + 1
+        const EntryID = entries[entries.length - 1].id + 1 
         const newEntry = new Entry({id: EntryID, ...entry})
         entries.push(newEntry);
 
@@ -47,6 +47,11 @@ class Entry{
         const updatedEntry = new Entry({id: entryID, ...EntryData})
         entries.splice(entries.indexOf(changingEntry), 1 , updatedEntry)
         return updatedEntry
+    }
+
+    delete(){
+        const targetEntry = entries.filter((entry) => entry.id == this.id)[0]
+        entries.splice(entries.indexOf(targetEntry), 1);
     }
 
     // static updateComments(comment){
