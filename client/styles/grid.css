@@ -13,11 +13,11 @@ body {
   }
 
 .container .card {
-    border: 1px solid red;
     width: 90%;
     break-inside: avoid; /* this is important!! */
     padding: 5%;
     margin-bottom: 5%;
+    display: grid;
 }
 
 @media  (max-width: 1030px) {
