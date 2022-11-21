@@ -1,11 +1,12 @@
 const sterling= document.getElementById("sterling");
 const bellingham = document.getElementById("bellingham")
+const taremi = document.getElementById("taremi")
 
 sterling.addEventListener("submit", createPost);
 bellingham.addEventListener("submit", getGIF)
+taremi.addEventListener("submit", updateComment)
 
 let chosenGif;
-
 
 function createPost(e){
     e.preventDefault();
@@ -77,4 +78,31 @@ function getGIF(e){
 function chooseGIF(){
     chosenGif = this.src;
     console.log(chosenGif)
+}
+
+
+function updateComment(e){
+    e.preventDefault();
+    const comment = document.getElementById("comment").value;
+    const id = document.getElementById("entryID").textContent;
+
+    fetch(`http://localhost:3000/entries/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            gif: this.gif,
+            category: this.category,
+            entry: this.entry,
+            emoji: this.emoji,
+            dnt: this.dnt,
+            comments: []
+        })
+        
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+    })
 }
