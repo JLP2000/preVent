@@ -104,5 +104,4 @@ describe("Testing the entries API", () => {
                 }
               ], done);
     })
-
 })
