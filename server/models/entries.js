@@ -17,8 +17,8 @@ class Entry{
     }
 
     static findById(id){
-        const entryID = entries.filter((entry) => entry.id == id)[0]
-        if(!id){
+        const entryID = entries.find((entry) => entry.id == id)
+        if(!entryID){
             return;
         }
         const foundEntry = new Entry(entryID)
@@ -27,7 +27,7 @@ class Entry{
 
     static findByCategory(target){
         const category = entries.filter((entry) => entry.category == target)
-        if(!category){
+        if(category.length == 0){
             return;
         }
         const entries1 = category.map((entry) => new Entry(entry))
