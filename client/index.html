@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>preVent</title>
     <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <link rel="icon" type="image/svg" href="img/logosmall.png">
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
     <!-- <script src="/js/index.js"></script> -->
 
@@ -19,7 +22,7 @@
                 <ul id="navbar">
                     <div id="topbar">
                         <a href="index.html"><img class="smalllogo" src="img/logogifsmall.gif" alt="logo"></a>
-                        <div class="topphrase">Preventing by Venting</div>
+                        <div class="topphrase">Powered by Venting</div>
                     </div>
                     <li><a class="active" href="vents.html">Vents</a></li>
                     <li class="dropdown">
@@ -37,7 +40,7 @@
         </header>
         <div class="main">
             <!-- <div class="biglogo"></div> -->
-            <h1 class="cover-heading">Welcome to </h1>
+            <h1 id ="coverheading" class="coverheading"> ..</h1>
             <img class="biglogo" src="img/logogif.gif" alt="mainmiddlelogo">
             <!-- <div class="biglogo"><img src="img/logogif.gif" alt="mainmiddlelogo"></div>
             <h1 class="cover-heading">Welcome to</h1> -->
@@ -69,6 +72,48 @@
             // navbar.classList.remove("stickyDown");
           }
         } 
+
+        var i = 0;
+        var txt = 'Welcome to';
+        var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+new TypeIt("#coverheading", {
+  speed: 50,
+  startDelay: 900,
+})
+//Welcome to the most convenient journaling platform.
+  .type("Welcoe to tee", { delay: 100 })
+  .move(-8, { delay: 100 })
+  .type("m", { delay: 400 })
+  .move(null, { to: "START", instant: true, delay: 300 })
+  .move(1, { delay: 200 })
+  .delete(1)
+  .move(1, { delay: 200 })
+  .delete(1)
+  .pause(200)
+  .move(14, { instant: true })
+  .delete(1)
+  .move(1, { delay: 200 })
+  .delete(1)
+  .move(1, { delay: 200 })
+  .type("he most  ", { delay: 350 })
+  .move(null, { to: "END" })
+  .type(" convenient journaling platform")
+  .move(null, { to: "END" })
+  .type(' <span class="place">on the internet?</span>', { delay: 400 })
+  .delete(".place", { delay: 800, instant: true })
+  .type('<em><strong class="font-semibold">in the whole world.</strong></em>', {
+    speed: 300,
+  })
+  .go();
         </script>
         
 

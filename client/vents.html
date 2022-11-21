@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/homepage.css">
     <link rel="stylesheet" href="styles/grid.css">
+    <link rel="stylesheet" href="styles/vents.css">
+    <script defer src="./js/vent.js"></script>
     <link rel="icon" type="image/svg" href="img/logosmall.png">
     <title>Vents</title>
 </head>
@@ -33,57 +35,91 @@
             </div>
         </header>
    
+        <main class = "inner">
+            <div class="modal fade" id="buttonpost" aria-labelledby="modal-title" aria-hidden="true">
+
+            </div>
+     
         <p>This is the home page and contains all the posts</p>
-        <div class="container">
-            <div class="card">
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modalmain">
+    <span class="close">&times;</span>
+    <div class="postform">
+        <form id="formpost">
+            <section id="title">
+                <label for="titleinput">Give your post a title:</label>
+                <br>
+                <input type="text" name="titleinput" id="titleinput" placeholder="Title of post" required>
+            </section>
+    
+            <section id="post-gif">
+                <label for="gifinput" id="giftitle">Give your post a gif:</label>
+                <br>
+                <input type="text" id="search" placeholder="Search for GIF">
+                <div id="giphydivbuttons">
+                    <button id="giphygetbutton">Get gif</button>
+                    <button id="btnremove">Change gif</button>
+                </div>
+            </section>
+
+            <div id="results"> </div>
+            <div id="result"> </div>
+            <section id="postinput">
+                <label for="post" id="textareainput">Tell us more!:</label>
+                <br>
+                <textarea name="post" id="post" placeholder="1000 characters max." maxlength="1000" style="resize:none" required></textarea>
+            </section>
+            <input type="submit" value="post" id="sendInForm">
+        </form>
+  </div>
+</div>
+</main>     
+</div>
+
+
+
+            <div class="container">
+           
+                <div class="card">
                 <p>Sfnsd`bhgdjsBGdjs:BGjkdsbgksdjgbou gbsdjkgbsdkjgbvsd`gjbsd`gouehfdhgs` gnksldl`dgksbgosdgoudsdkj`bgsdj nfsdbjkbsdu`gbs dnkdsguie gaui fbadhsfgaei gfoaugiud gfa9 hgi`bahsf yau`fahobfai fiahf auoj sjg gauoeh fia hgdsu gau hfilakjksd gfai jasg faiLF GuoaSJ fash fgai fsa fgaiu Gfiays fkaj fgiuag fuia fhsuagaudi` gfauo fhioafaui`gfuoa hfpia houagaif foaifioa gfiuagfaou;hfaoi hfsadaiofaio 400 characters</p>
                 <p>date: Today</p>
                 <div>reactions</div>
                 <p>comments</p>
             </div>
-            <div class="card">
-                <p>fkaj fgiuag fuia fhsuagaudi` gfauo fhioafaui`gfuoa hfpia houagaif foai hfioa gfiuagfaou;hfai hfsadaiofaio 120 characters</p>
-                <p>date: Yestersday</p>
-                <div>reactions</div>
-                <p>comments</p>
-            </div>
-            <div class="card">
-                <p>fkaj fgiuag fuia fhsuagaudi` gfauo fhioafaui`gfuoa hfpia houagaif foai hfioa gfiuagfaou;hfai hfsadaasgfafas esrft se  werae`rs`  srgs hdt sreryer ftrt s str  etsey gsdgtar  fes`f iofaio 200 characters</p>
-                <p>date Last week</p>
-                <div>reactions</div>
-                <p>comments</p>
-            </div>
-
-            <div class="card">
-                <p>fkaj fgiuag fuia fhsuagaudi` gfauo fhioafaui`gfuoa hfpia houagaif foai hfioa gfiuagfaou;hfai hfsadaasgfafas esrft se  werae`rs`  srgs hdt sreryer ftrt s str  etsey gsdgtar  fes`f iofaio 200 characters</p>
-                <p>date</p>
-                <div>reactions</div>
-                <p>comments</p>
-            </div>
-            <div class="card">
-                <p>fkaj fgiuag fuia fhsuagaudi` gfauo fhioafaui`gfuoa hfpia houagaif foai hfioa gfiuagfaou;hfai hfsadaiofaio 120 characters</p>
-                <p>date</p>
-                <div>reactions</div>
-                <p>comments</p>
-            </div>
-            <div class="card">
-                <p>Sfnsd`bhgdjsBGdjs:BGjkdsbgksdjgbou gbsdjkgbsdkjgbvsd`gjbsd`gouehfdhgs` gnksldl`dgksbgosdgoudsdkj`bgsdj nfsdbjkbsdu`gbs dnkdsguie gaui fbadhsfgaei gfoaugiud gfa9 hgi`bahsf yau`fahobfai fiahf auoj sjg gauoeh fia hgdsu gau hfilakjksd gfai jasg faiLF GuoaSJ fash fgai fsa fgaiu Gfiays fkaj fgiuag fuia fhsuagaudi` gfauo fhioafaui`gfuoa hfpia houagaif foaifioa gfiuagfaou;hfaoi hfsadaiofaio 400 characters</p>
-                <p>date</p>
-                <div>reactions</div>
-                <p>comments</p>
-            </div>
-            <div class="card">
-                <p>Sfnsd`bhgdjsBGdjs:BGjkdsbgksdjgbou gbsdjkgbsdkjgbvsd`gjbsd`gouehfdhgs` gnksldl`dgksbgosdgoudsdkj`bgsdj nfsdbjkbsdu`gbs dnkdsguie gaui fbadhsfgaei gfoaugiud gfa9 hgi`bahsf yau`fahobfai fiahf auoj sjg gauoeh fia hgdsu gau hfilakjksd gfai jasg faiLF GuoaSJ fash fgai fsa fgaiu Gfiays fkaj fgiuag fuia fhsuagaudi` gfauo fhioafaui`gfuoa hfpia houagaif foaifioa gfiuagfaou;hfaoi hfsadaiofaio 400 characters</p>
-                <p>date</p>
-                <div>reactions</div>
-                <p>comments</p>
-            </div>
-            <div class="card">
-                <p>fkaj fgiuag fuia fhsuagaudi` gfauo fhioafaui`gfuoa hfpia houagaif foai hfioa gfiuagfaou;hfai hfsadaasgfafas esrft se  werae`rs`  srgs hdt sreryer ftrt s str  etsey gsdgtar  fes`f iofaio 200 characters</p>
-                <p>date</p>
-                <div>reactions</div>
-                <p>comments</p>
-            </div>
     </div>
+
+    <script>
+        // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+    </script>
     </body>
 </html>
