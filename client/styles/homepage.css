@@ -9,7 +9,7 @@ white: rgb(245, 245, 245);
 body{
     width:100%;
     margin:0;
-    background-color: white;
+    /* background-color: white; */
     /* background: linear-gradient(#ffffff39,#e9ce007b),
     url(../img/bg.jpg) */
     font-family: 'Source Code Pro', monospace;
@@ -21,21 +21,12 @@ body{
   
 }
 
-#navbar{
-  width: 100%;
-  top: 0; left: 0;
-  text-align: center;
-  background-color: rgb(245, 245, 245);
-  -webkit-transition: height 0.35s ease, padding 0.35s ease;
-  -moz-transition: height 0.35s ease, padding 0.35s ease;
-  -ms-transition: height 0.35s ease, padding 0.35s ease;
-  -o-transition: height 0.35s ease, padding 0.35s ease;
-  transition: height 0.35s ease, padding 0.35s ease;
-}
+
 #topbar {
 	height:			10px;
   background-color: #e9cd00;
   margin-left: 0;
+  
 	/* background: 	linear-gradient(to bottom right, rgb(200, 200, 200), rgb(100, 100, 100)); */
 }
 
@@ -58,12 +49,18 @@ body{
 }
 
 #navbar {
+    
     list-style-type:	none;
-	margin:				0;
-	padding:			0;
-    background-color: 	rgba(254, 254, 254, 0.807);
+    margin:				0;
+    padding:			0;
+    background-color: 	rgba(254, 254, 254, 0.926);
     font-size: 0;
-}
+    width: 100%;
+    top: 0; left: 0;
+    text-align: center;
+    transition: height 0.35s ease, padding 0.35s ease;
+
+  }
 
 li {
     display: 	inline-block;
@@ -129,12 +126,12 @@ li a:hover, .dropdown:hover .dropbtn {
   top: 0;
   width: 100%;
   transition: 0.3s;
+  overflow:hidden;
+
+  
 }
 
-.stickyDown{
-  height: 30px;
-  background-color: #e9cd00;
-}
+
 
 
 /* .smalllogo {
