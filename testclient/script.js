@@ -7,6 +7,7 @@ bellingham.addEventListener("submit", getGIF)
 taremi.addEventListener("submit", updateComment)
 
 let chosenGif;
+const baseURL = "http://localhost:3000/entries/"
 
 function createPost(e){
     e.preventDefault();
@@ -14,7 +15,7 @@ function createPost(e){
     const postCategory = document.getElementById("category").value
     const dateNtime = new Date().toLocaleString();
     
-    fetch(`http://localhost:3000/entries`, {
+    fetch(baseURL, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -81,23 +82,25 @@ function chooseGIF(){
 }
 
 
-function updateComment(e){
+async function updateComment(e){
     e.preventDefault();
     const comment = document.getElementById("comment").value;
     const id = document.getElementById("entryID").textContent;
 
-    fetch(`http://localhost:3000/entries/${id}`, {
+    const original = await originalData(id);
+
+    fetch(baseURL + id, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            gif: this.gif,
-            category: this.category,
-            entry: this.entry,
-            emoji: this.emoji,
-            dnt: this.dnt,
-            comments: []
+            gif: original.gif,
+            category: original.category,
+            entry: original.entry,
+            emoji: original.emoji,
+            dnt: original.dnt,
+            comments: [...original.comments, comment]
         })
         
     })
@@ -105,4 +108,14 @@ function updateComment(e){
     .then(data => {
         console.log(data)
     })
+}
+
+
+async function originalData(id) {
+    const data = await fetch(baseURL + id)
+        .then(res => res.json())
+        .then(data => {
+            return data;
+        })
+        return data;
 }

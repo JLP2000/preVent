@@ -10,7 +10,7 @@ userEntries = [
             unhappy: 0
         },
         dnt: "",
-        comments: []
+        comments: ["something"]
     }
 ]
 

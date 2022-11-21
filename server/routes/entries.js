@@ -27,7 +27,24 @@ router.get("/category/:category", (req, res) => {
         console.log(err);
         res.status(404).send({message: err.message})
     }
-})
+});
+
+router.get("/:id", (req, res) => {
+    try{
+        const id = req.params.id;
+        const selectedEntry = Entry.findById(id)
+        if(!selectedEntry){
+            throw new Error("There are no entries for this id")
+        }
+        else{
+            res.send(selectedEntry)
+        } 
+    } catch(err){
+            console.log(err);
+            res.status(404).send({message: err.message})
+        }
+    }
+)
 
 router.put('/:id', (req, res) => {
     const id = parseInt(req.params.id)
