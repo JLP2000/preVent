@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateQuote();
   });
 
-  function updateCharCount(event){
+  function updateCharCount(){
     let entry = postText.value
     let remaining = postText.maxLength - entry.length
     document.getElementById("remainingChar").textContent = remaining;
@@ -125,7 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault()
     let entry = postText.value.toLowerCase();
 
-
     profanities.forEach((word) => {
         if(postText.value.includes(word)){
             let censored = "#".repeat(word.length);
@@ -145,7 +144,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // }
 
     let censoredPost = firstLetterUpper(entry);
-
     console.log(censoredPost);
   }
 
