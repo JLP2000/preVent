@@ -1,5 +1,10 @@
+:root {
+    --offred: #FF5959;
+    --bluegrey: #676FA3;
+    --greyblue: #CDDEFF;
+    --snow: #EEF2FF;
+}
 
-  
 .container{
 
     column-count: 3;
@@ -12,7 +17,7 @@
 
 .container .card {
     width: 90%;
-    background-color: #e9cd00;
+    background-color: #b1af9f;
     border: 1px solid #506872;
     break-inside: avoid; /* this is important!! */
     padding: 5%;
@@ -31,12 +36,27 @@
         column-count: 1;
 	}
   }
-  /* .card {
-    width: 80%;
-    max-width: 700px;
-  } */
-  .card-body {
-    padding: 40px;
-  }
-  
-  
+
+  .container .card {
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.container .card:hover {
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+}
+
+.container .card .post {
+    border-top: 2px solid var(--offred);
+    border-bottom: 2px solid var(--offred);
+}
+
+.container .card .date {
+    font-style: italic;
+    color: var(--bluegrey);
+    float: right;
+}
+
+.card-header p {
+    display: inline-block;
+}

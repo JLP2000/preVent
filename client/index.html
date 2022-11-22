@@ -73,17 +73,6 @@
           }
         } 
 
-        var i = 0;
-        var txt = 'Welcome to';
-        var speed = 50;
-
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("demo").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
 
 new TypeIt("#coverheading", {
   speed: 50,
