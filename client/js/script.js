@@ -21,9 +21,8 @@ function giphyapipleasework(){
 
     console.log("hi")
     const giftext = document.getElementById("grealish").value;
+    fetch(`https://api.giphy.com/v1/gifs/search?q=${giftext}&api_key=${apiKey}&rating=pg&limit=4`)
 
-    // const img = document.getElementById("gif");
-    fetch(`https://api.giphy.com/v1/gifs/search?q=${giftext}&api_key=${apiKey}&rating=pg&limit=4"`)
     .then((res) => res.json())
     .then((data) => {
         console.log(data)
