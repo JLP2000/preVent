@@ -201,6 +201,7 @@ cursor: pointer;
   padding: 5px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   background-color: var(--snow);
+  display: hide;
 }
 
 .form {

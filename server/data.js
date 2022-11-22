@@ -12,7 +12,7 @@ userEntries = [
             sad:0
         },
         dnt: "yesterday",
-        comments: ["this is so sad"]
+        comments: ["this is so sad","i feel sorry for you"]
     }
 ]
 

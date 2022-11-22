@@ -19,23 +19,44 @@ async function originalData(id) {
       })
       return data;
 }
-
+function printData(data,id) {
+  document.getElementById(`date_${id}`).textContent = data.dnt
+  document.getElementById(`post_${id}`).textContent = data.entry
+  document.getElementById(`happyCount${id}`).textContent = data.emoji["happy"]
+  document.getElementById(`amusedCount${id}`).textContent = data.emoji["amused"]
+  document.getElementById(`shockedCount${id}`).textContent = data.emoji["shocked"]
+  document.getElementById(`sadCount${id}`).textContent = data.emoji["sad"]
+  document.getElementById(`angryCount${id}`).textContent = data.emoji["angry"]
+  document.getElementById(`commentCount${id}`).textContent = data.comments.length
+ }
+ 
+//loading original data
 window.addEventListener("load", (e) => {
 for (let id=1; id < dummyData.length+1; id++) {
   fetch(baseURL+id)
   .then(res => res.json())
   .then(data => {
-    document.getElementById(`date_${id}`).textContent = data.dnt
-    document.getElementById(`post_${id}`).textContent = data.entry
-    document.getElementById(`happyCount${id}`).textContent = data.emoji["happy"]
-    document.getElementById(`amusedCount${id}`).textContent = data.emoji["amused"]
-    document.getElementById(`shockedCount${id}`).textContent = data.emoji["shocked"]
-    document.getElementById(`sadCount${id}`).textContent = data.emoji["sad"]
-    document.getElementById(`angryCount${id}`).textContent = data.emoji["angry"]
-    document.getElementById(`commentCount${id}`).textContent = data.comments.length
-    document.getElementById(`comment1_${id}`).textContent = data.comments[0]
-  })
-}})
+      printData(data,id)
+
+      let commentNo = data.comments.length
+      if(commentNo != 0 && commentNo < 4) {
+          for (let i = commentNo - 1; i >= 0; i-- ) {
+            let newDiv = document.getElementById(`comments_${id}`).appendChild(document.createElement("div"))
+            newDiv.setAttribute("id", `comment${i}_${id}`)
+            newDiv.setAttribute("class", `comment`)
+            document.getElementById(`comment${i}_${id}`).textContent = data.comments[i]
+          }
+        } else if (commentNo > 3) {
+          for (let i = commentNo - 1; i >= commentNo-4; i-- ) {
+            let newDiv = document.getElementById(`comments_${id}`).appendChild(document.createElement("div"))
+            newDiv.setAttribute("id", `comment${i}_${id}`)
+            newDiv.setAttribute("class", `comment`)
+            document.getElementById(`comment${i}_${id}`).textContent = data.comments[i]
+          }
+        }
+    }
+)}})
+
 
 
 
@@ -132,7 +153,6 @@ for (let id=1; id < dummyData.length+1;id++) {
 for (let id=1; id < dummyData.length+1; id++) {
   let writeComment = document.getElementById(`${id}_writeComment`);
   writeComment.addEventListener("submit", addNewComment);
-
   async function addNewComment(e){
     e.preventDefault();
     let newComment = writeComment.querySelector("textarea").value
@@ -154,11 +174,28 @@ for (let id=1; id < dummyData.length+1; id++) {
     .then(res => res.json())
     .then(data => {
         console.log(data)
+        printData(data,id)
+        let commentNo = data.comments.length
+      if(commentNo != 0 && commentNo < 4) {
+          for (let i = commentNo - 1; i >= 0; i-- ) {
+            let newDiv = document.getElementById(`comments_${id}`).appendChild(document.createElement("div"))
+            newDiv.setAttribute("id", `comment${i}_${id}`)
+            newDiv.setAttribute("class", `comment`)
+            document.getElementById(`comment${i}_${id}`).textContent = data.comments[i]
+          }
+        } else if (commentNo > 3) {
+          for (let i = commentNo - 1; i >= commentNo-4; i-- ) {
+            let newDiv = document.getElementById(`comments_${id}`).appendChild(document.createElement("div"))
+            newDiv.setAttribute("id", `comment${i}_${id}`)
+            newDiv.setAttribute("class", `comment`)
+            document.getElementById(`comment${i}_${id}`).textContent = data.comments[i]
+            document.getElementById(`comment${1}_${id}`).remove()
+          }
+        }
     })}}
 
 
 ///updating emojicount
-
 for (let id=1; id < dummyData.length+1; id++) {
   let emojiArray = document.querySelectorAll('.reaction'+id);
   console.log(emojiArray);
@@ -190,11 +227,6 @@ for (let id=1; id < dummyData.length+1; id++) {
       })
       .then(res => res.json())
       .then(data => {
-          console.log(data);
-          document.getElementById(`happyCount${id}`).textContent = data.emoji["happy"]
-          document.getElementById(`amusedCount${id}`).textContent = data.emoji["amused"]
-          document.getElementById(`shockedCount${id}`).textContent = data.emoji["shocked"]
-          document.getElementById(`sadCount${id}`).textContent = data.emoji["sad"]
-          document.getElementById(`angryCount${id}`).textContent = data.emoji["angry"]
+        printData(data,id)
       })
 }}
