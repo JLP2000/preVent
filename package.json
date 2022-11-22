@@ -4,7 +4,7 @@
   "description": "## Installation & Usage",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./server/app.js",
+    "start": "node ./server/app.js",
     "test": "jest",
     "coverage": "jest --coverage"
   },
