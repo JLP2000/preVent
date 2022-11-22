@@ -4,7 +4,7 @@ sterling.addEventListener("submit", createPost);
 taremi.addEventListener("submit", updateComment)
 let chosenGif;
 const bellingham = document.getElementById("bellingham")
-const baseURL = "http://localhost:3000/entries/"
+const baseURL = "http://localhost:3000/entries/";
 
 bellingham.addEventListener("submit", giphyapipleasework)
 let apiKey = `a1Gm9f8gJX62owmzVfR5PddN5zDlklJ5`;
@@ -14,10 +14,10 @@ function giphyapipleasework(e){
     console.log("hi")
     const giftext = document.getElementById("grealish").value;
 
-    const img = document.getElementById("gif");
-    const img1 = document.getElementById("gif1");
-    const img2 = document.getElementById("gif2");
-    const img3 = document.getElementById("gif3");
+    // const img = document.getElementById("gif");
+    // const img1 = document.getElementById("gif1");
+    // const img2 = document.getElementById("gif2");
+    // const img3 = document.getElementById("gif3");
     fetch(`https://api.giphy.com/v1/gifs/search?q=${giftext}&api_key=${apiKey}&rating=pg&limit=4"`)
     .then((res) => res.json())
     .then((data) => {
@@ -41,11 +41,12 @@ function giphyapipleasework(e){
                 let newImg = img
                 result.append(newImg)
                 results.style.display = 'none';
-                chooseGIF();
+                chosenGif = this.src;
+                console.log(chosenGif)
             }
             
-
             img.addEventListener('click', addGif)
+            // img.addEventListener('click', chooseGIF)
             let remove = document.querySelector('#btnremove')
             remove.addEventListener('click', (e) =>{
                 e.preventDefault()
@@ -57,30 +58,10 @@ function giphyapipleasework(e){
                 }  
             })
         })
-        search.value = ''
+        giftext.value = ''
     })
-
-    //     const gifURL = data.data[0].images.original.url
-    //     const gifURL1 = data.data[1].images.original.url
-    //     const gifURL2 = data.data[2].images.original.url
-    //     const gifURL3 = data.data[3].images.original.url
-
-    //     img.setAttribute("src", gifURL)
-    //     // img1.setAttribute("src", gifURL1)
-    //     // img2.setAttribute("src", gifURL2)
-    //     // img3.setAttribute("src", gifURL3)
-
-
-    // img.addEventListener("click", chooseGIF)
-    // // img1.addEventListener("click", chooseGIF)
-    // // img2.addEventListener("click", chooseGIF)
-    // // img3.addEventListener("click", chooseGIF)
 }
 
-function chooseGIF(){
-    chosenGif = this.src;
-    console.log(chosenGif)
-}
 
 
 
