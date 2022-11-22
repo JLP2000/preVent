@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/homepage.css">
     <link rel="stylesheet" href="styles/grid.css">
     <link rel="stylesheet" href="styles/vents.css">
-    <script defer src="./js/vent.js"></script>
+    <!-- <script defer src="./js/vent.js"></script> -->
     <link rel="icon" type="image/svg" href="img/logosmall.png">
     <title>Vents</title>
 </head>
@@ -57,31 +57,63 @@
                 <input type="text" name="titleinput" id="titleinput" placeholder="Title of post" required>
             </section>
     
-            <section id="post-gif">
-                <label for="gifinput" id="giftitle">Add a gif:</label>
-                <br>
-                <input type="text" id="search" placeholder="Search for GIF">
-                <div id="giphydivbuttons">
-                    <button id="giphygetbutton">Add gif</button>
-                    <button id="btnremove">Update gif</button>
-                </div>
-            </section>
 
-            <div id="results"> </div>
-            <div id="result"> </div>
+
+
             <section id="postinput">
-                <label for="post" id="textareainput">Tell us more!:</label>
-                <br>
-                <textarea name="post" id="post" placeholder="1000 characters max." maxlength="1000" style="resize:none" required></textarea>
+
             </section>
             <input type="submit" value="post" id="sendInForm">
         </form>
   </div>
 </div>
+
 </main>     
 </div>
+<div id="post">
+    <form id="sterling">
+        <textarea name="entry" id="saka" cols="30" rows="10" placeholder="400 characters max." maxlength="400" style="resize:none" required></textarea>
+        <input type="text" id = "category">;
+        <input type="submit" value="Post" id="saka1">
+    </form>
 
 
+
+    <div id="results"> </div>
+    <div id="result"> </div>
+
+<section id="post-gif">
+<form id="bellingham">
+<label for="gifinput" id="giftitle">Add a gif:</label>
+<input type="text" id="grealish" placeholder="Search for GIF">
+<br>
+<!-- <img src="" alt="" id="gif">
+<img src="" alt="" id="gif1">
+<img src="" alt="" id="gif2">
+<img src="" alt="" id="gif3"> -->
+<div id="giphydivbuttons">
+    <input type="submit" id="rashford">
+    <button id="giphygetbutton">Add gif</button>
+    <button id="btnremove">Update gif</button>
+</div>
+</form>
+</section>
+
+</div>
+<div id="entry">
+    <p id="entryID">1</p>
+
+    <img src="" alt="" style="border: solid;" id="postIMG">
+    <p style="border: solid;" id="textEntry">I am depressed with work</p>
+    <p id="dateTime">Date and time</p>
+    <form action="" id="taremi">
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+        <input type="submit">
+    </form>
+    <button class = "emojiBtn" id="hap" value="happy">Happy</button>
+    <button class = "emojiBtn" id="lol" value ="laughing">Lol</button>
+    <button class = "emojiBtn" id="crybaby" value = "unhappy">sad</button>
+</div>
 
             <div class="container">
                 <div class="card">
@@ -188,5 +220,7 @@ window.onclick = function(event) {
   }
 }
     </script>
+        <script defer src="./js/script.js"></script>
+
     </body>
 </html>
