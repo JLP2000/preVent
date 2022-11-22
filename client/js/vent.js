@@ -174,24 +174,30 @@ for (let id=1; id < dummyData.length+1; id++) {
     .then(res => res.json())
     .then(data => {
         console.log(data)
-        printData(data,id)
-        let commentNo = data.comments.length
-      if(commentNo != 0 && commentNo < 4) {
-          for (let i = commentNo - 1; i >= 0; i-- ) {
-            let newDiv = document.getElementById(`comments_${id}`).appendChild(document.createElement("div"))
-            newDiv.setAttribute("id", `comment${i}_${id}`)
-            newDiv.setAttribute("class", `comment`)
-            document.getElementById(`comment${i}_${id}`).textContent = data.comments[i]
-          }
-        } else if (commentNo > 3) {
-          for (let i = commentNo - 1; i >= commentNo-4; i-- ) {
-            let newDiv = document.getElementById(`comments_${id}`).appendChild(document.createElement("div"))
-            newDiv.setAttribute("id", `comment${i}_${id}`)
-            newDiv.setAttribute("class", `comment`)
-            document.getElementById(`comment${i}_${id}`).textContent = data.comments[i]
-            document.getElementById(`comment${1}_${id}`).remove()
-          }
-        }
+        let i = data.comments.length
+        let newDiv = document.getElementById(`comments_${id}`).appendChild(document.createElement("div"))
+        newDiv.setAttribute("id", `comment${i}_${id}`)
+        newDiv.setAttribute("class", `comment`)
+        document.getElementById(`comment${i}_${id}`).textContent = newComment
+
+        // printData(data,id)
+        // let commentNo = data.comments.length
+        // if(commentNo != 0 && commentNo < 4) {
+        //   for (let i = commentNo - 1; i >= 0; i-- ) {
+        //     let newDiv = document.getElementById(`comments_${id}`).appendChild(document.createElement("div"))
+        //     newDiv.setAttribute("id", `comment${i}_${id}`)
+        //     newDiv.setAttribute("class", `comment`)
+        //     document.getElementById(`comment${i}_${id}`).textContent = data.comments[i]
+        //   }
+        // } else if (commentNo > 3) {
+        //   for (let i = commentNo - 1; i >= commentNo-4; i-- ) {
+        //     let newDiv = document.getElementById(`comments_${id}`).appendChild(document.createElement("div"))
+        //     newDiv.setAttribute("id", `comment${i}_${id}`)
+        //     newDiv.setAttribute("class", `comment`)
+        //     document.getElementById(`comment${i}_${id}`).textContent = data.comments[i]
+        //     document.getElementById(`comment${1}_${id}`).remove()
+        //   }
+        // }
     })}}
 
 
