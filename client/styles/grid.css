@@ -9,7 +9,6 @@
 body {
   width: 100%;
   overflow-x: hidden;
-
 }
 
 .container{
@@ -34,20 +33,16 @@ body {
   box-shadow: 12px 10px 2px #50687293;
 }
 
-@media  (max-width: 1020px) {
-  break-inside: avoid; /* this is important!! */
-  margin-bottom: 5%;
-  display: grid;
-}
-
 @media  (max-width: 1030px) {
 .container {
       column-count: 2;
+}
 }
 
 @media (max-width: 650px){
 .container {
       column-count: 1;
+}
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
