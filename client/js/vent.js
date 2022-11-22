@@ -125,16 +125,24 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault()
     let entry = postText.value.toLowerCase();
 
-    for (let i = 0; i < profanities.length; i++){
-        if(postText.value.includes(profanities[i])){
-            let censored = '';
-            for(let j = 0; j<profanities[i].length; j++){
-                censored += '#' 
-            }
-            entry = entry.replaceAll(profanities[i], censored)
-            
+
+    profanities.forEach((word) => {
+        if(postText.value.includes(word)){
+            let censored = "#".repeat(word.length);
+            entry = entry.replaceAll(word, censored);
         }
-    }
+    });
+
+    // for (let i = 0; i < profanities.length; i++){
+    //     if(postText.value.includes(profanities[i])){
+    //         let censored = '';
+    //         for(let j = 0; j<profanities[i].length; j++){
+    //             censored += '#' 
+    //         }
+    //         entry = entry.replaceAll(profanities[i], censored)
+            
+    //     }
+    // }
 
     let censoredPost = firstLetterUpper(entry);
 
