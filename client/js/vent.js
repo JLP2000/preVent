@@ -9,6 +9,16 @@ let apiKey = `a1Gm9f8gJX62owmzVfR5PddN5zDlklJ5`;
 let search = document.querySelector("#search");
 let gifChange = document.querySelector("#btnremove");
 
+const baseURL = "http://localhost:3000/entries/"
+
+async function originalData(id) {
+  const data = await fetch(baseURL + id)
+      .then(res => res.json())
+      .then(data => {
+          return data;
+      })
+      return data;
+}
 
 // gifChange.style.display = 'none';
 gifButton.addEventListener('click', (e) =>{
@@ -85,15 +95,52 @@ document.addEventListener("DOMContentLoaded", () => {
     // call updateQuote once when page loads
     updateQuote();
   });
-  
-let data = [1,2,3]
 
-  for (let i=1; i < data.length+1;i++) {
-       btn  = document.getElementById(i + "_comment-icon");
-       btn.addEventListener("click", function(e){
-          e.preventDefault()
-          const form = document.getElementById(`${i}_writeComment`);
-          console.log(`${i} button was clicked`)
-          form.style.display = 'block';
+
+let data = [1,2]
+//open the comment window
+for (let id=1; id < data.length+1;id++) {
+      commentbtn  = document.getElementById(id + "_comment-icon");
+      commentbtn.addEventListener("click", function(e){
+        e.preventDefault()
+        const form = document.getElementById(`${id}_writeComment`);
+        form.style.display = 'block';
      });
   }
+
+//add new comment
+for (let id=1; id < data.length+1; id++) {
+  let writeComment = document.getElementById(`${id}_writeComment`);
+  writeComment.addEventListener("submit", addNewComment);
+
+  async function addNewComment(e){
+    e.preventDefault();
+    let newComment = writeComment.querySelector("textarea").value
+
+    const original = await originalData(id);
+      fetch(baseURL + id, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            gif: original.gif,
+            category: original.category,
+            entry: original.entry,
+            emoji: original.emoji,
+            dnt: original.dnt,
+            comments: [...original.comments, newComment]
+        })  
+      })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+    })}}
+
+//pull original data
+document.addEventListener("DOMContentLoaded", () => {
+  for (let id=1; id < data.length+1; id++) {
+    let data = originalData(1)
+    // console.log(data.dnt)
+    // document.getElementById(`${id}_date`).textContent = data.dnt;
+    }});

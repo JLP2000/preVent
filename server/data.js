@@ -9,8 +9,8 @@ userEntries = [
             laughing: 0,
             unhappy: 0
         },
-        dnt: "",
-        comments: []
+        dnt: "yesterday",
+        comments: ["this is so sad"]
     }
 ]
 
