@@ -18,7 +18,7 @@ gifButton.addEventListener('click', (e) =>{
 })
 
 function giphyapipleasework(){
-    fetch(`https://api.giphy.com/v1/gifs/search?q=${search.value}&api_key=${apiKey}&rating=pg&limit=8`)
+    fetch(`https://api.giphy.com/v1/gifs/search?q=${search.value}&api_key=${apiKey}&rating=pg&limit=`)
     .then((response) => response.json())
     .then((data) => {
         console.log(data);

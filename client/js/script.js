@@ -18,7 +18,7 @@ function giphyapipleasework(e){
     // const img1 = document.getElementById("gif1");
     // const img2 = document.getElementById("gif2");
     // const img3 = document.getElementById("gif3");
-    fetch(`https://api.giphy.com/v1/gifs/search?q=${giftext}&api_key=${apiKey}&rating=pg&limit=4"`)
+    fetch(`https://api.giphy.com/v1/gifs/search?q=${giftext}&api_key=${apiKey}&rating=pg&limit=4`)
     .then((res) => res.json())
     .then((data) => {
         console.log(data)
