@@ -12,13 +12,33 @@ let gifChange = document.querySelector("#btnremove");
 const baseURL = "http://localhost:3000/entries/"
 
 async function originalData(id) {
-  const data = await fetch(baseURL + id)
+  let data = await fetch(baseURL + id)
       .then(res => res.json())
       .then(data => {
           return data;
       })
       return data;
 }
+
+window.addEventListener("load", (e) => {
+for (let id=1; id < dummyData.length+1; id++) {
+  fetch(baseURL+id)
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById(`date_${id}`).textContent = data.dnt
+    document.getElementById(`post_${id}`).textContent = data.entry
+    document.getElementById(`happyCount${id}`).textContent = data.emoji["happy"]
+    document.getElementById(`amusedCount${id}`).textContent = data.emoji["amused"]
+    document.getElementById(`shockedCount${id}`).textContent = data.emoji["shocked"]
+    document.getElementById(`sadCount${id}`).textContent = data.emoji["sad"]
+    document.getElementById(`angryCount${id}`).textContent = data.emoji["angry"]
+    document.getElementById(`commentCount${id}`).textContent = data.comments.length
+    document.getElementById(`comment1_${id}`).textContent = data.comments[0]
+  })
+}})
+
+
+
 
 // gifChange.style.display = 'none';
 gifButton.addEventListener('click', (e) =>{
@@ -97,9 +117,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-let data = [1,2]
+let dummyData = [1]
 //open the comment window
-for (let id=1; id < data.length+1;id++) {
+for (let id=1; id < dummyData.length+1;id++) {
       commentbtn  = document.getElementById(id + "_comment-icon");
       commentbtn.addEventListener("click", function(e){
         e.preventDefault()
@@ -109,14 +129,13 @@ for (let id=1; id < data.length+1;id++) {
   }
 
 //add new comment
-for (let id=1; id < data.length+1; id++) {
+for (let id=1; id < dummyData.length+1; id++) {
   let writeComment = document.getElementById(`${id}_writeComment`);
   writeComment.addEventListener("submit", addNewComment);
 
   async function addNewComment(e){
     e.preventDefault();
     let newComment = writeComment.querySelector("textarea").value
-
     const original = await originalData(id);
       fetch(baseURL + id, {
         method: "PUT",
@@ -137,10 +156,45 @@ for (let id=1; id < data.length+1; id++) {
         console.log(data)
     })}}
 
-//pull original data
-document.addEventListener("DOMContentLoaded", () => {
-  for (let id=1; id < data.length+1; id++) {
-    let data = originalData(1)
-    // console.log(data.dnt)
-    // document.getElementById(`${id}_date`).textContent = data.dnt;
-    }});
+
+///updating emojicount
+
+for (let id=1; id < dummyData.length+1; id++) {
+  let emojiArray = document.querySelectorAll('.reaction'+id);
+  console.log(emojiArray);
+
+  emojiArray.forEach((element) => {
+  element.addEventListener("click", updateEmoji)
+})
+  async function updateEmoji(e){
+      e.preventDefault();
+      const addedEmoji = this.value;
+
+      const original = await originalData(id);
+      original.emoji[addedEmoji]++;
+
+      fetch(baseURL + id, {
+          method: "PUT",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+              gif: original.gif,
+              category: original.category,
+              entry: original.entry,
+              emoji: original.emoji,
+              dnt: original.dnt,
+              comments: original.comments
+          })
+          
+      })
+      .then(res => res.json())
+      .then(data => {
+          console.log(data);
+          document.getElementById(`happyCount${id}`).textContent = data.emoji["happy"]
+          document.getElementById(`amusedCount${id}`).textContent = data.emoji["amused"]
+          document.getElementById(`shockedCount${id}`).textContent = data.emoji["shocked"]
+          document.getElementById(`sadCount${id}`).textContent = data.emoji["sad"]
+          document.getElementById(`angryCount${id}`).textContent = data.emoji["angry"]
+      })
+}}

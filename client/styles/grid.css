@@ -27,7 +27,7 @@
   box-shadow: 12px 10px 2px #50687293;
 }
 
-@media  (max-width: 1030px) {
+@media  (max-width: 1020px) {
 .container {
       column-count: 2;
 }
@@ -61,3 +61,4 @@
 .card-header p {
   display: inline-block;
 }
+

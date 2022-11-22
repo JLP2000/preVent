@@ -6,8 +6,10 @@ userEntries = [
         entry: "I work on weekends",
         emoji: {
             happy: 0,
-            laughing: 0,
-            unhappy: 0
+            amused: 0,
+            shocked: 0,
+            angry: 0,
+            sad:0
         },
         dnt: "yesterday",
         comments: ["this is so sad"]
