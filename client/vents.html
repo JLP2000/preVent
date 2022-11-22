@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="styles/homepage.css">
     <link rel="stylesheet" href="styles/grid.css">
     <link rel="stylesheet" href="styles/vents.css">
+    <script defer src="./js/script.js"></script>
     <script defer src="./js/vent.js"></script>
+    
     <link rel="icon" type="image/svg" href="img/logosmall.png">
     <title>Vents</title>
 </head>
@@ -42,10 +44,8 @@
 <!-- Trigger/Open The Modal -->
 
 <button id="myBtn">VENT</button>
-
 <!-- The Modal -->
 <div id="myModal" class="modal">
-
   <!-- Modal content -->
   <div class="modalmain">
     <span class="close">&times;</span>
@@ -69,12 +69,54 @@
 
             <div id="results"> </div>
             <div id="result"> </div>
+
             <section id="postinput">
-                <label for="post" id="textareainput">Tell us more!:</label>
-                <br>
-                <textarea name="post" id="post" placeholder="1000 characters max." maxlength="1000" style="resize:none" required></textarea>
+                <section id="postinput">
+                    <form id="sterling">
+                        <textarea name="entry" id="saka" cols="30" rows="10"></textarea>
+                        <input type="text" id = "category">;
+                        <input type="submit" value="Post" id="saka1">
+                    </form>
+
+                </section>
+                <!-- <form id="sterling">
+                    <label for="postinput" id="textareainput">Tell us more!:</label>
+                    <br>
+                    <textarea name="entry" id="saka postbox" placeholder="400 characters max." maxlength="400" style="resize:none" required></textarea>
+                    <input type="text" id = "category">;
+                    <input type="submit" value="Post" id="saka1">
+                </form> -->
+                <!-- <form id="sterling">
+                    <label for="postinput" id="textareainput">Tell us more!:</label>
+                    <br>
+                    <textarea name="entry" id="postbox" cols="30" rows="10"></textarea>
+                    <textarea name="post" id="postbox" placeholder="1000 characters max." maxlength="400" style="resize:none" required></textarea>
+                    <input type="text" id = "category">
+                    <input type="submit" value="Post" id="saka1">
+                </form> -->
+
+                <!-- EMOJIS -->
+
+                <!-- <div id="entry">
+                    <p id="entryID">1</p>
+            
+                    <img src="" alt="" style="border: solid;" id="postIMG">
+                    <p style="border: solid;" id="textEntry">I am depressed with work</p>
+                    <p id="dateTime">Date and time</p>
+                    <form action="" id="taremi">
+                        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                        <input type="submit">
+                    </form>
+                    <button class = "emojiBtn" id="hap" value="happy">Happy</button>
+                    <button class = "emojiBtn" id="lol" value ="laughing">Lol</button>
+                    <button class = "emojiBtn" id="crybaby" value = "unhappy">sad</button>
+                </div> -->
+
+                
             </section>
+
             <input type="submit" value="post" id="sendInForm">
+        
         </form>
   </div>
 </div>
@@ -97,7 +139,6 @@
                       <button id="newquotebutton">New Quote</div>
                     </div>
                   </div>
-
                   <div class="container">
                     <div class="card">
                         <div class="card-header">
