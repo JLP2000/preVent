@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>preVent</title>
+    <link rel="stylesheet" href="styles/preventers.css">
+
+    <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" type="image/svg" href="img/logosmall.png">
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
+    <!-- <script src="/js/index.js"></script> -->
+
+</head>
+
+<body class="home">
+    <div class="mainpage">
+        <header class="headersgroup">
+            <div class="within">
+                <ul id="navbar">
+                    <div id="topbar">
+                        <a href="index.html"><img class="smalllogo" src="img/logogifsmall.gif" alt="logo"></a>
+                        <div class="topphrase">Powered by Venting</div>
+                    </div>
+                    <li><a class="active" href="vents.html">Vents</a></li>
+                    <li class="dropdown">
+                        <a class="dropbtn" href="javascript:void(0)">Categories</a>
+                        <div class="dropdown-content">
+                            <a href="#">Relationship</a>
+                            <a href="#">School</a>
+                            <a href="#">Family</a>
+                        </div>
+                    </li>
+                    <li><a href="preventers.html">Preventers</a></li>
+                    <!-- <li><a href="">About</a></li> -->
+                </ul>
+            </div>
+        </header>
+        <div class="main">
+            <!-- <div class="biglogo"></div> -->
+            <h1 id ="coverheading" class="coverheading"> ..</h1>
+            <img class="biglogo" src="img/logogif.gif" alt="mainmiddlelogo">
+            <!-- <div class="biglogo"><img src="img/logogif.gif" alt="mainmiddlelogo"></div>
+            <h1 class="cover-heading">Welcome to</h1> -->
+            <p class="lead">Preventers Vent to Prevent.</p>
+            <p class="lead">Become a Preventer.</p>
+            <p class="lead">
+                <h2>Why venting is good for you</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+                <button onclick="readMoreButton()" id="readMore">Read more</button>
+                </p>
+                <p class="lead">
+                    <h2>Documentation</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+                    <button onclick="readMoreButton()" id="readMore">Read more</button>
+                    </p>
+            <p class="lead">Created by: Josh, Sheena, Adam, Mizna [2022]</p>
+
+    
+            </div>
+    </div>
+    <script>
+        // When the user scrolls the page, execute myFunction
+        window.onscroll = function() {myFunction()};
+        
+        // Get the navbar
+        // var navbar = document.getElementById("topbar");
+        var navbar = document.getElementById("navbar");
+        // Get the offset position of the navbar
+        var sticky = navbar.offsetTop;
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+          if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky");
+            // navbar.classList.add("stickyDown");
+          } else {
+            navbar.classList.remove("sticky");
+            // navbar.classList.remove("stickyDown");
+          }
+        } 
+
+
+new TypeIt("#coverheading", {
+  speed: 50,
+  startDelay: 900,
+})
+//Welcome to the most convenient journaling platform.
+  .type("Welcoe to tee", { delay: 100 })
+  .move(-8, { delay: 100 })
+  .type("m", { delay: 400 })
+  .move(null, { to: "START", instant: true, delay: 300 })
+  .move(1, { delay: 200 })
+  .delete(1)
+  .move(1, { delay: 200 })
+  .delete(1)
+  .pause(200)
+  .move(14, { instant: true })
+  .delete(1)
+  .move(1, { delay: 200 })
+  .delete(1)
+  .move(1, { delay: 200 })
+  .type("he most  ", { delay: 350 })
+  .move(null, { to: "END" })
+  .type(" convenient journaling platform")
+  .move(null, { to: "END" })
+  .type(' <span class="place">on the internet?</span>', { delay: 400 })
+  .delete(".place", { delay: 800, instant: true })
+  .type('<em><strong class="font-semibold">in the whole world.</strong></em>', {
+    speed: 300,
+  })
+  .go();
+
+  function readMoreButton() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("readMore");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+        </script>
+        
+
+</body>
+
+
+</html>

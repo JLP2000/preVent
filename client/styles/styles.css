@@ -1,0 +1,16 @@
+/* 
+blue: #182633
+lightblue: 506872
+yellow: #e9cd00 
+orange: #f4a902
+*/
+body{
+    width:100%;
+    margin:0;
+    /* overflow-x: hidden;
+    overflow-y: hidden; */
+}
+.main{ 
+  margin-top: 110px;
+  text-align: center;
+}

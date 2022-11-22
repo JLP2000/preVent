@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="stylesheet" href="styles/grid.css">
+    <link rel="stylesheet" href="styles/vents.css">
+    <script defer src="./js/vent.js"></script>
+    <link rel="icon" type="image/svg" href="img/logosmall.png">
+    <title>Vents</title>
+</head>
+<body>
+    <div class="mainpage">
+        <header class="headersgroup">
+            <div class="within">
+                <ul id="navbar">
+                    <div id="topbar">
+                        <a href="index.html"><img class="smalllogo" src="img/logogifsmall.gif" alt="logo"></a>
+                        <div class="topphrase">Preventing by Venting</div>
+                    </div>
+                    <li><a class="active" href="vents.html">Vents</a></li>
+                    <li class="dropdown">
+                        <a class="dropbtn" href="javascript:void(0)">Categories</a>
+                        <div class="dropdown-content">
+                            <a href="#">Relationship</a>
+                            <a href="#">School</a>
+                            <a href="#">Family</a>
+                        </div>
+                    </li>
+                    <li><a href="preventers.html">Preventers</a></li>
+                    <!-- <li><a href="">About</a></li> -->
+                </ul>
+            </div>
+        </header>
+
+<main class = "inner">
+    <!-- <div class="modalfade" id="buttonpost">
+        <button id="makepost">Post it</button>
+    </div> -->
+<!-- Trigger/Open The Modal -->
+
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modalmain">
+    <span class="close">&times;</span>
+    <div class="postform">
+        <form id="formpost">
+            <section id="title">
+                <label for="titleinput">Title:</label>
+                <br>
+                <input type="text" name="titleinput" id="titleinput" placeholder="Title of post" required>
+            </section>
+    
+            <section id="post-gif">
+                <label for="gifinput" id="giftitle">Add a gif:</label>
+                <br>
+                <input type="text" id="search" placeholder="Search for GIF">
+                <div id="giphydivbuttons">
+                    <button id="giphygetbutton">Add gif</button>
+                    <button id="btnremove">Update gif</button>
+                </div>
+            </section>
+
+            <div id="results"> </div>
+            <div id="result"> </div>
+            <section id="postinput">
+                <label for="post" id="textareainput">Tell us more!:</label>
+                <br>
+                <textarea name="post" id="post" placeholder="1000 characters max." maxlength="1000" style="resize:none" required></textarea>
+            </section>
+            <input type="submit" value="post" id="sendInForm">
+        </form>
+  </div>
+</div>
+</main>     
+</div>
+
+
+
+            <div class="container">
+                <div class="card">
+                    <div class="cardbody">
+                      <blockquote>
+                        <p>Loading...</p>
+                        <footer class="blockquote-footer">
+                          <cite title="Source Title"></cite>
+                        </footer>
+                      </blockquote>
+                    </div>
+                    <div id="cardfooter">
+                      <button id="newquotebutton">New Quote</div>
+                    </div>
+                  </div>
+    </div>
+
+    <script>
+        // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+    </script>
+    </body>
+</html>
