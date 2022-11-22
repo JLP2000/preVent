@@ -10,10 +10,10 @@ let search = document.querySelector("#search");
 let gifChange = document.querySelector("#btnremove");
 
 
-// gifChange.style.display = 'none';
+gifChange.style.display = 'none';
 gifButton.addEventListener('click', (e) =>{
     e.preventDefault()
-    // gifChange.style.display ='block'
+    gifChange.style.display ='block'
     giphyapipleasework();
 })
 

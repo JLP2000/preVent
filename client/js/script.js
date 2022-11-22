@@ -5,19 +5,24 @@ taremi.addEventListener("submit", updateComment)
 let chosenGif;
 const bellingham = document.getElementById("bellingham")
 const baseURL = "http://localhost:3000/entries/";
+let gifChange = document.querySelector("#btnremove");
+const gifButton = document.querySelector("#giphygetbutton");
 
 bellingham.addEventListener("submit", giphyapipleasework)
 let apiKey = `a1Gm9f8gJX62owmzVfR5PddN5zDlklJ5`;
 
-function giphyapipleasework(e){
-    e.preventDefault();
+
+gifButton.addEventListener('click', (e) =>{
+    e.preventDefault()
+    giphyapipleasework();
+})
+
+function giphyapipleasework(){
+
     console.log("hi")
     const giftext = document.getElementById("grealish").value;
 
     // const img = document.getElementById("gif");
-    // const img1 = document.getElementById("gif1");
-    // const img2 = document.getElementById("gif2");
-    // const img3 = document.getElementById("gif3");
     fetch(`https://api.giphy.com/v1/gifs/search?q=${giftext}&api_key=${apiKey}&rating=pg&limit=4"`)
     .then((res) => res.json())
     .then((data) => {
