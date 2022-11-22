@@ -59,7 +59,6 @@ function giphyapipleasework(){
     })
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
     // DOM elements
     const button = document.getElementById("newquotebutton")
