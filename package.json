@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon ./server/app.js",
+    "start": "node ./server/app.js",
     "test": "jest",
     "coverage": "jest --coverage"
   },
