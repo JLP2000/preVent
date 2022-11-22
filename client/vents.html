@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="styles/grid.css">
     <link rel="stylesheet" href="styles/vents.css">
 
-    <!-- <script defer src="./js/vent.js"></script> -->
-
+    <script defer src="./js/script.js"></script>
     <script type="module" defer src="./js/vent.js" ></script>
+
+    <!-- <script type="module" defer src="./js/vent.js" ></script> -->
 
     <link rel="icon" type="image/svg" href="img/logosmall.png">
     <title>Vents</title>
@@ -98,85 +99,71 @@
 </div>
 </form>
 </section>
-
 </div>
-
-            <div class="container">
-                <div class="card">
-                    <div class="cardbody">
-                      <blockquote>
-                        <p>Loading...</p>
-                        <footer class="blockquote-footer">
-                          <cite title="Source Title"></cite>
-                        </footer>
-                      </blockquote>
-                    </div>
-                    <div id="cardfooter">
-                      <button id="newquotebutton">New Quote</div>
-                    </div>
-                  </div>
-
-                  <div class="container">
-                    <div class="card">
-                        <div class="card-header">
-                            <p class="alias">alias</p>
-                            <p class="date">date</p>
-                        </div>
-                        <div class="post">
-                            <p>Lorem ipsum risus nullam eget felis eget nunc lobortis mattis aliquam faucibus purus in massa tempor nec feugiat nisl pretium fusce id velit ut tortor pretium viverra suspendisse potenti nullam ac</p>
-                        </div>
-                        <div class="reactions">
-                            <div class="reaction" id="1_comment-icon">
-                                <div class="emoji" >💬</div>
-                                <div class="text">comment</div>
-                                <div class="count">0</div>
-                            </div>
-        
-                            <div class="reaction">
-                                <div class="emoji">😃</div>
-                                <div class="count">52</div>
-                                <div class="text">happy</div>
-                            </div>
-                            <div class="reaction">
-                                <div class="emoji">😂</div>
-                                <div class="text">amused</div>
-                                <div class="count">1361</div>
-                            </div> 
-                                  
-                            <div class="reaction">
-                                <div class="emoji">😮</div>
-                                <div class="text">shocked</div>
-                                <div class="count">5</div>
-                            </div>
-                                
-                            <div class="reaction">
-                                <div class="emoji">😡</div>
-                                <div class="text">angry</div>
-                                <div class="count">17</div>
-                            </div>
-                                
-                            <div class="reaction">
-                                <div class="emoji">😢</div>
-                                <div class="text">sad</div>
-                                <div class="count">0</div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="comments">
-                            <div class="form">
-                                <form id="1_writeComment" class="writeComment">
-                                    <textarea id="blog" name="blog" rows="3"></textarea>
-                                    <input type="submit" value="submit">
-                                </form>
-                            </div>
-                            <div class="comment">comment</div>
-                            <div class="comment">comment</div>
-                            <div class="comment">comment</div>
-                        </div>
-                    </div>
-                    </div>
+<div class="container">
+    <div class="card">
+        <div class="cardbody">
+            <blockquote>
+                <p>Loading...</p>
+                <footer class="blockquote-footer">
+                <cite title="Source Title"></cite>
+                </footer>
+            </blockquote>
+        </div>
+        <div id="cardfooter">
+            <button id="newquotebutton">New Quote</div>
     </div>
-
+    <div class="card">
+        <div class="card-header">
+            <p class="alias" id="alias_1">alias</p>
+            <p class="date" id="date_1">date</p>
+        </div>
+        <div class="post">
+            <p id="post_1">post</p>
+        </div>
+        <div class="reactions">
+            <button class="reaction1 reaction" id="1_comment-icon">
+                <div class="emoji" >💬</div>
+                <div class="count" id="commentCount1">0</div>
+                <div class="text">comment</div>
+            </button>
+            <button class="reaction1 reaction" value="happy">
+                <div class="emoji">😃</div>
+                <div class="count" id="happyCount1">0</div>
+                <div class="text">happy</div>
+            </button>
+            <button class="reaction1 reaction" value="amused">
+                <div class="emoji">😂</div>
+                <div class="count" id="amusedCount1">0</div>
+                <div class="text">amused</div>
+            </button>   
+            <button class="reaction1 reaction" value="shocked">
+                <div class="emoji">😮</div>
+                <div class="count" id="shockedCount1">0</div>
+                <div class="text">shocked</div>
+            </button>   
+            <button class="reaction1 reaction" value="angry">
+                <div class="emoji">😡</div>
+                <div class="count" id="angryCount1">0</div>
+                <div class="text">angry</div>
+            </button>
+            <button class="reaction1 reaction" value="sad">
+                <div class="emoji">😢</div>
+                <div class="count" id="sadCount1">0</div>
+                <div class="text">sad</div>
+            </button>
+        </div>
+        <br>
+        <div class="comments" id="comments_1">
+            <div class="form" id="1_commentForm">
+                <form id="1_writeComment" class="writeComment">
+                    <textarea id="blog" name="blog" rows="2"></textarea>
+                    <input type="submit" value="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script>

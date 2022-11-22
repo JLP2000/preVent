@@ -3,7 +3,7 @@ const postButton = document.querySelector("#buttonpost");
 const form = document.getElementById("formpost");
 const cover = document.querySelector("main.inner");
 const postText = document.getElementById("post")
-
+// let chosenGif;
 const baseURL = "http://localhost:3000/entries/"
 
 async function originalData(id) {
@@ -62,9 +62,19 @@ form.addEventListener('submit', postForm)
 
 // gifChange.style.display = 'none';
 
+async function allData() {
+  const data = await fetch(baseURL)
+      .then(res => res.json())
+      .then(data => {
+          return data;
+      })
+      return data;
+}
 
 
-let dummyData = [1]
+
+let dummyData = await allData()
+
 //open the comment window
 for (let id=1; id < dummyData.length+1;id++) {
       commentbtn  = document.getElementById(id + "_comment-icon");
@@ -180,9 +190,47 @@ for (let id=1; id < dummyData.length+1; id++) {
             entry = entry.replaceAll(word, censored);
         }
     });
-    
+
     let censoredPost = firstLetterUpper(entry);
     console.log(censoredPost);
+
+    const postCategory = document.getElementById("category").value
+    const dateNtime = new Date().toLocaleString();
+    const postGif = document.querySelector("#result img").src;
+
+    
+    fetch(baseURL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            gif: postGif,
+            category: postCategory,
+            entry: censoredPost,
+            emoji: {
+                happy: 0,
+                laughing: 0,
+                unhappy: 0
+            },
+            dnt: dateNtime,
+            comments: []
+        }),
+        
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        const postIMG = document.getElementById("postIMG")
+        const textEntry = document.getElementById("textEntry")
+        const dateTime = document.getElementById("dateTime")
+
+        postIMG.src = data.gif;
+        textEntry.textContent = data.entry;
+        dateTime.textContent = data.dnt;
+    })
+
+
   }
 
   function firstLetterUpper(theString) {
