@@ -1,7 +1,7 @@
 {
   "name": "prevent",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Installation & Usage",
   "main": "index.js",
   "scripts": {
     "start": "node ./server/app.js",
@@ -13,11 +13,21 @@
   "dependencies": {
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "random-alias": "^1.0.0"
   },
   "devDependencies": {
     "jest": "^29.3.1",
     "nodemon": "^2.0.20",
     "supertest": "^6.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JLP2000/preVent.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/JLP2000/preVent/issues"
+  },
+  "homepage": "https://github.com/JLP2000/preVent#readme"
 }

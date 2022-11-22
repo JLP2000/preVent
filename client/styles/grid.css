@@ -1,4 +1,5 @@
 :root {
+
     --offred: #FF5959;
     --bluegrey: #676FA3;
     --greyblue: #CDDEFF;
@@ -8,20 +9,32 @@
 body {
   width: 100%;
   overflow-x: hidden;
+
 }
 
 .container{
   column-count: 3;
   column-gap: 3%;
-  margin: 0px;
-  width: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  padding:0px;
   justify-content: center;
-  padding: 2%;
-  
+  position: absolute;
 }
 
 .container .card {
   width: 90%;
+  background-color: #b1af9f;
+  border: 1px solid #506872;
+  break-inside: avoid; /* this is important!! */
+  padding: 5%;
+  margin-bottom: 5%;
+  display: grid;
+  box-shadow: 12px 10px 2px #50687293;
+}
+
+@media  (max-width: 1020px) {
   break-inside: avoid; /* this is important!! */
   margin-bottom: 5%;
   display: grid;
@@ -31,11 +44,10 @@ body {
 .container {
       column-count: 2;
 }
-}
+
 @media (max-width: 650px){
 .container {
       column-count: 1;
-}
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
