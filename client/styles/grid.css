@@ -20,6 +20,7 @@ body {
 
 .container .card {
   width: 90%;
+  /* vertical-align: top; */
   background-color: #fffef3;
   border: 1px solid #b7dff0;
   break-inside: avoid; /* this is important!! */

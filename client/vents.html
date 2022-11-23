@@ -53,18 +53,13 @@
     <div class="postform">
         <form id="formpost">
             <section id="title">
-                <label for="titleinput">Post Title:</label>
-                <br>
-                <input type="text" name="titleinput" id="titleinput" placeholder="Title of post" required>
-            </section>
-
-            <section id="title">
                 <label for="titleinput">Choose Category of the post:</label>
                 <select name="options" id="selectCategories">
+                    <option disabled selected value> -- select an option -- </option>
                     <option value="general">General</option>
                     <option value="relationships">Relationships</option>
                     <option value="school">School</option>
-                    <option value="family">Family<option>
+                    <option value="family">Family</option>
                 </select>
             </section>
     
@@ -85,6 +80,7 @@
                 <label for="post" id="textareainput">Vent it out:</label>
                 <br>
                 <textarea name="post" class="innermodebox" id="post" placeholder="400 characters max." maxlength="400" style="resize:none" required></textarea>
+                <p id="remainingChar">400</p>
             </section>
             <input type="submit" value="post" id="sendInForm">
         </form>
@@ -117,25 +113,25 @@
 
 
 <script>
-        // Get the modal
+// Get the modal
 var modal = document.getElementById("myModal");
-
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
-
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
+var btn2 = document.getElementById("sendInForm");
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
 }
-
+btn2.onclick = function() {
+  modal.style.display = "none";
+  window.location.reload();
+}
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
 }
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {

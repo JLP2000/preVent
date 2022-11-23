@@ -18,24 +18,30 @@ gifButton.addEventListener('click', (e) =>{
 })
 
 function giphyapipleasework(){
+    let results = document.querySelector("#results");
+    let result = document.querySelector("#result");
+
+    while(results.firstChild){
+        results.removeChild(results.firstChild)
+    }
+
     fetch(`https://api.giphy.com/v1/gifs/search?q=${search.value}&api_key=${apiKey}&rating=pg&limit=8`)
     .then((response) => response.json())
     .then((data) => {
         console.log(data);
 
-        let results = document.querySelector("#results");
-        let result = document.querySelector("#result");
         data.data.forEach((obj) =>{
+            
             console.log(obj.images.downsized.url)
             let img = document.createElement("img")
-            img.style.width = "60px";
-            img.style.height = '40px';
+            img.style.width = "180px";
+            img.style.height = '120px';
+            img.style.padding = "10px"
             let body = document.querySelector("body")
             img.src = obj.images.original.url
             img.alt =  obj.title
-            console.log(img)
 
-            // results.append(img)
+            results.append(img)
             
             function addGif(e){ 
                 result.style.display ='block'
@@ -46,19 +52,26 @@ function giphyapipleasework(){
             }
             
             img.addEventListener('click', addGif)
+            let remove = document.querySelector('#btnremove')
 
-            // let remove = document.querySelector('#btnremove')
-
-            // remove.addEventListener('click', (e) =>{
-            //     e.preventDefault()
-            //     if(result.contains(img)){
-            //         result.style.display = 'none'
-            //         result.removeChild(img)
-            //         results.style.display = 'flex'
-            //         results.append(img)
-            //     }  
-            // })
+            remove.addEventListener('click', (e) =>{
+                e.preventDefault()
+                if(result.contains(img)){
+                    result.style.display = 'none'
+                    result.removeChild(img)
+                    results.style.display = 'flex'
+                    results.append(img)
+                }  
+            })
         })
+
         search.value = ''
     })
     }
+
+
+    // window.onbeforeunload = function(event)
+    // {
+    //     event.preventDefault()
+    //     alert("Refresh called")
+    // };
