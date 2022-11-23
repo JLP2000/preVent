@@ -34,9 +34,9 @@ function giphyapipleasework(){
             
             console.log(obj.images.downsized.url)
             let img = document.createElement("img")
-            img.style.width = "95px";
-            img.style.height = '65px';
-            img.style.padding = "5px"
+            img.style.width = "180px";
+            img.style.height = '120px';
+            img.style.padding = "10px"
             let body = document.querySelector("body")
             img.src = obj.images.original.url
             img.alt =  obj.title
@@ -52,7 +52,6 @@ function giphyapipleasework(){
             }
             
             img.addEventListener('click', addGif)
-
             let remove = document.querySelector('#btnremove')
 
             remove.addEventListener('click', (e) =>{

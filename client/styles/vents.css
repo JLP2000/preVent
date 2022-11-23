@@ -107,7 +107,7 @@ align-items: center;
 #postinput{
 display: flex;
 width: 50vh;
-height: 50vw;
+height: 10vw;
 justify-content: space-around;
 align-items: center;
 }

@@ -118,7 +118,8 @@ async function addNewComment(e){
       console.log(i);
       let commentDiv = document.getElementById(`comments_${id}`);
       const formDiv = commentDiv.querySelector(".form");
-      const commentIcon = document.getElementById(`${id}_comment_icon`);
+      const commentIcon = document.getElementById(`commentCount${id}`);
+      console.log(commentIcon)
       commentIcon.textContent  = i;
       const removeDiv = commentDiv.lastElementChild;
       let newDiv = document.createElement("div");
@@ -425,7 +426,8 @@ async function filterCategory(){
   
     const divCardsContainer = document.getElementById("cardContainer")
     while(divCardsContainer.querySelector('.card')){
-      divCardsContainer.querySelector('.card').remove()
+      divCardsContainer.querySelector('.card').remove();
+    
     }
   
     loadAll(data);
