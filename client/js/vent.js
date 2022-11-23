@@ -124,7 +124,7 @@ let cardCount = allEntries.length;
 async function updateEmoji(e){
     e.preventDefault();
     const addedEmoji = this.value;
-    let id = this.document.getElementsByClassName("count").getAttribute("id")[-1];
+    let id = this.document.getAttribute("class")[-1];
     const original = await originalData(id);
     original.emoji[addedEmoji]++;
 

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/vents.css">
     <script type="module" defer src="./js/query.js" ></script>
 
-    <!-- <script type="module" defer src="./js/vent.js" ></script> -->
+    <script type="module" defer src="./js/vent.js" ></script>
     <link rel="icon" type="image/svg" href="img/logosmall.png">
     <title>Vents</title>
 </head>
@@ -41,59 +41,49 @@
     <!-- <div class="modalfade" id="buttonpost">
         <button id="makepost">Post it</button>
     </div> -->
+
+
 <!-- Trigger/Open The Modal -->
-
-<button id="myBtn">VENT</button>
-
-<div id="sortingdiv">
-    <label for="sortBy">Sort by: </label>
-    <select name="sortBy" id="sortBy">
-        <option selected value="default">Latest</option>
-        <option value="alphabetical">Alphabetical</option>
-    </select>
-</div>
-<div id="ventingsomething"></div>
-
+<button id="myBtn">Vent</button>
 <!-- The Modal -->
 <div id="myModal" class="modal">
-
   <!-- Modal content -->
   <div class="modalmain">
     <span class="close">&times;</span>
     <div class="postform">
         <form id="formpost">
             <section id="title">
-                <label for="titleinput">Title:</label>
+                <label for="titleinput">Vent Title:</label>
                 <br>
                 <input type="text" name="titleinput" id="titleinput" placeholder="Title of post" required>
             </section>
-            <div id="post">
-                <form id="sterling">
-                    <textarea name="entry" id="saka" placeholder="400 characters max." maxlength="400" style="resize:none" required></textarea>
-                    <input type="text" id = "category">;
-                    <input type="submit" value="Post" id="saka1">
-                </form>
-            
-                <div id="results"> </div>
-                <div id="result"> </div>
-            
-                <section id="post-gif">
-                <form id="bellingham">
-                <label for="gifinput" id="giftitle">Add a gif:</label>
-                <input type="text" id="grealish" placeholder="Search for GIF">
+    
+            <section id="post-gif">
+                <label for="gifinput" id="giftitle">Give your post a gif:</label>
                 <br>
+                <input type="text" id="search" placeholder="Search for GIF">
                 <div id="giphydivbuttons">
-                    <!-- <input type="submit" id="rashford giphygetbutton"> -->
-                    <input type="submit" id="giphygetbutton">
-                    <button id="btnremove">Update gif</button>
+                    <button id="giphygetbutton">Get gif</button>
+                    <button id="btnremove">Change gif</button>
                 </div>
-                </form>
-                </section>
-                </div>
+            </section>
+
+            <div id="results"> </div>
+            <div id="result"> </div>
+            <section id="postinput">
+                <label for="post" id="textareainput">Tell us more!:</label>
+                <br>
+                <textarea name="post" id="post" placeholder="1000 characters max." maxlength="1000" style="resize:none" required></textarea>
+            </section>
             <input type="submit" value="post" id="sendInForm">
         </form>
   </div>
 </div>
+</main>     
+</div>
+
+
+
 
 </main>     
 </div>
@@ -142,7 +132,7 @@ window.onclick = function(event) {
 }
     </script>
         <script defer src="./js/quote.js"></script>
-        <script defer src="./js/script.js"></script>
+        <script defer src="./js/giphy.js"></script>
 
     </body>
 </html>
