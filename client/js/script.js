@@ -205,3 +205,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // call updateQuote once when page loads
     updateQuote();
   });
+

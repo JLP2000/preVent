@@ -144,9 +144,10 @@ right: 0%;
   display: inline-block;
 }
 .reactions{
-display: table-cell;
-vertical-align: middle;
-text-align: center;
+  margin-top: 3%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
 .reaction{
 display: inline-block;
@@ -225,4 +226,10 @@ cursor: pointer;
   font: inherit;
   cursor: pointer;
   outline: inherit;
+}
+
+
+.postGify {
+  width: 100%;
+  margin-bottom: 3%;
 }
