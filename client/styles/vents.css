@@ -35,7 +35,6 @@ align-items: center;
 }
 
 
-
 /* The Close Button */
 .close {
   color: #aaa;
@@ -127,7 +126,7 @@ align-items: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-#results {
+/* #results {
   display: flex;
   justify-content: space-between;
 }
@@ -135,18 +134,9 @@ align-items: center;
 #result {
   margin-top: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-
-/* #postTextContainer{
-position: relative;
-}
-
-#remainingChar{
-position: absolute;
-bottom: 0%;
-right: 0%;
 } */
+
+
 .container .card, .container .cardQuotes{
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
   padding: 20px;
@@ -171,6 +161,11 @@ right: 0%;
 .card-header p {
   display: inline-block;
 }
+
+.reactions .reaction .text {
+  font-size: 10px;
+  visibility: hidden;
+}
 .reactions{
   margin-top: 3%;
   display: table-cell;
@@ -193,6 +188,7 @@ transition: all 0.7s;
 .reaction:hover > .text {
 color: #222;
 transition: all 0.7s;
+visibility: visible;
 }
 
 .emoji{
@@ -215,16 +211,9 @@ padding: 0 3px;
 cursor: pointer;
 }
 
-.text {
-font-size: 12px;
-font-weight: 300;
-color: var(--bluegrey);
-cursor: pointer;
-}
-
 .comments {
   border-radius: 15px;
-  margin: 15px;
+  margin: 0px 15px 15px 15px;
   padding: 5px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   background-color: var(--snow);
@@ -243,10 +232,9 @@ cursor: pointer;
 }
 
 .comments .form {
-  border-radius: 10px;
-
   width: 100%;
   justify-content: center;
+  margin-bottom: 60px;
 }
 
 .writeComment {
@@ -255,11 +243,15 @@ cursor: pointer;
   display: none;
 }
 
+
 .writeComment textarea {
-  width: 100%;
-  padding: 0px;
-  margin-top: 10px;
+  margin-left: 15px;
+  width: auto;
+  margin-top: 5px;
   height: 100px;
+  border-radius: 30px;
+  border: none;
+  padding: 5%;
 }
 
 .reactions button {
@@ -270,7 +262,6 @@ cursor: pointer;
   cursor: pointer;
   outline: inherit;
 }
-
 
 .postGify {
   width: 100%;
@@ -286,5 +277,61 @@ cursor: pointer;
 #sortBy{
   position: absolute;
   width: 200px;
+}      
+
+#post, select, #post textarea {
+  width: 100%;
+  padding: 12px;
+  border: 10px solid rgba(208, 160, 160, 0.537);
+  border-radius: 7px;
+  resize: vertical;
 }
 
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #ffffff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #a06c45;
+}
+
+#giphygetbutton{
+  border-radius: 10px;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #dc8c7d;
+}
+
+#giphygetbutton:hover{
+  transition: 0.6s;
+  color:white;
+
+}
+#btnremove{
+  background-color: #e3eb97;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

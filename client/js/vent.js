@@ -1,3 +1,8 @@
+//this script contains the following functions:
+//Fetch original data based on ID, load original data onto the window, fetch all data
+//open comment window, post new comment, load emoji count, update emoji count
+//addiing new post and censoring new post
+
 const profanities = ["4r5e", "5h1t", "5hit", "a55", "anal", "anus", "ar5e", "arrse", "arse", "ass", "ass-fucker", "asses", "assfucker", "assfukka", "asshole", "assholes", "asswhole", "a_s_s", "b!tch", "b00bs", "b17ch", "b1tch", "ballbag", "balls", "ballsack", "bastard", "beastial", "beastiality", "bellend", "bestial", "bestiality", "bi+ch", "biatch", "bitch", "bitcher", "bitchers", "bitches", "bitchin", "bitching", "bloody", "blow job", "blowjob", "blowjobs", "boiolas", "bollock", "bollok", "boner", "boob", "boobs", "booobs", "boooobs", "booooobs", "booooooobs", "breasts", "buceta", "bugger", "bum", "bunny fucker", "butt", "butthole", "buttmuch", "buttplug", "c0ck", "c0cksucker", "carpet muncher", "cawk", "chink", "cipa", "cl1t", "clit", "clitoris", "clits", "cnut", "cock", "cock-sucker", "cockface", "cockhead", "cockmunch", "cockmuncher", "cocks", "cocksuck", "cocksucked", "cocksucker", "cocksucking", "cocksucks", "cocksuka", "cocksukka", "cok", "cokmuncher", "coksucka", "coon", "cox", "crap", "cum", "cummer", "cumming", "cums", "cumshot", "cunilingus", "cunillingus", "cunnilingus", "cunt", "cuntlick", "cuntlicker", "cuntlicking", "cunts", "cyalis", "cyberfuc", "cyberfuck", "cyberfucked", "cyberfucker", "cyberfuckers", "cyberfucking", "d1ck", "damn", "dick", "dickhead", "dildo", "dildos", "dink", "dinks", "dirsa", "dlck", "dog-fucker", "doggin", "dogging", "donkeyribber", "doosh", "duche", "dyke", "ejaculate", "ejaculated", "ejaculates", "ejaculating", "ejaculatings", "ejaculation", "ejakulate", "f u c k", "f u c k e r", "f4nny", "fag", "fagging", "faggitt", "faggot", "faggs", "fagot", "fagots", "fags", "fanny", "fannyflaps", "fannyfucker", "fanyy", "fatass", "fcuk", "fcuker", "fcuking", "feck", "fecker", "felching", "fellate", "fellatio", "fingerfuck", "fingerfucked", "fingerfucker", "fingerfuckers", "fingerfucking", "fingerfucks", "fistfuck", "fistfucked", "fistfucker", "fistfuckers", "fistfucking", "fistfuckings", "fistfucks", "flange", "fook", "fooker", "fuck", "fucka", "fucked", "fucker", "fuckers", "fuckhead", "fuckheads", "fuckin", "fucking", "fuckings", "fuckingshitmotherfucker", "fuckme", "fucks", "fuckwhit", "fuckwit", "fudge packer", "fudgepacker", "fuk", "fuker", "fukker", "fukkin", "fuks", "fukwhit", "fukwit", "fux", "fux0r", "f_u_c_k", "gangbang", "gangbanged", "gangbangs", "gaylord", "gaysex", "goatse", "God", "god-dam", "god-damned", "goddamn", "goddamned", "hardcoresex", "hell", "heshe", "hoar", "hoare", "hoer", "homo", "hore", "horniest", "horny", "hotsex", "jack-off", "jackoff", "jap", "jerk-off", "jism", "jiz", "jizm", "jizz", "kawk", "knob", "knobead", "knobed", "knobend", "knobhead", "knobjocky", "knobjokey", "kock", "kondum", "kondums", "kum", "kummer", "kumming", "kums", "kunilingus", "l3i+ch", "l3itch", "labia", "lust", "lusting", "m0f0", "m0fo", "m45terbate", "ma5terb8", "ma5terbate", "masochist", "master-bate", "masterb8", "masterbat*", "masterbat3", "masterbate", "masterbation", "masterbations", "masturbate", "mo-fo", "mof0", "mofo", "mothafuck", "mothafucka", "mothafuckas", "mothafuckaz", "mothafucked", "mothafucker", "mothafuckers", "mothafuckin", "mothafucking", "mothafuckings", "mothafucks", "mother fucker", "motherfuck", "motherfucked", "motherfucker", "motherfuckers", "motherfuckin", "motherfucking", "motherfuckings", "motherfuckka", "motherfucks", "muff", "mutha", "muthafecker", "muthafuckker", "muther", "mutherfucker", "n1gga", "n1gger", "nazi", "nigg3r", "nigg4h", "nigga", "niggah", "niggas", "niggaz", "nigger", "niggers", "nob", "nob jokey", "nobhead", "nobjocky", "nobjokey", "numbnuts", "nutsack", "orgasim", "orgasims", "orgasm", "orgasms", "p0rn", "pawn", "pecker", "penis", "penisfucker", "phonesex", "phuck", "phuk", "phuked", "phuking", "phukked", "phukking", "phuks", "phuq", "pigfucker", "pimpis", "piss", "pissed", "pisser", "pissers", "pisses", "pissflaps", "pissin", "pissing", "pissoff", "poop", "porn", "porno", "pornography", "pornos", "prick", "pricks", "pron", "pube", "pusse", "pussi", "pussies", "pussy", "pussys", "rectum", "retard", "rimjaw", "rimming", "s hit", "s.o.b.", "sadist", "schlong", "screwing", "scroat", "scrote", "scrotum", "semen", "sex", "sh!+", "sh!t", "sh1t", "shag", "shagger", "shaggin", "shagging", "shemale", "shi+", "shit", "shitdick", "shite", "shited", "shitey", "shitfuck", "shitfull", "shithead", "shiting", "shitings", "shits", "shitted", "shitter", "shitters", "shitting", "shittings", "shitty", "skank", "slut", "sluts", "smegma", "smut", "snatch", "son-of-a-bitch", "spac", "spunk", "s_h_i_t", "t1tt1e5", "t1tties", "teets", "teez", "testical", "testicle", "tit", "titfuck", "tits", "titt", "tittie5", "tittiefucker", "titties", "tittyfuck", "tittywank", "titwank", "tosser", "turd", "tw4t", "twat", "twathead", "twatty", "twunt", "twunter", "v14gra", "v1gra", "vagina", "viagra", "vulva", "w00se", "wang", "wank", "wanker", "wanky", "whoar", "whore", "willies", "willy", "xrated", "xxx"];
 
 let allEntries;
@@ -36,9 +41,8 @@ window.addEventListener("load", async () => {
   updateEmojiCount()
 })
 
-// gifChange.style.display = 'none';
 
-//load all data
+//fetch all data
 async function allData() {
   const data = await fetch(baseURL)
       .then(res => res.json())
@@ -84,6 +88,9 @@ async function openComment() {
 async function addNewComment(e){
   e.preventDefault();
   let newComment = this.querySelector("textarea").value;
+  if (newComment.length == 0){
+    return;
+  }
   let id = this.getAttribute("id")[0];
   const original = await originalData(id);
     fetch(baseURL + id, {
@@ -104,13 +111,22 @@ async function addNewComment(e){
   .then(data => {
       console.log(data)
       let i = data.comments.length
-      let newDiv = document.getElementById(`comments_${id}`).appendChild(document.createElement("div"))
-      newDiv.setAttribute("id", `comment${i}_${id}`)
-      newDiv.setAttribute("class", `comment`)
-      document.getElementById(`comment${i}_${id}`).textContent = newComment
+      let commentDiv = document.getElementById(`comments_${id}`);
+      const formDiv = commentDiv.querySelector(".form");
+      const removeDiv = commentDiv.lastElementChild;
+      let newDiv = document.createElement("div");
+      console.log(newDiv);
+      newDiv.setAttribute("id", `comment${i}_${id}`);
+      newDiv.setAttribute("class", `comment`);
+      formDiv.after(newDiv);
+      newDiv.textContent = newComment;
+      removeDiv.remove();
+      
+
+
   })}
 
-  
+
 ///updating emojicount
 async function updateEmojiCount() {
 let cardCount = allEntries.length;
@@ -124,7 +140,7 @@ let cardCount = allEntries.length;
 async function updateEmoji(e){
     e.preventDefault();
     const addedEmoji = this.value;
-    let id = this.document.getAttribute("class")[-1];
+    let id = this.getAttribute("class")[8];
     const original = await originalData(id);
     original.emoji[addedEmoji]++;
 
@@ -145,6 +161,7 @@ async function updateEmoji(e){
       .then(res => res.json())
       .then(data => {
         console.log(data)
+        document.getElementById(addedEmoji+"Count"+id).textContent = data.emoji[addedEmoji]
       })
 }
 
@@ -240,7 +257,7 @@ function postForm(e){
           let divEmoji = document.createElement("div").setAttribute("class", "emoji");
           let divCount = document.createElement("div").setAttribute("class", "count");
           let divText = document.createElement("div").setAttribute("class", "text");
-      let br = document.createElement("br");
+          let br = document.createElement("br");
       let divComments = document.createElement("div")
       divComments.setAttribute("class", "comments");
         let divForm = document.createElement("div")
@@ -278,20 +295,20 @@ function postForm(e){
       let emojiAngry = document.createElement("div"); emojiAngry.setAttribute("class", "emoji");emojiAngry.textContent = "😡";
       let emojiSad = document.createElement("div"); emojiSad.setAttribute("class", "emoji");emojiSad.textContent = "😢";
   
-      let countComment = document.createElement("div"); countComment.setAttribute("class", "count"); countComment.setAttribute("id", `commentCount${currentData.id}`); countComment.textContent = 0;
-      let countHappy =  document.createElement("div"); countHappy.setAttribute("class", "count"); countHappy.setAttribute("id", `happyCount${currentData.id}`); countHappy.textContent = 0;
-      let countAmused = document.createElement("div"); countAmused.setAttribute("class", "count"); countAmused.setAttribute("id", `amusedCount${currentData.id}`); countAmused.textContent = 0;
-      let countShocked = document.createElement("div"); countShocked.setAttribute("class", "count"); countShocked.setAttribute("id", `shockedCount${currentData.id}`); countShocked.textContent = 0;
-      let countAngry = document.createElement("div"); countAngry.setAttribute("class", "count"); countAngry.setAttribute("id", `angryCount${currentData.id}`); countAngry.textContent = 0;
-      let countSad = document.createElement("div"); countSad.setAttribute("class", "count"); countSad.setAttribute("id", `sadCount${currentData.id}`); countSad.textContent = 0;
+      let countComment = document.createElement("div"); countComment.setAttribute("class", "count"); countComment.setAttribute("id", `commentCount${currentData.id}`); countComment.textContent = currentData.comments.length;
+      let countHappy =  document.createElement("div"); countHappy.setAttribute("class", "count"); countHappy.setAttribute("id", `happyCount${currentData.id}`); countHappy.textContent = currentData.emoji.happy;
+      let countAmused = document.createElement("div"); countAmused.setAttribute("class", "count"); countAmused.setAttribute("id", `amusedCount${currentData.id}`); countAmused.textContent = currentData.emoji.amused;
+      let countShocked = document.createElement("div"); countShocked.setAttribute("class", "count"); countShocked.setAttribute("id", `shockedCount${currentData.id}`); countShocked.textContent = currentData.emoji.shocked;
+      let countAngry = document.createElement("div"); countAngry.setAttribute("class", "count"); countAngry.setAttribute("id", `angryCount${currentData.id}`); countAngry.textContent = currentData.emoji.angry;
+      let countSad = document.createElement("div"); countSad.setAttribute("class", "count"); countSad.setAttribute("id", `sadCount${currentData.id}`); countSad.textContent = currentData.emoji.sad;
   
       let textComment = document.createElement("div"); textComment.setAttribute("class", "text"); textComment.textContent = "comment";
       let textHappy = document.createElement("div"); textHappy.setAttribute("class", "text"); textHappy.textContent = "happy";
       let textAmused = document.createElement("div"); textAmused.setAttribute("class", "text"); textAmused.textContent = "amused";
       let textShocked = document.createElement("div"); textShocked.setAttribute("class", "text"); textShocked.textContent = "shocked";
       let textAngry = document.createElement("div"); textAngry.setAttribute("class", "text"); textAngry.textContent = "angry";
-      let textSad = document.createElement("div"); textSad.setAttribute("class", "text"); textSad.textContent = "amused";
-  
+      let textSad = document.createElement("div"); textSad.setAttribute("class", "text"); textSad.textContent = "sad";
+      
   
       divCard.setAttribute("id", `card_${currentData.id}`);
   
@@ -368,3 +385,44 @@ function postForm(e){
       }
     }
   }
+
+  
+//filter
+//Filter Categories
+const relationshipsFilter = document.getElementById("relationships")
+const schoolFilter = document.getElementById("school")
+const familyFilter = document.getElementById("family")
+
+const categoryURL = "http://localhost:3000/entries/category/"
+
+// Run through event listeners to listen for a 'click'
+const filterItems = document.querySelectorAll(".filter");
+filterItems.forEach((item) => {
+  item.addEventListener("click", filterCategory)
+})
+
+// Remove cards currently on display and load up only cards with the chosen category
+async function filterCategory(){
+    let category = this.getAttribute("value")
+    let data = await getCategory(category)
+  
+    const divCardsContainer = document.getElementById("cardContainer")
+    while(divCardsContainer.querySelector('.card')){
+      divCardsContainer.querySelector('.card').remove()
+    }
+  
+    loadAll(data);
+  }
+  
+  // Get entries with the chosen category from dataset
+  async function getCategory(category){
+      let data = await fetch(categoryURL + category)
+          .then(res => res.json())
+          .then(data => {
+            return data;
+          })
+          return data;
+  }
+
+  
+  

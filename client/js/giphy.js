@@ -22,18 +22,21 @@ function giphyapipleasework(){
     .then((response) => response.json())
     .then((data) => {
         console.log(data);
+
         let results = document.querySelector("#results");
         let result = document.querySelector("#result");
         data.data.forEach((obj) =>{
             console.log(obj.images.downsized.url)
             let img = document.createElement("img")
             img.style.width = "60px";
-            img.style.height = '45px';
+            img.style.height = '40px';
             let body = document.querySelector("body")
             img.src = obj.images.original.url
             img.alt =  obj.title
+            console.log(img)
 
-            results.append(img)
+            // results.append(img)
+            
             function addGif(e){ 
                 result.style.display ='block'
                 e.preventDefault()
@@ -44,18 +47,18 @@ function giphyapipleasework(){
             
             img.addEventListener('click', addGif)
 
-            let remove = document.querySelector('#btnremove')
+            // let remove = document.querySelector('#btnremove')
 
-            remove.addEventListener('click', (e) =>{
-                e.preventDefault()
-                if(result.contains(img)){
-                    result.style.display = 'none'
-                    result.removeChild(img)
-                    results.style.display = 'flex'
-                    results.append(img)
-                }  
-            })
+            // remove.addEventListener('click', (e) =>{
+            //     e.preventDefault()
+            //     if(result.contains(img)){
+            //         result.style.display = 'none'
+            //         result.removeChild(img)
+            //         results.style.display = 'flex'
+            //         results.append(img)
+            //     }  
+            // })
         })
         search.value = ''
     })
-}
+    }

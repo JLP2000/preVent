@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles/grid.css">
     <link rel="stylesheet" href="styles/vents.css">
     <script type="module" defer src="./js/query.js" ></script>
-
     <script type="module" defer src="./js/vent.js" ></script>
     <link rel="icon" type="image/svg" href="img/logosmall.png">
     <title>Vents</title>
@@ -26,6 +25,7 @@
                     <li class="dropdown">
                         <a class="dropbtn" href="javascript:void(0)">Categories</a>
                         <div class="dropdown-content">
+                            <a href="#" class="filter" id="general" value="general">General</a>
                             <a href="#" class="filter" id="relationships" value="relationships">Relationship</a>
                             <a href="#" class="filter" id="school" value="school">School</a>
                             <a href="#" class="filter" id="family" value="family">Family</a>
@@ -53,13 +53,23 @@
     <div class="postform">
         <form id="formpost">
             <section id="title">
-                <label for="titleinput">Vent Title:</label>
+                <label for="titleinput">Post Title:</label>
                 <br>
                 <input type="text" name="titleinput" id="titleinput" placeholder="Title of post" required>
             </section>
+
+            <section id="title">
+                <label for="titleinput">Choose Category of the post:</label>
+                <select name="options" id="selectCategories">
+                    <option value="general">General</option>
+                    <option value="relationships">Relationships</option>
+                    <option value="school">School</option>
+                    <option value="family">Family<option>
+                </select>
+            </section>
     
             <section id="post-gif">
-                <label for="gifinput" id="giftitle">Give your post a gif:</label>
+                <label for="gifinput" id="giftitle">Choose a GIF</label>
                 <br>
                 <input type="text" id="search" placeholder="Search for GIF">
                 <div id="giphydivbuttons">
@@ -67,16 +77,18 @@
                     <button id="btnremove">Change gif</button>
                 </div>
             </section>
-
             <div id="results"> </div>
             <div id="result"> </div>
+
+            <div class = "wraptext">
             <section id="postinput">
-                <label for="post" id="textareainput">Tell us more!:</label>
+                <label for="post" id="textareainput">Vent it out:</label>
                 <br>
-                <textarea name="post" id="post" placeholder="1000 characters max." maxlength="1000" style="resize:none" required></textarea>
+                <textarea name="post" class="innermodebox" id="post" placeholder="400 characters max." maxlength="400" style="resize:none" required></textarea>
             </section>
             <input type="submit" value="post" id="sendInForm">
         </form>
+    </div>
   </div>
 </div>
 </main>     
@@ -133,6 +145,8 @@ window.onclick = function(event) {
     </script>
         <script defer src="./js/quote.js"></script>
         <script defer src="./js/giphy.js"></script>
+        <!-- <script type="module" defer src="./js/filter.js" ></script> -->
+
 
     </body>
 </html>
