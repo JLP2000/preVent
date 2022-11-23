@@ -5,10 +5,14 @@
 }
 
 :root {
-  --offred: #FF5959;
-  --bluegrey: #676FA3;
-  --greyblue: #CDDEFF;
-  --snow: #EEF2FF;
+  --offred: #f9a696;
+  --bluegrey: #4c6e7c;
+  --reactionRed:#FF5959;
+  --btnColor: #dc8c7d;
+}
+
+.inner {
+  margin: 15px 5%;
 }
 
 .modal {
@@ -29,7 +33,7 @@
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid rgb(212, 160, 3);
   width: 80%; /* Could be more or less, depending on screen size */
 align-items: center;
 }
@@ -62,7 +66,7 @@ align-items: center;
 
 
 #myBtn{
-  background-color: #dc8c7d; /* Green */
+  background-color: var(--btnColor); /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -204,7 +208,7 @@ border-radius: 28px;
 min-width: 10px;
 height: 15px;
 font-size: 10px;
-background: var(--offred);
+background: var(--reactionRed);
 color: white;
 border: 2px solid white;
 padding: 0 3px;
@@ -212,17 +216,17 @@ cursor: pointer;
 }
 
 .comments {
-  border-radius: 15px;
+  border-radius: 30px;
   margin: 0px 15px 15px 15px;
   padding: 5px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-  background-color: var(--snow);
-  /* display: hide; */
+  background-color: var(--offred);
+  display: hidden;
   
 }
 
 .comment {
-  border-radius: 10px;
+  border-radius: 30px;
   margin: 15px;
   padding: 10px;
   background-color: white;
@@ -238,20 +242,25 @@ cursor: pointer;
 }
 
 .writeComment {
-  margin-bottom: 35px;
+  margin-top:5px;
+  margin-bottom: 10px;
   width: 100%;
   display: none;
 }
 
-
 .writeComment textarea {
-  margin-left: 15px;
-  width: auto;
+  margin-left: 5px;
+  width: 80%;
   margin-top: 5px;
   height: 100px;
   border-radius: 30px;
-  border: none;
+  border: 10px solid rgba(208, 160, 160, 0.537);
   padding: 5%;
+  margin-bottom: 5px;
+}
+
+.writeComment input[type=submit] {
+  margin-right: 5px;
 }
 
 .reactions button {
@@ -315,7 +324,7 @@ input[type=submit]:hover {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  background-color: #dc8c7d;
+  background-color: var(--btnColor);
 }
 
 #giphygetbutton:hover{
@@ -325,6 +334,7 @@ input[type=submit]:hover {
 }
 #btnremove{
   background-color: #e3eb97;
+  border-radius: 10px;
   border: none;
   color: white;
   padding: 15px 32px;

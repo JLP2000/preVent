@@ -12,15 +12,12 @@ const postButton = document.querySelector("#buttonpost");
 const form = document.getElementById("formpost");
 const cover = document.querySelector("main.inner");
 const postText = document.getElementById("post")
-
-// let chosenGif;
 const baseURL = "http://localhost:3000/entries/"
 
 
 // event listeners
 postText.addEventListener('keyup', updateCharCount)
-form.addEventListener('submit', postForm) 
-
+form.addEventListener('submit', postForm)
 
 async function originalData(id) {
   let data = await fetch(baseURL + id)
@@ -58,30 +55,37 @@ async function openComment() {
   // let allEntries = await allData();
   let cardCount = allEntries.length;
   for (let id=1; id <= cardCount;id++) {
+    
     let commentbtn  = document.getElementById(`${id}_comment-icon`);
-      commentbtn.addEventListener("click", function(e){
+      commentbtn.addEventListener("click", async function(e){
         e.preventDefault()
+        let currentData = await originalData(id);
+        let commentContainerDiv = document.getElementById(`comments_${id}`);
+        let commentsCurrentLength = currentData.comments.length;
         const form = document.getElementById(`${id}_writeComment`);
-        if(form.style.display == "block"){
+        if(form.style.display == "block" && commentsCurrentLength > 0){
           form.style.display = "none";
+        }
+        else if (form.style.display == "block"){
+          form.style.display = "none";
+          commentContainerDiv.style.display = "none";
         }
         else{
           form.style.display = 'block';
+          commentContainerDiv.style.display = "block";
+          // document.getElementByClass("comments").style.dislay = "visible";
         }
       }
     )
   }
 }
   
-
-
-  // let allEntries = await allData();
   async function postComment() {
     let cardCount = allEntries.length;
     for (let id=1; id < cardCount+1; id++) {
       let writeComment = document.getElementById(`${id}_writeComment`);
       console.log(writeComment)
-      writeComment.addEventListener("submit", addNewComment);
+      if(writeComment.length > 0){writeComment.addEventListener("submit", addNewComment);}
     }
   }
 
@@ -110,9 +114,12 @@ async function addNewComment(e){
   .then(res => res.json())
   .then(data => {
       console.log(data)
-      let i = data.comments.length
+      let i = data.comments.length;
+      console.log(i);
       let commentDiv = document.getElementById(`comments_${id}`);
       const formDiv = commentDiv.querySelector(".form");
+      const commentIcon = document.getElementById(`${id}_comment_icon`);
+      commentIcon.textContent  = i;
       const removeDiv = commentDiv.lastElementChild;
       let newDiv = document.createElement("div");
       console.log(newDiv);
@@ -120,7 +127,9 @@ async function addNewComment(e){
       newDiv.setAttribute("class", `comment`);
       formDiv.after(newDiv);
       newDiv.textContent = newComment;
-      removeDiv.remove();
+      if (i >= 4){
+        removeDiv.remove();
+      }
       
 
 
@@ -132,7 +141,6 @@ async function updateEmojiCount() {
 let cardCount = allEntries.length;
   for (let id=1; id <= cardCount; id++) {
   let emojiArray = document.querySelectorAll('.reaction'+id);
-  console.log(emojiArray);
   emojiArray.forEach((element) => {
   element.addEventListener("click", updateEmoji)
 })}}
@@ -161,8 +169,8 @@ async function updateEmoji(e){
       .then(res => res.json())
       .then(data => {
         console.log(data)
-        document.getElementById(addedEmoji+"Count"+id).textContent = data.emoji[addedEmoji]
-      })
+        document.getElementById(addedEmoji+"Count"+id).textContent = data.emoji[addedEmoji]}
+      )
 }
 
 
@@ -170,7 +178,7 @@ async function updateEmoji(e){
 function updateCharCount(){
   let entry = postText.value
   let remaining = postText.maxLength - entry.length
-  document.getElementById("remainingChar").textContent = remaining;
+  document.getElementById("remainingChar").textContent = remaining+"/400";
   return;
 }
 
@@ -189,7 +197,8 @@ function postForm(e){
   let censoredPost = firstLetterUpper(entry);
   console.log(censoredPost);
 
-  const postCategory = document.getElementById("category").value
+  const postCategory = document.getElementById("selectCategories").value;
+
   const dateNtime = new Date().toLocaleString();
   const postGif = document.querySelector("#result img").src;
 
@@ -204,8 +213,10 @@ function postForm(e){
           entry: censoredPost,
           emoji: {
               happy: 0,
-              laughing: 0,
-              unhappy: 0
+              amused: 0,
+              shocked: 0,
+              angry: 0,
+              sad: 0
           },
           dnt: dateNtime,
           comments: []
@@ -214,13 +225,15 @@ function postForm(e){
     .then(res => res.json())
     .then(data => {
         console.log(data);
-        const postIMG = document.getElementById("postIMG")
-        const textEntry = document.getElementById("textEntry")
-        const dateTime = document.getElementById("dateTime")
-
-        postIMG.src = data.gif;
-        textEntry.textContent = data.entry;
-        dateTime.textContent = data.dnt;
+        // this.close();
+        // window.location.reload();
+        
+        // const postIMG = document.getElementById("postIMG")
+        // const textEntry = document.getElementById("textEntry")
+        // const dateTime = document.getElementById("dateTime")
+        // postIMG.src = data.gif;
+        // textEntry.textContent = data.entry;
+        // dateTime.textContent = data.dnt;
     })
 
 
@@ -382,6 +395,10 @@ function postForm(e){
           newDiv.setAttribute("class", `comment`)
           document.getElementById(`comment${i}_${currentData.id}`).textContent = currentData.comments[i]
         }
+      }
+      else {
+          let newDiv = document.getElementById(`comments_${currentData.id}`);
+          newDiv.style.display = "none";
       }
     }
   }
