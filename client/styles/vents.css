@@ -21,7 +21,7 @@
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgba(212, 12, 12, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
@@ -31,7 +31,10 @@
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+align-items: center;
 }
+
+
 
 /* The Close Button */
 .close {
@@ -58,15 +61,26 @@
   color: black;
 }
 
-textarea {
+
+#myBtn{
+  background-color: #dc8c7d; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 10px;
+}
+#saka{
   resize: none;
-  width: 650px;
-  height: 200px;
+  width: 500px;
+  height: 300px;
   border: none;
   padding-left: 5px;
   margin-top: 30px;
 }
-
 #titleinput {
   background-color: white;
   width: 350px;
@@ -173,12 +187,12 @@ margin: 1em 0 0 0;
 
 .reaction:hover > .emoji{
 transform: scale(1.1, 1.1);
-transition: all .1s;
+transition: all 0.7s;
 }
 
 .reaction:hover > .text {
 color: #222;
-transition: all .1s;
+transition: all 0.7s;
 }
 
 .emoji{
@@ -209,12 +223,13 @@ cursor: pointer;
 }
 
 .comments {
-  border-radius: 10px;
+  border-radius: 15px;
   margin: 15px;
   padding: 5px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   background-color: var(--snow);
-  display: hide;
+  /* display: hide; */
+  
 }
 
 .comment {
@@ -223,10 +238,13 @@ cursor: pointer;
   padding: 10px;
   background-color: white;
   font-weight: 200;
-  display: hide;
+  display: visible !important;
+  /* display: inline-block; */
 }
 
 .comments .form {
+  border-radius: 10px;
+
   width: 100%;
   justify-content: center;
 }
@@ -258,3 +276,15 @@ cursor: pointer;
   width: 100%;
   margin-bottom: 3%;
 }
+
+#sortingdiv{
+  margin: 10px;
+  position: relative;
+  width: 200px;
+}
+
+#sortBy{
+  position: absolute;
+  width: 200px;
+}
+

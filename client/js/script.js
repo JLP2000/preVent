@@ -1,6 +1,6 @@
 const sterling= document.getElementById("sterling");
 // const taremi = document.getElementById("taremi")
-sterling.addEventListener("submit", createPost);
+sterling.addEventListener("click", createPost);
 // taremi.addEventListener("submit", updateComment)
 let chosenGif;
 const bellingham = document.getElementById("bellingham")

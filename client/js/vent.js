@@ -7,42 +7,15 @@ const postButton = document.querySelector("#buttonpost");
 const form = document.getElementById("formpost");
 const cover = document.querySelector("main.inner");
 const postText = document.getElementById("post")
-const relationshipsFilter = document.getElementById("relationships")
-const schoolFilter = document.getElementById("school")
-const familyFilter = document.getElementById("family")
+
 // let chosenGif;
 const baseURL = "http://localhost:3000/entries/"
-const categoryURL = "http://localhost:3000/entries/category/"
+
 
 // event listeners
 postText.addEventListener('keyup', updateCharCount)
 form.addEventListener('submit', postForm) 
-const filterItems = document.querySelectorAll(".filter");
-filterItems.forEach((item) => {
-  item.addEventListener("click", filterCategory)
-})
 
-async function filterCategory(){
-  let category = this.getAttribute("value")
-  let data = await getCategory(category)
-
-  const divCardsContainer = document.getElementById("cardContainer")
-  const cardContainerDivs = divCardsContainer.querySelectorAll(".card");
-  cardContainerDivs.forEach((card) => {
-    card.style.display = "none";
-  })
-
-  loadCategory(data);
-}
-
-async function getCategory(category){
-    let data = await fetch(categoryURL + category)
-        .then(res => res.json())
-        .then(data => {
-          return data;
-        })
-        return data;
-}
 
 async function originalData(id) {
   let data = await fetch(baseURL + id)
@@ -52,17 +25,6 @@ async function originalData(id) {
       })
       return data;
 }
-function printData(data,id) {
-  document.getElementById(`date_${id}`).textContent = data.dnt
-  document.getElementById(`post_${id}`).textContent = data.entry
-  document.getElementById(`postGify_${id}`).textContent = data.gify
-  document.getElementById(`happyCount${id}`).textContent = data.emoji["happy"]
-  document.getElementById(`amusedCount${id}`).textContent = data.emoji["amused"]
-  document.getElementById(`shockedCount${id}`).textContent = data.emoji["shocked"]
-  document.getElementById(`sadCount${id}`).textContent = data.emoji["sad"]
-  document.getElementById(`angryCount${id}`).textContent = data.emoji["angry"]
-  document.getElementById(`commentCount${id}`).textContent = data.comments.length
- }
  
 
 //loading original data
@@ -71,6 +33,7 @@ window.addEventListener("load", async () => {
   await loadAll (allEntries);
   openComment()
   postComment()
+  updateEmojiCount()
 })
 
 // gifChange.style.display = 'none';
@@ -149,24 +112,26 @@ async function addNewComment(e){
 
   
 ///updating emojicount
-for (let id=1; id < cardCount+1; id++) {
+async function updateEmojiCount() {
+let cardCount = allEntries.length;
+  for (let id=1; id <= cardCount; id++) {
   let emojiArray = document.querySelectorAll('.reaction'+id);
   console.log(emojiArray);
-
   emojiArray.forEach((element) => {
   element.addEventListener("click", updateEmoji)
-})
-  async function updateEmoji(e){
-      e.preventDefault();
-      const addedEmoji = this.value;
+})}}
 
-      const original = await originalData(id);
-      original.emoji[addedEmoji]++;
+async function updateEmoji(e){
+    e.preventDefault();
+    const addedEmoji = this.value;
+    let id = this.document.getElementsByClassName("count").getAttribute("id")[-1];
+    const original = await originalData(id);
+    original.emoji[addedEmoji]++;
 
-      fetch(baseURL + id, {
-          method: "PUT",
-          headers: {
-              "Content-Type": "application/json"
+    fetch(baseURL + id, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
           },
           body: JSON.stringify({
               gif: original.gif,
@@ -176,58 +141,58 @@ for (let id=1; id < cardCount+1; id++) {
               dnt: original.dnt,
               comments: original.comments
           })
-          
       })
       .then(res => res.json())
       .then(data => {
-        printData(data,id)
+        console.log(data)
       })
-}}
+}
 
-  function updateCharCount(){
-    let entry = postText.value
-    let remaining = postText.maxLength - entry.length
-    document.getElementById("remainingChar").textContent = remaining;
-    return;
-  }
 
-  function postForm(e){
-    e.preventDefault()
-    let entry = postText.value.toLowerCase();
+//update character count
+function updateCharCount(){
+  let entry = postText.value
+  let remaining = postText.maxLength - entry.length
+  document.getElementById("remainingChar").textContent = remaining;
+  return;
+}
 
-    profanities.forEach((word) => {
+//post new entry
+function postForm(e){
+  e.preventDefault()
+  let entry = postText.value.toLowerCase();
+
+  profanities.forEach((word) => {
         if(postText.value.includes(word)){
             let censored = "#".repeat(word.length);
             entry = entry.replaceAll(word, censored);
         }
     });
 
-    let censoredPost = firstLetterUpper(entry);
-    console.log(censoredPost);
+  let censoredPost = firstLetterUpper(entry);
+  console.log(censoredPost);
 
-    const postCategory = document.getElementById("category").value
-    const dateNtime = new Date().toLocaleString();
-    const postGif = document.querySelector("#result img").src;
+  const postCategory = document.getElementById("category").value
+  const dateNtime = new Date().toLocaleString();
+  const postGif = document.querySelector("#result img").src;
 
-    
-    fetch(baseURL, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            gif: postGif,
-            category: postCategory,
-            entry: censoredPost,
-            emoji: {
-                happy: 0,
-                laughing: 0,
-                unhappy: 0
-            },
-            dnt: dateNtime,
-            comments: []
-        }),
-        
+  fetch(baseURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+          gif: postGif,
+          category: postCategory,
+          entry: censoredPost,
+          emoji: {
+              happy: 0,
+              laughing: 0,
+              unhappy: 0
+          },
+          dnt: dateNtime,
+          comments: []
+        }), 
     })
     .then(res => res.json())
     .then(data => {
@@ -401,149 +366,5 @@ for (let id=1; id < cardCount+1; id++) {
           document.getElementById(`comment${i}_${currentData.id}`).textContent = currentData.comments[i]
         }
       }
-    }
-  }
-
-  async function loadCategory (entries){
-    let divCardsContainer = document.getElementById("cardContainer");
-  
-    for (let j = 0; j < entries.length; j++) {
-      let currentData = entries[j];
- 
-      let divCard = document.createElement("div");
-      divCard.setAttribute("class", "card");
-      let divCardHeader = document.createElement("div")
-      divCardHeader.setAttribute("class", "card-header");
-        let pCategory = document.createElement("p")
-        pCategory.setAttribute("class", "category");
-        let pDate = document.createElement("p")
-        pDate.setAttribute("class", "date");
-      let divPost = document.createElement("div")
-      divPost.setAttribute("class", "post");
-        let p = document.createElement("p");
-        let postImg = document.createElement("img");
-        postImg.setAttribute("class", "postGify");
-      let divReactions = document.createElement("div")
-      divReactions.setAttribute("class", "reactions");
-        let buttonReaction = document.createElement("button");
-          let divEmoji = document.createElement("div").setAttribute("class", "emoji");
-          let divCount = document.createElement("div").setAttribute("class", "count");
-          let divText = document.createElement("div").setAttribute("class", "text");
-      let br = document.createElement("br");
-      let divComments = document.createElement("div")
-      divComments.setAttribute("class", "comments");
-        let divForm = document.createElement("div")
-        divForm.setAttribute("class", "form");
-          let formWriteComment = document.createElement("form")
-          formWriteComment.setAttribute("class", "writeComment");
-            let textareaComment = document.createElement("textarea");
-            let inputSubmit = document.createElement("input")
-            inputSubmit.setAttribute("type", "submit");
-  
-  
-      let commentButton = document.createElement("button");
-      commentButton.setAttribute("id", `${currentData.id}_comment-icon`)
-      commentButton.setAttribute("class", `reaction${currentData.id} reaction`);
-      let happyButton = document.createElement("button");
-      happyButton.setAttribute("class", `reaction${currentData.id} reaction`);
-      happyButton.setAttribute("value", "happy");
-      let amusedButton = document.createElement("button");
-      amusedButton.setAttribute("class", `reaction${currentData.id} reaction`);
-      amusedButton.setAttribute("value", "amused");
-      let shockedButton = document.createElement("button");
-      shockedButton.setAttribute("class", `reaction${currentData.id} reaction`);
-      shockedButton.setAttribute("value", "shocked");
-      let angryButton = document.createElement("button");
-      angryButton.setAttribute("class", `reaction${currentData.id} reaction`);
-      angryButton.setAttribute("value", "angry");
-      let sadButton = document.createElement("button");
-      sadButton.setAttribute("class", `reaction${currentData.id} reaction`);
-      sadButton.setAttribute("value", "sad");
-  
-      let emojiComment = document.createElement("div");  emojiComment.setAttribute("class", "emoji"); emojiComment.textContent = "💬";
-      let emojiHappy = document.createElement("div");  emojiHappy.setAttribute("class", "emoji");emojiHappy.textContent = "😃";
-      let emojiAmused = document.createElement("div"); emojiAmused.setAttribute("class", "emoji");emojiAmused.textContent = "😂";
-      let emojiShocked = document.createElement("div"); emojiShocked.setAttribute("class", "emoji");emojiShocked.textContent = "😮";
-      let emojiAngry = document.createElement("div"); emojiAngry.setAttribute("class", "emoji");emojiAngry.textContent = "😡";
-      let emojiSad = document.createElement("div"); emojiSad.setAttribute("class", "emoji");emojiSad.textContent = "😢";
-  
-      let countComment = document.createElement("div"); countComment.setAttribute("class", "count"); countComment.setAttribute("id", `commentCount${currentData.id}`); countComment.textContent = 0;
-      let countHappy =  document.createElement("div"); countHappy.setAttribute("class", "count"); countHappy.setAttribute("id", `happyCount${currentData.id}`); countHappy.textContent = 0;
-      let countAmused = document.createElement("div"); countAmused.setAttribute("class", "count"); countAmused.setAttribute("id", `amusedCount${currentData.id}`); countAmused.textContent = 0;
-      let countShocked = document.createElement("div"); countShocked.setAttribute("class", "count"); countShocked.setAttribute("id", `shockedCount${currentData.id}`); countShocked.textContent = 0;
-      let countAngry = document.createElement("div"); countAngry.setAttribute("class", "count"); countAngry.setAttribute("id", `angryCount${currentData.id}`); countAngry.textContent = 0;
-      let countSad = document.createElement("div"); countSad.setAttribute("class", "count"); countSad.setAttribute("id", `sadCount${currentData.id}`); countSad.textContent = 0;
-  
-      let textComment = document.createElement("div"); textComment.setAttribute("class", "text"); textComment.textContent = "comment";
-      let textHappy = document.createElement("div"); textHappy.setAttribute("class", "text"); textHappy.textContent = "happy";
-      let textAmused = document.createElement("div"); textAmused.setAttribute("class", "text"); textAmused.textContent = "amused";
-      let textShocked = document.createElement("div"); textShocked.setAttribute("class", "text"); textShocked.textContent = "shocked";
-      let textAngry = document.createElement("div"); textAngry.setAttribute("class", "text"); textAngry.textContent = "angry";
-      let textSad = document.createElement("div"); textSad.setAttribute("class", "text"); textSad.textContent = "amused";
-  
-  
-      divCard.setAttribute("id", `card_${currentData.id}`);
-  
-      divCardsContainer.appendChild(divCard);
-  
-      
-        divCard.appendChild(divCardHeader);
-          pCategory.setAttribute("id", `category_${currentData.id}`);
-          pCategory.textContent = `Category: ${currentData.category}`;
-          divCardHeader.appendChild(pCategory);
-          pDate.setAttribute("id", `date_${currentData.id}`);
-          pDate.textContent = currentData.dnt;
-          divCardHeader.appendChild(pDate);
-        divCard.appendChild(divPost);
-          divPost.appendChild(p)
-          p.setAttribute("id", `post_${currentData.id}`)
-          p.textContent = currentData.entry;
-          divPost.appendChild(postImg);
-          postImg.setAttribute("id", `${currentData.id}_postImg`);
-          postImg.src = currentData.gif;
-  
-        divCard.appendChild(divReactions);
-          divReactions.appendChild(commentButton);
-            commentButton.appendChild(emojiComment);
-            commentButton.appendChild(countComment);
-            commentButton.appendChild(textComment);
-          divReactions.appendChild(happyButton);  
-            happyButton.appendChild(emojiHappy);
-            happyButton.appendChild(countHappy);
-            happyButton.appendChild(textHappy);
-          divReactions.appendChild(amusedButton);  
-            amusedButton.appendChild(emojiAmused);
-            amusedButton.appendChild(countAmused);
-            amusedButton.appendChild(textAmused);
-          divReactions.appendChild(shockedButton);  
-            shockedButton.appendChild(emojiShocked);
-            shockedButton.appendChild(countShocked);
-            shockedButton.appendChild(textShocked);
-          divReactions.appendChild(angryButton);  
-            angryButton.appendChild(emojiAngry);
-            angryButton.appendChild(countAngry);
-            angryButton.appendChild(textAngry);
-          divReactions.appendChild(sadButton);  
-            sadButton.appendChild(emojiSad);
-            sadButton.appendChild(countSad);
-            sadButton.appendChild(textSad);
-        divCard.appendChild(br);
-        divCard.appendChild(divComments);
-        divComments.setAttribute("id", `comments_${currentData.id}`);
-          divComments.appendChild(divForm);
-          divForm.setAttribute("id",`${currentData.id}_commentForm`);
-            divForm.appendChild(formWriteComment);
-            formWriteComment.setAttribute("id", `${currentData.id}_writeComment`);
-              formWriteComment.appendChild(textareaComment);
-              textareaComment.setAttribute("id", `blog_${currentData.id}`);
-              formWriteComment.appendChild(inputSubmit);
-  
-              let i = 1000
-              
-              let newDiv = document.getElementById(`comments_${currentData.id}`).appendChild(document.createElement("div"))
-              newDiv.setAttribute("id", `comment${i}_${currentData.id}`)
-              newDiv.setAttribute("class", `comment`)
-              document.getElementById(`comment${i}_${currentData.id}`).textContent = "Hello"
-
     }
   }

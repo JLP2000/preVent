@@ -3,6 +3,7 @@
 body {
   width: 100%;
   overflow-x: hidden;
+  
 }
 
 .container{
@@ -15,23 +16,27 @@ body {
   justify-content: center;
   position: absolute;
   font-weight: 600;
+  
+
 }
 
 .container .card {
   width: 90%;
-  background-color: #b1af9f;
-  border: 1px solid #506872;
+  background-color: #fffef3;
+  border: 1px solid #b7dff0;
   break-inside: avoid; /* this is important!! */
   padding: 5%;
   margin-bottom: 5%;
+  border-radius: 30px;
   display: grid;
-  box-shadow: 12px 10px 2px #50687293;
+  box-shadow: 12px 10px 2px #1282b393;
   font-weight: 300;
+  transition: 0.8s;
 }
 
 .container .cardQuotes {
     width: 90%;
-    background-color: #b1af9f;
+    background-color: #f8a696;
     border: 1px solid #506872;
     break-inside: avoid; /* this is important!! */
     padding: 5%;
@@ -39,8 +44,26 @@ body {
     display: grid;
     box-shadow: 12px 10px 2px #50687293;
     font-weight: 800;
+    border-radius: 30px;
   }
 
+  .container .cardQuotes button{
+    width: 90%;
+    background-color: #4c6e7c;
+    border: 1px solid #506872;
+    break-inside: avoid; /* this is important!! */
+    padding: 5%;
+    margin-bottom: 5%;
+    display: grid;
+    box-shadow: 10px 10px 2px #50687293;
+    font-weight: 100;
+    border-radius: 30px;
+  }
+
+  .container .cardQuotes button:hover{
+    background-color: #4c6e7c;
+    transition: 0.6s;
+  }
 @media  (max-width: 1030px) {
 .container {
       column-count: 2;

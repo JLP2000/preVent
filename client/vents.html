@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="styles/homepage.css">
     <link rel="stylesheet" href="styles/grid.css">
     <link rel="stylesheet" href="styles/vents.css">
-    
-    
-    <script type="module" defer src="./js/vent.js" ></script>
+    <script type="module" defer src="./js/query.js" ></script>
+
+    <!-- <script type="module" defer src="./js/vent.js" ></script> -->
     <link rel="icon" type="image/svg" href="img/logosmall.png">
     <title>Vents</title>
 </head>
@@ -44,15 +44,15 @@
 <!-- Trigger/Open The Modal -->
 
 <button id="myBtn">VENT</button>
+
 <div id="sortingdiv">
     <label for="sortBy">Sort by: </label>
     <select name="sortBy" id="sortBy">
-        <option selected value="default">All</option>
-        <option value="Family">Family</option>
-        <option value="Relationship">Relationships</option>
-        <option value="Work">Work</option>
+        <option selected value="default">Latest</option>
+        <option value="alphabetical">Alphabetical</option>
     </select>
 </div>
+<div id="ventingsomething"></div>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -69,7 +69,7 @@
             </section>
             <div id="post">
                 <form id="sterling">
-                    <textarea name="entry" id="saka" cols="30" rows="10" placeholder="400 characters max." maxlength="400" style="resize:none" required></textarea>
+                    <textarea name="entry" id="saka" placeholder="400 characters max." maxlength="400" style="resize:none" required></textarea>
                     <input type="text" id = "category">;
                     <input type="submit" value="Post" id="saka1">
                 </form>
@@ -90,15 +90,6 @@
                 </form>
                 </section>
                 </div>
-
-            <section id="postinput">
-                <label for="post" id="textareainput">Tell us more!:</label>
-                <br>
-                <div id="postTextContainter">
-                  <textarea name="post" id="post" placeholder="1000 characters max." maxlength="1000" style="resize:none" required></textarea>
-                  <p id="remainingChar">1000</p>
-                </div>
-            </section>
             <input type="submit" value="post" id="sendInForm">
         </form>
   </div>
@@ -151,5 +142,7 @@ window.onclick = function(event) {
 }
     </script>
         <script defer src="./js/quote.js"></script>
+        <script defer src="./js/script.js"></script>
+
     </body>
 </html>
