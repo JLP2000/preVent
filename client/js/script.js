@@ -1,7 +1,7 @@
 const sterling= document.getElementById("sterling");
-const taremi = document.getElementById("taremi")
+// const taremi = document.getElementById("taremi")
 sterling.addEventListener("submit", createPost);
-taremi.addEventListener("submit", updateComment)
+// taremi.addEventListener("submit", updateComment)
 let chosenGif;
 const bellingham = document.getElementById("bellingham")
 const baseURL = "http://localhost:3000/entries/";
@@ -18,8 +18,7 @@ gifButton.addEventListener('click', (e) =>{
 })
 
 function giphyapipleasework(){
-
-    console.log("hi")
+    console.log("hi");
     const giftext = document.getElementById("grealish").value;
     fetch(`https://api.giphy.com/v1/gifs/search?q=${giftext}&api_key=${apiKey}&rating=pg&limit=4`)
 
@@ -65,9 +64,6 @@ function giphyapipleasework(){
         giftext.value = ''
     })
 }
-
-
-
 
 function createPost(e){
     e.preventDefault();
@@ -180,6 +176,7 @@ async function originalData(id) {
         return data;
 }
 
+
 // Random quote
 
 
@@ -208,3 +205,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // call updateQuote once when page loads
     updateQuote();
   });
+

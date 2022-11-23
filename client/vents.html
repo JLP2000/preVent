@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="styles/homepage.css">
     <link rel="stylesheet" href="styles/grid.css">
     <link rel="stylesheet" href="styles/vents.css">
-
-    <script defer src="./js/vent.js" ></script>
-
+    <!-- <script defer src="./js/script.js"></script> -->
+    <script type="module" defer src="./js/vent.js" ></script>
     <link rel="icon" type="image/svg" href="img/logosmall.png">
     <title>Vents</title>
 </head>
@@ -26,9 +25,9 @@
                     <li class="dropdown">
                         <a class="dropbtn" href="javascript:void(0)">Categories</a>
                         <div class="dropdown-content">
-                            <a href="#">Relationship</a>
-                            <a href="#">School</a>
-                            <a href="#">Family</a>
+                            <a href="#" id="relationships" value="relationships">Relationship</a>
+                            <a href="#" id="school" value="school">School</a>
+                            <a href="#" id="family" value="family">Family</a>
                         </div>
                     </li>
                     <li><a href="preventers.html">Preventers</a></li>
@@ -44,6 +43,15 @@
 <!-- Trigger/Open The Modal -->
 
 <button id="myBtn">VENT</button>
+<div id="sortingdiv">
+    <label for="sortBy">Sort by: </label>
+    <select name="sortBy" id="sortBy">
+        <option selected value="default">All</option>
+        <option value="Family">Family</option>
+        <option value="Relationship">Relationships</option>
+        <option value="Work">Work</option>
+    </select>
+</div>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -58,24 +66,29 @@
                 <br>
                 <input type="text" name="titleinput" id="titleinput" placeholder="Title of post" required>
             </section>
-    
-
-            <section id="post-gif">
+            <div id="post">
+                <form id="sterling">
+                    <textarea name="entry" id="saka" cols="30" rows="10" placeholder="400 characters max." maxlength="400" style="resize:none" required></textarea>
+                    <input type="text" id = "category">;
+                    <input type="submit" value="Post" id="saka1">
+                </form>
+            
+                <div id="results"> </div>
+                <div id="result"> </div>
+            
+                <section id="post-gif">
+                <form id="bellingham">
                 <label for="gifinput" id="giftitle">Add a gif:</label>
+                <input type="text" id="grealish" placeholder="Search for GIF">
                 <br>
-                <input type="text" id="search" placeholder="Search for GIF">
                 <div id="giphydivbuttons">
-                    <button id="giphygetbutton">Add gif</button>
+                    <!-- <input type="submit" id="rashford giphygetbutton"> -->
+                    <input type="submit" id="giphygetbutton">
                     <button id="btnremove">Update gif</button>
                 </div>
-            </section>
-
-            <div id="results"> </div>
-            <div id="result"> </div>
-            <section id="postinput">
-                <label for="post" id="textareainput">Tell us more!:</label>
-                <br>
-                <textarea name="post" id="post" placeholder="1000 characters max." maxlength="1000" style="resize:none" required></textarea>
+                </form>
+                </section>
+                </div>
 
             <section id="postinput">
                 <label for="post" id="textareainput">Tell us more!:</label>
@@ -84,108 +97,30 @@
                   <textarea name="post" id="post" placeholder="1000 characters max." maxlength="1000" style="resize:none" required></textarea>
                   <p id="remainingChar">1000</p>
                 </div>
-
             </section>
             <input type="submit" value="post" id="sendInForm">
         </form>
   </div>
 </div>
+
 </main>     
 </div>
-<div id="post">
-    <form id="sterling">
-        <textarea name="entry" id="saka" cols="30" rows="10" placeholder="400 characters max." maxlength="400" style="resize:none" required></textarea>
-        <input type="text" id = "category">;
-        <input type="submit" value="Post" id="saka1">
-    </form>
 
-    <div id="results"> </div>
-    <div id="result"> </div>
-
-<section id="post-gif">
-<form id="bellingham">
-<label for="gifinput" id="giftitle">Add a gif:</label>
-<input type="text" id="grealish" placeholder="Search for GIF">
-<br>
-<div id="giphydivbuttons">
-    <!-- <input type="submit" id="rashford giphygetbutton"> -->
-    <input type="submit" id="giphygetbutton">
-    <button id="btnremove">Update gif</button>
-</div>
-</form>
-</section>
-
-</div>
-            <div class="container">
-                <div class="card">
-                    <div class="cardbody">
-                      <blockquote>
-                        <p>Loading...</p>
-                        <footer class="blockquote-footer">
-                          <cite title="Source Title"></cite>
-                        </footer>
-                      </blockquote>
-                    </div>
-                    <div id="cardfooter">
-                      <button id="newquotebutton">New Quote</div>
-                    </div>
-           
-                    <div class="card">
-                      <div class="card-header">
-                          <p class="alias" id="alias_1">alias</p>
-                          <p class="date" id="date_1">date</p>
-                      </div>
-                      <div class="post">
-                          <p id="post_1">post</p>
-                      </div>
-                      <div class="reactions">
-                          <button class="reaction1 reaction" id="1_comment-icon">
-                              <div class="emoji" >💬</div>
-                              <div class="count" id="commentCount1">0</div>
-                              <div class="text">comment</div>
-                          </button>
-      
-                          <button class="reaction1 reaction" value="happy">
-                              <div class="emoji">😃</div>
-                              <div class="count" id="happyCount1">0</div>
-                              <div class="text">happy</div>
-                          </button>
-                          <button class="reaction1 reaction" value="amused">
-                              <div class="emoji">😂</div>
-                              <div class="count" id="amusedCount1">0</div>
-                              <div class="text">amused</div>
-                          </button> 
-                                
-                          <button class="reaction1 reaction" value="shocked">
-                              <div class="emoji">😮</div>
-                              <div class="count" id="shockedCount1">0</div>
-                              <div class="text">shocked</div>
-                          </button>
-                              
-                          <button class="reaction1 reaction" value="angry">
-                              <div class="emoji">😡</div>
-                              <div class="count" id="angryCount1">0</div>
-                              <div class="text">angry</div>
-                          </button>
-                              
-                          <button class="reaction1 reaction" value="sad">
-                              <div class="emoji">😢</div>
-                              <div class="count" id="sadCount1">0</div>
-                              <div class="text">sad</div>
-                          </button>
-                      </div>
-                      <br>
-                      <div class="comments" id="comments_1">
-                          <div class="form" id="1_commentForm">
-                              <form id="1_writeComment" class="writeComment">
-                                  <textarea id="blog" name="blog" rows="2"></textarea>
-                                  <input type="submit" value="submit">
-                              </form>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+<div class="container" id="cardContainer">
+    <div class="card">
+        <div class="cardbody">
+            <blockquote>
+                <p>Loading...</p>
+                <footer class="blockquote-footer">
+                <cite title="Source Title"></cite>
+                </footer>
+            </blockquote>
+        </div>
+        <div id="cardfooter">
+            <button id="newquotebutton">New Quote</div>
     </div>
+</div>
+
 
 <script>
         // Get the modal
@@ -214,6 +149,7 @@ window.onclick = function(event) {
   }
 }
     </script>
+        <!-- <script defer src="./js/script.js"></script> -->
+
     </body>
 </html>
-
