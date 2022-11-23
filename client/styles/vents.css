@@ -129,6 +129,15 @@ right: 0%;
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
 }
 
+.container .cardQuotes {
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.container .cardQuotes:hover {
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+}
+
 .container .card .post {
   border-top: 2px solid var(--offred);
   border-bottom: 2px solid var(--offred);
