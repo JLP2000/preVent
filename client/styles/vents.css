@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap');
+
+* {
+  font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+:root {
+  --offred: #FF5959;
+  --bluegrey: #676FA3;
+  --greyblue: #CDDEFF;
+  --snow: #EEF2FF;
+}
+
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -120,12 +133,13 @@ position: absolute;
 bottom: 0%;
 right: 0%;
 } */
-.container .card {
+.container .card, .container .cardQuotes{
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
   padding: 20px;
+  
 }
 
-.container .card:hover {
+.container .card:hover, .container .cardQuotes:hover {
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -189,12 +203,13 @@ cursor: pointer;
 
 .text {
 font-size: 12px;
+font-weight: 300;
 color: var(--bluegrey);
 cursor: pointer;
 }
 
-.comment {
-  border-radius: 5px;
+.comments {
+  border-radius: 10px;
   margin: 15px;
   padding: 5px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
@@ -202,21 +217,31 @@ cursor: pointer;
   display: hide;
 }
 
-.form {
-  width: 100%;
+.comment {
+  border-radius: 10px;
+  margin: 15px;
+  padding: 10px;
+  background-color: white;
+  font-weight: 200;
+  display: hide;
 }
 
-#blog {
+.comments .form {
   width: 100%;
-}
-
-.writeComment input{
-  float: right;
+  justify-content: center;
 }
 
 .writeComment {
-  display: none;
   margin-bottom: 35px;
+  width: 100%;
+  display: none;
+}
+
+.writeComment textarea {
+  width: 100%;
+  padding: 0px;
+  margin-top: 10px;
+  height: 100px;
 }
 
 .reactions button {
