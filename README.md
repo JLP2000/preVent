@@ -165,12 +165,46 @@ To create the API we used express, nodemon/ node. We created the data to be able
 
 We created a model and routes for this data, allowing for creating, read, update and delete. We created routes for /entries and for /entries/category allowing for us to easily access all the data and to filter by id and category.
 
-As we seperated into backend and frontend teams, the backend team created a test client with a single card that had full functionality with the post API and giphy API. This was to make it easy for process of combining the frontend and backend. 
+As we seperated into backend and frontend teams, the backend team created a [test client](./testclient) with a single card that had full functionality with the post API and giphy API. This was to make it easy for process of combining the frontend and backend. 
 
-During this the nackend team also made a test suite that had 100% coverage for the API. 
+During this the backend team also made a test suite that had 100% coverage for the API. 
+
+![coverage](./client/img/image.png)
+
+### Frontend
+
+We created the pages of the website using HTMl and used a combination of vanilla CSS and Javascript to style and add animations and intreactive elements to the pages.
+
+For the homepage we used TypeIt.js to create a typewriting effect, making the page much more interesting.
+
+The vents page, contains all the posts for our app in the form of cards in a masonary grid layout, inspired by the popular journaling app, Tumblr. The cards would pull data from the api and create new cards as posts are added. You can also comment on ech post, and the cards will display the newest three commments. In addition, they can also react to the post with an emoji, whcih will also count the number of reactions it has recieved. We also have a card that retrieves motivational quotes from an API.
+
+On the nav bar; we also have a filter option as dropdown menu, which will filter out the data based on their category. There is also a pop-up window for new post entries. Here, you can choose a gif from the GIPHY API to go with your post.
+
+Lastly is the Preventers page, which simply tells you more about the group and the purpose of the website. All pages have a mark mode function, that turns color scale to grey.
+
+### Combine
+
+Combining the frontend and backend was a massive task. Implementing functionality took the whole team a day plus time for sorting out errors.
+
+- Display
+    - To display the cards we had to dynamically create each element and systemeatically append each element to the document making sure each element had teh correct class and id.
+    - We created a function that would accept any amount of data and automatically display it onto the page.
+
+- Post
+    - For posting an entry to the website we had to use the fetch method "POST" with all the information to the API which would then be posted onto the website.
+
+- Commenting
+    - For commenting on an entry there had to be a form that would be read and automatically used to update the data that it correlated to.
+    - The updating required thr method of "PUT" with all the original data and the updated data. 
+    - The updated comment would then be automatically posted but the website only shows the top three comments.
+
+- Emoji
+    - For the emoji reactions the buttons needed to be linked to the data that everytime you clicked on the emoji it would increase the count of the corresponding emoji in the data.
+    - Like the commenting it used the method "PUT" with teh original data.
 
 
-
+## WIns and Challenges
 ## Licence
 
 [MIT licence](https://opensource.org/licenses/mit-license.php)

@@ -83,7 +83,6 @@ body{
     top: 0; left: 0;
     text-align: center;
     transition: height 0.35s ease, padding 0.35s ease;
-    /* justify-items: center; */
   }
 
 li {
@@ -157,6 +156,5 @@ li a:hover, .dropdown:hover .dropbtn {
 }
 
 .topphrase {
-  top: 4px;
   border: none;
 }

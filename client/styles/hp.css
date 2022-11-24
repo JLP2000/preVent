@@ -13,6 +13,30 @@
   filter: grayscale(100%);
 }
 
+#navbar {
+  list-style-type:	none;
+  margin:	0;
+  padding:0;
+  background-color: var(--reactionRed);
+  font-size: 0;
+  width: 100%;
+  top: 0; left: 0;
+  text-align: center;
+  transition: height 0.35s ease, padding 0.35s ease;
+  
+}
+
+
+li a, .dropbtn {
+display:			inline-block;
+color:				white;
+text-align:			center;
+padding:			15px 15px;
+text-decoration:	none;
+width:				100px;
+font-size: initial;
+}
+
 body{
   width:100%;
   margin:0;
@@ -34,7 +58,7 @@ body{
 }
 
 .coverheading{
-  margin: -1;
+  margin: 0;
   top: 0;
   width: 100%;
   height: 100%;
@@ -59,14 +83,33 @@ body{
   }
 } */
 
+
+
 .biglogo{
   width: 60vw;
   position:absolute;
   font-size: 20px;
   z-index: 1;
-  margin-top: 10vh;
-  
+  margin-top: 10vh; 
 }
+
+.biglogo:hover{
+  transition: 0.6s;
+  transform: scale(2);
+}
+
+.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
 .lead{
   display: flex;
   justify-content: center;
@@ -79,13 +122,12 @@ body{
   margin-left: 50vw;
   margin-top: 50vh;
   position: absolute;
+
 }
 .startbutton{
   position:absolute;
   background-color: var(--reactionRed);
   color: white;
-  background-color: white;
-  color: var(--reactionRed);
   padding: 15px 40px;
   text-align: center;
   text-decoration: none;
@@ -96,6 +138,10 @@ body{
   z-index: 1;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+.startbutton:hover{
+  transition: 0.6s;
+  transform: scale(1.2);
 }
 
 .place{

@@ -92,11 +92,22 @@ async function openComment() {
 
 async function addNewComment(e){
   e.preventDefault();
-  let newComment = this.querySelector("textarea").value;
+  let newComment = this.querySelector("textarea").value.toLowerCase();
 
   if (newComment.length == 0){
     return;
   }
+
+  profanities.forEach((word) => {
+    if(this.querySelector("textarea").value.includes(word)){
+        let censored = "#".repeat(word.length);
+        newComment = newComment.replaceAll(word, censored);
+    }
+  });
+
+  let censoredComment = firstLetterUpper(newComment);
+
+  
   let id = this.getAttribute("id")[0];
   const form = document.getElementById(`${id}_writeComment`);
   form.style.display = "none";
@@ -112,7 +123,7 @@ async function addNewComment(e){
           entry: original.entry,
           emoji: original.emoji,
           dnt: original.dnt,
-          comments: [...original.comments, newComment]
+          comments: [...original.comments, censoredComment]
       })  
     })
     .then(res => res.json())

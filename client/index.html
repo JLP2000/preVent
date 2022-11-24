@@ -39,10 +39,10 @@
     
 
         <div class="lead">
-          <img class="biglogo" src="img/logogif.gif" alt="mainmiddlelogo">
+          <!-- <img class="biglogo" src="img/whitelogo.gif" alt="mainmiddlelogo"> -->
           </div>
           <div class="lead2"><a href="vents.html" class="startbutton">
-            <i class="startbuttontext"></i>Start Venting.</a></div>
+            <i class="startbuttontext"></i>Start Venting <i class="arrow right"></i></a></div>
         <div class="mainHome">
             <h1 id ="coverheading" class="coverheading"> ..</h1>
           </div>
@@ -91,7 +91,7 @@ new TypeIt("#coverheading", {
   .move(1, { delay: 200 })
   .type("to pr ", { delay: 350 })
   .move(null, { to: "END" })
-  .type("event")
+  .type("event.")
   .move(null, { to: "END" })
   .type(' <span class="place">Start Preventing.</span>', { delay: 400 })
   .delete(".place", { delay: 800, instant: true })
@@ -106,17 +106,28 @@ new TypeIt("#coverheading", {
      var element = document.body;
      element.classList.toggle("dark-mode");
   }
-  </script>
-<!-- <script>
+</script>
+
+<script>
 let t1 = anime({
-  targets: ['.lead', '.biglogo'],
+  targets: ['.coverheading'],
   translateX: '6rem',
-  rotate: 180,
-  borderRadius: '8px',
+  borderRadius: '1px',
   duration: 2000,
+  delay: 1000,
+    easing: 'easeInQuad',
   loop: true
-});t1.add({
-  translateY: '6rem',
-});</script> -->
+});</script>
+
+<script>
+  let t2 = anime({
+  targets: ['.startbutton'],
+  translateX: 10,
+  delay: function(el, i) { return i * 100; },
+  direction: 'alternate',
+  loop: true,
+  easing: 'easeInOutSine'
+  })
+</script>
 </body>
 </html>
