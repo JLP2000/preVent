@@ -1,3 +1,33 @@
+body {
+    width: 100%;
+}
+
 #more {display: none;}
 
 #more1 {display: none;}
+
+.main {
+    padding: 5%;
+}
+
+.biglogo {
+    width: 500px;
+    height: 160px;
+}
+
+.horizontal {
+    display: inline-block;
+}
+
+@media  (max-width: 1030px) {
+    .biglogo {
+        width: 250px;
+        height: 180px;
+    }
+    }
+    
+    @media (max-width: 650px){
+    .container {
+          column-count: 1;
+    }
+    }

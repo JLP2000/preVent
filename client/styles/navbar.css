@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nanum+Gothic:wght@400;700;800&display=swap');
+:root {
+  --darkerRed: #C81D25;
+  --MaxBlueGreen: #26b2bf;
+  --reactionRed:#ef233c;
+  --btnColor: #dc8c7d;
+  --topbarRed: #ce0000;
+  --offBlack: #212427;
+}
+
+.dark-mode {
+  filter: gray;
+  filter: grayscale(80%);
+  /* filter: hue-rotate(90deg); */
+  filter: contrast(80%);
+  background-color: black;
+}
+
+* {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+body{
+  width:100%;
+  margin:0;
+  font-family: 'Alfa Slab One', cursive;
+  background-color:var(--reactionRed);
+  
+}
+.topphrase {
+	font-size:	10px;
+  margin: 15px;
+	color:	var(--reactionRed);
+	padding: 10px 10px 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  border-radius: 5px;
+  float: right;
+}
+
+#topbar li {
+  justify-self: center;
+}
+
+#topbar {
+	height:			10px;
+  background-color: var(--reactionRed);
+  margin-left: 0;
+
+}
+.place{
+  font-weight: 1000;
+}
+
+.smalllogo {
+  margin-top: 10px;
+	width:	60px;
+	height: 45px;
+	float:	left;
+  margin-left: 30px;
+}
+
+#navbar {
+    list-style-type:	none;
+    margin:	0;
+    padding:0;
+    background-color: white;
+    font-size: 0;
+    width: 100%;
+    top: 0; left: 0;
+    text-align: center;
+    align-items: center;
+    transition: height 0.35s ease, padding 0.35s ease;
+  }
+
+li {
+  align-items: center;
+    display: 	inline-block;
+}
+
+
+li a, .dropbtn {
+  display:			inline-block;
+  color:				var(--offBlack);
+  text-align:			center;
+  padding:			15px 15px;
+  text-decoration:	none;
+	width:				100px;
+  font-size: initial;
+}
+
+.dropbtn{
+  color: #e93d3d;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    color:	var(--darkerRed);
+    transition: 0.6s;
+    font-weight: bolder;
+}
+
+.dropdown {
+    display:	inline-block;
+	position:	relative;
+  
+}
+
+.dropdown-content {
+    display: 			none;
+    position: 			absolute;
+    background-color: 	rgba(255, 255, 255, 0.766);
+    width: 				160px;
+    box-shadow: 		5px 10px 10px rgba(0,0,0,0.3);
+	z-index: 			1;
+  transition: 0.6s;
+}
+
+.dropdown-content a {
+    color: var(--darkerRed);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+	  width: 128px;
+	  z-index: 1;
+}
+
+.dropdown-content a:hover {
+	background-color: 	#e9ce00de;
+  transition: 0.6s;
+  color: #e93d3d;
+}
+
+.dropdown:hover .dropdown-content {
+    display:	block;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.topphrase {
+  border: none;
+}

@@ -1,7 +1,16 @@
+:root {
+  --darkerRed: #C81D25;
+  --MaxBlueGreen: #26b2bf;
+  --reactionRed:#ef233c;
+  --btnColor: #dc8c7d;
+  --topbarRed: #ce0000;
+  --offBlack: #212427;
+  --lightSlateGray:#798f9d;
+}
+
 body {
   width: 100%;
   overflow-x: hidden;
-  
 }
 
 .container{
@@ -10,7 +19,6 @@ body {
   margin-left: 5%;
   margin-right: 5%;
   width: 90%;
-  padding:0px;
   justify-content: center;
   position: absolute;
   font-weight: 600;
@@ -27,7 +35,7 @@ body {
 
 .container .card {
   /* vertical-align: top; */
-  background-color: #fffef3;
+  background-color: WHITE;
   border: 1px solid #b7dff0;
   box-shadow: 12px 10px 2px #1282b393;
   font-weight: 300;
@@ -35,7 +43,7 @@ body {
 }
 
 .container .cardQuotes {
-    background-color: #f8a696;
+    background-color: var(--MaxBlueGreen);
     border: 1px solid #506872;
     box-shadow: 12px 10px 2px #50687293;
     font-weight: 800;
@@ -43,21 +51,23 @@ body {
 
   .container .cardQuotes button{
     width: 90%;
-    background-color: #4c6e7c;
-    border: 1px solid #506872;
+    background-color: white;
+    border: none;
     break-inside: avoid; /* this is important!! */
     padding: 5%;
+    margin-left: 5%;
     margin-bottom: 5%;
     display: grid;
     box-shadow: 10px 10px 2px #50687293;
     font-weight: 100;
-    border-radius: 30px;
+    border-radius: none;
   }
 
   .container .cardQuotes button:hover{
-    background-color: #4c6e7c;
+    background-color: var(--btnColor);
     transition: 0.6s;
   }
+
 @media  (max-width: 1030px) {
 .container {
       column-count: 2;

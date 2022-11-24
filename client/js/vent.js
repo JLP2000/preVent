@@ -29,7 +29,6 @@ async function originalData(id) {
       return data;
 }
  
-
 //loading original data
 window.addEventListener("load", async () => {
   allEntries = await allData();
@@ -37,6 +36,7 @@ window.addEventListener("load", async () => {
   openComment()
   postComment()
   updateEmojiCount()
+  console.log(allEntries)
 })
 
 
@@ -74,7 +74,7 @@ async function openComment() {
         else{
           form.style.display = 'block';
           commentContainerDiv.style.display = "block";
-          // document.getElementByClass("comments").style.dislay = "visible";
+          commentContainerDiv.style.backgroundColor = "#26b2bf"
         }
       }
     )
@@ -92,11 +92,22 @@ async function openComment() {
 
 async function addNewComment(e){
   e.preventDefault();
-  let newComment = this.querySelector("textarea").value;
+  let newComment = this.querySelector("textarea").value.toLowerCase();
 
   if (newComment.length == 0){
     return;
   }
+
+  profanities.forEach((word) => {
+    if(this.querySelector("textarea").value.includes(word)){
+        let censored = "#".repeat(word.length);
+        newComment = newComment.replaceAll(word, censored);
+    }
+  });
+
+  let censoredComment = firstLetterUpper(newComment);
+
+  
   let id = this.getAttribute("id")[0];
   const form = document.getElementById(`${id}_writeComment`);
   form.style.display = "none";
@@ -112,7 +123,7 @@ async function addNewComment(e){
           entry: original.entry,
           emoji: original.emoji,
           dnt: original.dnt,
-          comments: [...original.comments, newComment]
+          comments: [...original.comments, censoredComment]
       })  
     })
     .then(res => res.json())
@@ -135,9 +146,6 @@ async function addNewComment(e){
       if (i >= 4){
         removeDiv.remove();
       }
-      
-
-
   })}
 
 
@@ -285,7 +293,7 @@ function postForm(e){
       let textareaComment = document.createElement("textarea");
       let inputSubmit = document.createElement("input")
       inputSubmit.setAttribute("type", "submit");
-  
+     
   
       let commentButton = document.createElement("button");
       commentButton.setAttribute("id", `${currentData.id}_comment-icon`)
@@ -330,7 +338,11 @@ function postForm(e){
   
       divCard.setAttribute("id", `card_${currentData.id}`);
   
-      divCardsContainer.appendChild(divCard);
+      const quotesDiv = document.getElementsByClassName("cardQuotes")[0];
+      // console.log(quotesDiv);
+  
+      // divCardsContainer.appendChild(divCard);
+      quotesDiv.after(divCard);
   
       
       divCard.appendChild(divCardHeader);
@@ -431,7 +443,7 @@ async function filterCategory(){
     const divCardsContainer = document.getElementById("cardContainer")
     while(divCardsContainer.querySelector('.card')){
       divCardsContainer.querySelector('.card').remove();
-    
+
     }
   
     loadAll(data);
@@ -446,6 +458,3 @@ async function filterCategory(){
           })
           return data;
   }
-
-  
-  

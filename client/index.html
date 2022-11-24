@@ -5,9 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>preVent</title>
-    <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="stylesheet" href="styles/vents.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/hp.css">
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="icon" type="image/svg" href="img/logosmall.png">
+    <!-- <link id="darkstyle" rel="stylesheet" type="text/css" href="./styles/dark.css">	 -->
+    <link rel="icon" type="image/svg" href="img/favicon.png">
+    
     <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
     <script src="./js/anime.min.js"></script>
     <script src="./js/animation.js"></script>
@@ -22,41 +26,38 @@
             <div class="within">
                 <ul id="navbar">
                     <div id="topbar">
-                        <a href="index.html"><img class="smalllogo" src="img/logogifsmall.gif" alt="logo"></a>
-                        <div class="topphrase">Powered by Venting</div>
-                    </div>
+                        <a href="index.html"><img class="smalllogo" src="img/logogif2.gif" alt="logo"></a>
+                        <!-- <div class="topphrase">Dark Mode Powered By Preventing</div> -->
+                        <button class="topphrase" onclick="myFunction()">Dark Mode Powered By Preventing</button>
+                      </div>
                     <li><a class="active" href="vents.html">Vents</a></li>
                     <li><a href="preventers.html">Preventers</a></li>
                     <!-- <li><a href="">About</a></li> -->
                 </ul>
             </div>
         </header>
-        <div class="main">
-            <!-- <div class="biglogo"></div> -->
+    
+
+        <div class="lead">
+          <!-- <img class="biglogo" src="img/whitelogo.gif" alt="mainmiddlelogo"> -->
+          </div>
+          
+          <div class="lead2"><a href="vents.html" class="startbutton">
+            <i class="startbuttontext"></i>Start Venting <i class="arrow right"></i></a></div>
+        <div class="mainHome">
             <h1 id ="coverheading" class="coverheading"> ..</h1>
-            <img class="biglogo" src="img/logogif.gif" alt="mainmiddlelogo">
-            <!-- <div class="biglogo"><img src="img/logogif.gif" alt="mainmiddlelogo"></div>
-            <h1 class="cover-heading">Welcome to</h1> -->
-            <p class="lead">Preventers Vent to Prevent.</p>
-            <p class="lead">Become a Preventer.</p>
-            <p class="lead">
-                <a href="preventers.html" class="btn btn-large btn-primary">
-                    <i class="startbutton"></i>Start Venting.</a>
-                </p>
-                
-            </div>
-    </div>
+          </div>
+      </div>  
+ 
     <script>
-        // When the user scrolls the page, execute myFunction
-        window.onscroll = function() {myFunction()};
-        
+        window.onscroll = function() {scrollFunction()};
         // Get the navbar
         // var navbar = document.getElementById("topbar");
         var navbar = document.getElementById("navbar");
         // Get the offset position of the navbar
         var sticky = navbar.offsetTop;
         // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-        function myFunction() {
+        function scrollFunction() {
           if (window.pageYOffset >= sticky) {
             navbar.classList.add("sticky");
             // navbar.classList.add("stickyDown");
@@ -70,44 +71,62 @@
 new TypeIt("#coverheading", {
   speed: 50,
   startDelay: 900,
-})
+})//Preventers vent to prevent, start venting.
+
 //Welcome to the most convenient journaling platform.
-  .type("Welcoe to tee", { delay: 100 })
+  .type("Preventer vent to", { delay: 100 })
   .move(-8, { delay: 100 })
-  .type("m", { delay: 400 })
+  .type("s", { delay: 400 })
   .move(null, { to: "START", instant: true, delay: 300 })
   .move(1, { delay: 200 })
   .delete(1)
   .move(1, { delay: 200 })
   .delete(1)
   .pause(200)
-  .move(14, { instant: true })
+  .move(17, { instant: true })
   .delete(1)
   .move(1, { delay: 200 })
   .delete(1)
   .move(1, { delay: 200 })
-  .type("he most  ", { delay: 350 })
+  .type("to pr ", { delay: 350 })
   .move(null, { to: "END" })
-  .type(" convenient journaling platform")
+  .type("event.")
   .move(null, { to: "END" })
-  .type(' <span class="place">on the internet?</span>', { delay: 400 })
+  .type(' <span class="place">Start Preventing.</span>', { delay: 400 })
   .delete(".place", { delay: 800, instant: true })
-  .type('<em><strong class="font-semibold">in the whole world.</strong></em>', {
+  .type('<span class="place">Become a Preventer.</span>', {
     speed: 300,
   })
   .go();
         </script>
 
-<!-- <script>
+<script>
+  function myFunction() {
+     var element = document.body;
+     element.classList.toggle("dark-mode");
+  }
+</script>
+
+<script>
 let t1 = anime({
-  targets: ['.lead', '.biglogo'],
+  targets: ['.coverheading'],
   translateX: '6rem',
-  rotate: 180,
-  borderRadius: '8px',
+  borderRadius: '1px',
   duration: 2000,
+  delay: 1000,
+    easing: 'easeInQuad',
   loop: true
-});t1.add({
-  translateY: '6rem',
-});</script> -->
+});</script>
+
+<script>
+  let t2 = anime({
+  targets: ['.startbutton'],
+  translateX: 10,
+  delay: function(el, i) { return i * 100; },
+  direction: 'alternate',
+  loop: true,
+  easing: 'easeInOutSine'
+  })
+</script>
 </body>
 </html>

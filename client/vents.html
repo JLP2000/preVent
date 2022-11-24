@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/grid.css">
     <link rel="stylesheet" href="styles/vents.css">
     <script type="module" defer src="./js/vent.js" ></script>
-   
     <script src="./js/anime.min.js"></script>
 
-    <link rel="icon" type="image/svg" href="img/logosmall.png">
+    <link rel="icon" type="image/svg" href="img/favicon.png">
     <title>Vents</title>
 </head>
 <body>
@@ -21,7 +20,8 @@
                 <ul id="navbar">
                     <div id="topbar">
                         <a href="index.html"><img class="smalllogo" src="img/logogifsmall.gif" alt="logo"></a>
-                        <div class="topphrase">Preventing by Venting</div>
+                        <!-- <div class="topphrase">Dark Mode Powered By Preventing</div> -->
+                        <button class="topphrase" onclick="myFunction()">Dark Mode Powered By Preventing</button>
                     </div>
                     <li><a class="active" href="vents.html">Vents</a></li>
                     <li class="dropdown">
@@ -88,29 +88,23 @@
         </form>
     </div>
   </div>
-</div>
-</main>     
-</div>
-
-
-
-
-</main>     
-</div>
-
-<div class="container" id="cardContainer">
-    <div class="cardQuotes">
-        <div class="cardbody">
-            <blockquote>
-                <p>Loading...</p>
-                <footer class="blockquote-footer">
-                <cite title="Source Title"></cite>
-                </footer>
-            </blockquote>
-        </div>
-        <div id="cardfooter">
-            <button id="newquotebutton">New Quote</div>
     </div>
+    </main>     
+
+    <div class="container" id="cardContainer">
+        <div class="cardQuotes">
+            <div class="cardbody">
+                <blockquote>
+                    <p>Loading...</p>
+                    <footer class="blockquote-footer">
+                    <cite title="Source Title"></cite>
+                    </footer>
+                </blockquote>
+            </div>
+            <div id="cardfooter">
+                <button id="newquotebutton">New Quote</div> 
+        </div> <!-- end cardquotes -->
+    </div> <!-- end container -->
 </div>
 
 
@@ -144,7 +138,9 @@
 
 <script defer src="./js/quote.js"></script>
 <script defer src="./js/giphy.js"></script>
-<script type="module" src="./js/filter.js"></script>
+<!-- <script type="module" src="./js/filter.js"></script> -->
+
+
 
 <script>
     let t1 = anime({
@@ -157,6 +153,11 @@
     duration: 2500
     });
 </script> 
-
+<script>
+    function myFunction() {
+       var element = document.body;
+       element.classList.toggle("dark-mode");
+    }
+    </script>
 </body>
 </html>
