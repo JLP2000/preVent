@@ -3,7 +3,7 @@ const relationshipsFilter = document.getElementById("relationships")
 const schoolFilter = document.getElementById("school")
 const familyFilter = document.getElementById("family")
 
-const categoryURL = "http://localhost:3000/entries/category/"
+const categoryURL = "https://preventfutureproof.herokuapp.com/entries/category/"
 
 // Run through event listeners to listen for a 'click'
 const filterItems = document.querySelectorAll(".filter");

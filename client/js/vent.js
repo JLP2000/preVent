@@ -12,7 +12,7 @@ const postButton = document.querySelector("#buttonpost");
 const form = document.getElementById("formpost");
 const cover = document.querySelector("main.inner");
 const postText = document.getElementById("post")
-const baseURL = "http://localhost:3000/entries/"
+const baseURL = "https://preventfutureproof.herokuapp.com/entries/"
 
 
 // event listeners
@@ -256,31 +256,31 @@ function postForm(e){
       divCard.setAttribute("class", "card");
       let divCardHeader = document.createElement("div")
       divCardHeader.setAttribute("class", "card-header");
-        let pCategory = document.createElement("p")
-        pCategory.setAttribute("class", "category");
-        let pDate = document.createElement("p")
-        pDate.setAttribute("class", "date");
+      let pCategory = document.createElement("p")
+      pCategory.setAttribute("class", "category");
+      let pDate = document.createElement("p")
+      pDate.setAttribute("class", "date");
       let divPost = document.createElement("div")
       divPost.setAttribute("class", "post");
-        let p = document.createElement("p");
-        let postImg = document.createElement("img");
-        postImg.setAttribute("class", "postGify");
+      let p = document.createElement("p");
+      let postImg = document.createElement("img");
+      postImg.setAttribute("class", "postGify");
       let divReactions = document.createElement("div")
       divReactions.setAttribute("class", "reactions");
-        let buttonReaction = document.createElement("button");
-          let divEmoji = document.createElement("div").setAttribute("class", "emoji");
-          let divCount = document.createElement("div").setAttribute("class", "count");
-          let divText = document.createElement("div").setAttribute("class", "text");
-          let br = document.createElement("br");
+      let buttonReaction = document.createElement("button");
+      let divEmoji = document.createElement("div").setAttribute("class", "emoji");
+      let divCount = document.createElement("div").setAttribute("class", "count");
+      let divText = document.createElement("div").setAttribute("class", "text");
+      let br = document.createElement("br");
       let divComments = document.createElement("div")
       divComments.setAttribute("class", "comments");
-        let divForm = document.createElement("div")
-        divForm.setAttribute("class", "form");
-          let formWriteComment = document.createElement("form")
-          formWriteComment.setAttribute("class", "writeComment");
-            let textareaComment = document.createElement("textarea");
-            let inputSubmit = document.createElement("input")
-            inputSubmit.setAttribute("type", "submit");
+      let divForm = document.createElement("div")
+      divForm.setAttribute("class", "form");
+      let formWriteComment = document.createElement("form")
+      formWriteComment.setAttribute("class", "writeComment");
+      let textareaComment = document.createElement("textarea");
+      let inputSubmit = document.createElement("input")
+      inputSubmit.setAttribute("type", "submit");
   
   
       let commentButton = document.createElement("button");
@@ -329,14 +329,14 @@ function postForm(e){
       divCardsContainer.appendChild(divCard);
   
       
-        divCard.appendChild(divCardHeader);
+      divCard.appendChild(divCardHeader);
           pCategory.setAttribute("id", `category_${currentData.id}`);
           pCategory.textContent = `Category: ${currentData.category}`;
           divCardHeader.appendChild(pCategory);
           pDate.setAttribute("id", `date_${currentData.id}`);
           pDate.textContent = currentData.dnt;
           divCardHeader.appendChild(pDate);
-        divCard.appendChild(divPost);
+      divCard.appendChild(divPost);
           divPost.appendChild(p)
           p.setAttribute("id", `post_${currentData.id}`)
           p.textContent = currentData.entry;
@@ -344,7 +344,7 @@ function postForm(e){
           postImg.setAttribute("id", `${currentData.id}_postImg`);
           postImg.src = currentData.gif;
   
-        divCard.appendChild(divReactions);
+      divCard.appendChild(divReactions);
           divReactions.appendChild(commentButton);
             commentButton.appendChild(emojiComment);
             commentButton.appendChild(countComment);
@@ -411,7 +411,7 @@ const relationshipsFilter = document.getElementById("relationships")
 const schoolFilter = document.getElementById("school")
 const familyFilter = document.getElementById("family")
 
-const categoryURL = "http://localhost:3000/entries/category/"
+const categoryURL = "https://preventfutureproof.herokuapp.com/entries/category/"
 
 // Run through event listeners to listen for a 'click'
 const filterItems = document.querySelectorAll(".filter");
