@@ -188,7 +188,7 @@ describe("Testing the entries API", () => {
             }, done);
     });
 
-    it("testing if the error is thrown when /entries/4 expect code 404", (done) => {
+    it("testing if the error is thrown when /entries/10 expect code 404", (done) => {
         request(api)
             .get("/entries/10")
             .expect(404)
