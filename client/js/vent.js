@@ -92,10 +92,13 @@ async function openComment() {
 async function addNewComment(e){
   e.preventDefault();
   let newComment = this.querySelector("textarea").value;
+
   if (newComment.length == 0){
     return;
   }
   let id = this.getAttribute("id")[0];
+  const form = document.getElementById(`${id}_writeComment`);
+  form.style.display = "none";
   const original = await originalData(id);
     fetch(baseURL + id, {
       method: "PUT",
@@ -111,8 +114,8 @@ async function addNewComment(e){
           comments: [...original.comments, newComment]
       })  
     })
-  .then(res => res.json())
-  .then(data => {
+    .then(res => res.json())
+    .then(data => {
       console.log(data)
       let i = data.comments.length;
       console.log(i);

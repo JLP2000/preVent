@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="styles/vents.css">
     <script type="module" defer src="./js/query.js" ></script>
     <script type="module" defer src="./js/vent.js" ></script>
+    <script src="./js/anime.min.js"></script>
+
     <link rel="icon" type="image/svg" href="img/logosmall.png">
     <title>Vents</title>
 </head>
@@ -73,7 +75,7 @@
                 </div>
             </section>
             <div id="results"> </div>
-            <div id="result"> </div>
+            <div id="result"> <img src="#" alt="empty" style="display: none"> </div>
 
             <div class = "wraptext">
             <section id="postinput">
@@ -126,7 +128,6 @@ btn.onclick = function() {
 }
 btn2.onclick = function() {
   modal.style.display = "none";
-  window.location.reload();
 }
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
@@ -143,6 +144,18 @@ window.onclick = function(event) {
         <script defer src="./js/giphy.js"></script>
         <!-- <script type="module" defer src="./js/filter.js" ></script> -->
 
+<script>
+let t1 = anime({
+targets: ['.container'],
+borderRadius: '8px',
+translateY: [100, 0],
+ translateZ: 0,
+opacity: [0, 1],
+easing: "easeOutExpo",
+duration: 2500
 
+});t1.add({
+//   translateY: '6rem',
+});</script> 
     </body>
 </html>

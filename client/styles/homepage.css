@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-/* 
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+* {
+  font-family: 'Nanum Gothic', sans-serif;
+}/* 
 blue: #182633
 lightblue: 506872
 yellow: #e9cd00 
@@ -14,6 +16,7 @@ body{
     /* background: linear-gradient(#ffffff39,#e9ce007b),
     url(../img/bg.jpg) */
     font-family: 'Source Code Pro', monospace;
+    
 }
 
 .main{ 
@@ -25,7 +28,7 @@ body{
 
 #topbar {
 	height:			20px;
-  background-color: #e9cd00;
+  background-color: #e93d3d;;
   margin-left: 0;
 	
 

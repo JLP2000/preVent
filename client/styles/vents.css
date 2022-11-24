@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 * {
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
 :root {
@@ -216,7 +216,7 @@ cursor: pointer;
 }
 
 .comments {
-  border-radius: 30px;
+  border-radius: 10px;
   margin: 0px 15px 15px 15px;
   padding: 5px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
