@@ -34,14 +34,16 @@ function giphyapipleasework(){
             
             console.log(obj.images.downsized.url)
             let img = document.createElement("img")
-            img.style.width = "180px";
-            img.style.height = '120px';
-            img.style.padding = "10px"
+            img.style.width = "100px";
+            img.style.height = '70px';
+            img.style.padding = "5px";
             let body = document.querySelector("body")
             img.src = obj.images.original.url
-            img.alt =  obj.title
+            img.alt =  obj.title;
 
-            results.append(img)
+    
+            results.append(img);
+            
             
             function addGif(e){ 
                 result.style.display ='block'
