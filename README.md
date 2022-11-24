@@ -4,8 +4,6 @@ The task set out to us was to create a comunity journaling website, that anyone 
 
 ![preVent logo](./client/img/logogif.gif)
 
-
-https://docs.google.com/document/d/1jtYJvLRgIEGb2oJwpSu0UzXL96GIWV7ZlmS0gzsukM4/edit#
 ## Installation & Usage
 
 ### Installation
@@ -14,16 +12,18 @@ https://docs.google.com/document/d/1jtYJvLRgIEGb2oJwpSu0UzXL96GIWV7ZlmS0gzsukM4/
 - use the commands: npm i
 
 ### Usage
-- Go to : 
+- Go to : https://dreamy-jalebi-cb99ed.netlify.app/client/index.html
 
 ## Technologies
 
 - Express: implement our entries API
 - Nodemon/Node: running the API
-- Jest and supertest: testing API routes and models on back-end
-- Loader.io: testing load on front-end
 - Anime.js: Javascript animation for front-end
 - TypeIt.js: Typewriter effect used on front-end
+- Netlify: Deploying preVent website from the repo
+- Heroku: Used for hosting the API platform
+- Jest and supertest: testing API routes and models on back-end
+- Loader.io: testing load on front-end
 
 ## Process
 ### The idea
@@ -177,7 +177,7 @@ We created the pages of the website using HTMl and used a combination of vanilla
 
 For the homepage we used TypeIt.js to create a typewriting effect, making the page much more interesting.
 
-The vents page, contains all the posts for our app in the form of cards in a masonary grid layout, inspired by the popular journaling app, Tumblr. The cards would pull data from the api and create new cards as posts are added. You can also comment on ech post, and the cards will display the newest three commments. In addition, they can also react to the post with an emoji, whcih will also count the number of reactions it has recieved. We also have a card that retrieves motivational quotes from an API.
+The vents page, contains all the posts for our app in the form of cards in a masonary grid layout, inspired by the popular journaling app, Tumblr. The cards would pull data from the api and create new cards as posts are added. You can also comment on ech post, and the cards will display the newest three commments. In addition, they can also react to the post with an emoji, whcih will also count the number of reactions it has recieved. We also have a card that retrieves motivational quotes from an API. We also used anime.js to make the transitions on the page much smoother.
 
 On the nav bar; we also have a filter option as dropdown menu, which will filter out the data based on their category. There is also a pop-up window for new post entries. Here, you can choose a gif from the GIPHY API to go with your post.
 
@@ -188,7 +188,7 @@ Lastly is the Preventers page, which simply tells you more about the group and t
 Combining the frontend and backend was a massive task. Implementing functionality took the whole team a day plus time for sorting out errors.
 
 - Display
-    - To display the cards we had to dynamically create each element and systemeatically append each element to the document making sure each element had teh correct class and id.
+    - To display the cards we had to dynamically create each element and systemeatically append each element to the document making sure each element had the correct class and id.
     - We created a function that would accept any amount of data and automatically display it onto the page.
 
 - Post
@@ -204,7 +204,38 @@ Combining the frontend and backend was a massive task. Implementing functionalit
     - Like the commenting it used the method "PUT" with teh original data.
 
 
-## WIns and Challenges
+## Wins and Challenges
+
+### Wins
+
+- We have an interacting website
+- You can post on the website which automatically shows the most recent posts at the top
+- You can add a gif and a category to the post
+- You can filter for certain categories
+- You can comment on the posts and only the top three show as to not clutter the page
+- You can react to the posts using emojis which has a count so you can see the support
+- We have an interactive random quote that can inspire our clientele
+- We have type.js that makes the homepage and preventers page more appealing and interesting
+- There is a character limit for the posts that also have a little count to show how many more characters can be posted
+- There is a filter on both post and comments to try and improve the constructive and supportive enviroment we are going for
+
+### Challenges
+
+- Thinking of a unique layout (style) for the website that would suit the target audience
+- Combining the code for the frontend and backend of the website
+- Too much code written on one JS file
+    - Difficult readability
+    - Causing problems with navigating tags
+
+## future features
+
+- Adding a user system: allowing users to create accounts to log their own posts
+- Implementing a delete functionality to allow users to delete their own posts
+- Most recent post placed at the top of the posts page
+- More filters for ordering posts i.e: by most liked, alphabetical order, most of a emoji type
+- Making a page to view a post in its entirety when clicking on the post, to view all comments
+
+
 ## Licence
 
 [MIT licence](https://opensource.org/licenses/mit-license.php)

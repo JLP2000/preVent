@@ -296,7 +296,7 @@ function postForm(e){
       let textareaComment = document.createElement("textarea");
       let inputSubmit = document.createElement("input")
       inputSubmit.setAttribute("type", "submit");
-  
+     
   
       let commentButton = document.createElement("button");
       commentButton.setAttribute("id", `${currentData.id}_comment-icon`)
@@ -341,7 +341,11 @@ function postForm(e){
   
       divCard.setAttribute("id", `card_${currentData.id}`);
   
-      divCardsContainer.appendChild(divCard);
+      const quotesDiv = document.getElementsByClassName("cardQuotes")[0];
+      // console.log(quotesDiv);
+  
+      // divCardsContainer.appendChild(divCard);
+      quotesDiv.after(divCard);
   
       
       divCard.appendChild(divCardHeader);

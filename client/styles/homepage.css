@@ -12,9 +12,8 @@
 .dark-mode {
   filter: gray;
   filter: grayscale(80%);
-  /* filter: hue-rotate(180deg); */
-  filter: contrast(90%);
-
+  /* filter: hue-rotate(90deg); */
+  filter: contrast(80%);
   background-color: black;
 }
 
@@ -35,6 +34,11 @@ body{
 	color:	var(--reactionRed);
 	padding: 10px 10px 10px 10px;
 	float: right;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  border-radius: 5px;
   
 }
 
@@ -82,10 +86,12 @@ body{
     width: 100%;
     top: 0; left: 0;
     text-align: center;
+    align-items: center;
     transition: height 0.35s ease, padding 0.35s ease;
   }
 
 li {
+  align-items: center;
     display: 	inline-block;
 }
 
@@ -152,7 +158,6 @@ li a:hover, .dropdown:hover .dropbtn {
   top: 0;
   width: 100%;
   transition: 0.3s;
-  
 }
 
 .topphrase {

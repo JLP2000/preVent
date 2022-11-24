@@ -76,6 +76,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
+  border: none;
   border-radius: 5px;
 }
 

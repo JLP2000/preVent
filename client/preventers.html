@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>preVent</title>
     <link rel="stylesheet" href="styles/preventers.css">
-
     <link rel="stylesheet" href="styles/homepage.css">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="icon" type="image/svg" href="img/logosmall.png">
     <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+    <script defer src="js/parallax.js"></script>
 
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
     <!-- <script src="/js/index.js"></script> -->
@@ -43,6 +43,37 @@
                 </ul>
             </div>
         </header>
+
+        <div id="el" class="El">
+          <div id="wrapper" class="El__wrapper">
+            <div class="El__slide">
+              <div class="El__content">
+                <h1 class="El__title">Title A</h1>
+                <h2 class="El__subtitle">Subtitle A</h2>
+              </div>
+            </div>
+            <div class="El__slide">
+              <div class="El__content">
+                <h1 class="El__title">Title B</h1>
+                <h2 class="El__subtitle">Subtitle B</h2>
+              </div>
+            </div>
+            <div class="El__slide">
+              <div class="El__content">
+                <h1 class="El__title">Title C</h1>
+                <h2 class="El__subtitle">Subtitle C</h2>
+              </div>
+            </div>
+            <div class="El__slide">
+              <div class="El__content">
+                <h1 class="El__title">Title D</h1>
+                <h2 class="El__subtitle">Subtitle D</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
         <div class="main">
             <!-- <div class="biglogo"></div> -->
             <h1 id ="coverheading" class="coverheading"> ..</h1>
@@ -62,8 +93,6 @@
                     <button onclick="readMoreButton1()" id="readMore1">Read more</button>
                     </p>
             <p class="lead">Created by: Josh, Sheena, Adam, Mizna [2022]</p>
-
-    
             </div>
     </div>
     <script>
@@ -86,36 +115,6 @@
           }
         } 
 
-
-new TypeIt("#coverheading", {
-  speed: 50,
-  startDelay: 900,
-})
-//Welcome to the most convenient journaling platform.
-  .type("Welcoe to tee", { delay: 100 })
-  .move(-8, { delay: 100 })
-  .type("m", { delay: 400 })
-  .move(null, { to: "START", instant: true, delay: 300 })
-  .move(1, { delay: 200 })
-  .delete(1)
-  .move(1, { delay: 200 })
-  .delete(1)
-  .pause(200)
-  .move(14, { instant: true })
-  .delete(1)
-  .move(1, { delay: 200 })
-  .delete(1)
-  .move(1, { delay: 200 })
-  .type("he most  ", { delay: 350 })
-  .move(null, { to: "END" })
-  .type(" convenient journaling platform")
-  .move(null, { to: "END" })
-  .type(' <span class="place">on the internet?</span>', { delay: 400 })
-  .delete(".place", { delay: 800, instant: true })
-  .type('<em><strong class="font-semibold">in the whole world.</strong></em>', {
-    speed: 300,
-  })
-  .go();
 
   function readMoreButton() {
   var dots = document.getElementById("dots");
@@ -149,8 +148,53 @@ new TypeIt("#coverheading", {
   }
 }
 </script>
-        </script>
+    
         
+<script>
+const ease = window.Power4.easeInOut
+  const el = document.querySelector('#el')
+  const wrapper = document.querySelector('#wrapper')
+  const slides = el.querySelectorAll('.El__slide')
+  const amount = slides.length
+  const controller = new window.ScrollMagic.Controller()
+  const horizontalMovement = new window.TimelineMax()
+
+  const controller2 = new window.ScrollMagic.Controller({
+    vertical: false
+  })
+
+  horizontalMovement
+    .add([
+      window.TweenMax.to(wrapper, 1, { x: `-${(100 / amount) * (amount - 1)}%` })
+    ])
+
+  new window.ScrollMagic.Scene({
+    triggerElement: el,
+    triggerHook: 'onLeave',
+    duration: `${amount * 100}%`
+  })
+    .setPin(el)
+    .setTween(horizontalMovement)
+    .addTo(controller)
+
+  slides.forEach((item, index) => {
+    const title = item.querySelector('h1')
+    const subtitle = item.querySelector('h2')
+    const tween = new window.TimelineMax()
+
+    tween
+      .fromTo(title, 1, { x: 0 }, { x: 500 }, 0)
+      .fromTo(subtitle, 1, { x: 600 }, { x: 500 }, 0)
+
+    new window.ScrollMagic.Scene({
+      triggerElement: item,
+      triggerHook: 1,
+      duration: '100%'
+    })
+      .setTween(tween)
+      .addTo(controller2)
+  })
+        </script>
 
 </body>
 
