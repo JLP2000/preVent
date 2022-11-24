@@ -146,9 +146,6 @@ async function addNewComment(e){
       if (i >= 4){
         removeDiv.remove();
       }
-      
-
-
   })}
 
 

@@ -6,85 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>preVent</title>
     <link rel="stylesheet" href="styles/preventers.css">
-    <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="icon" type="image/svg" href="img/logosmall.png">
+    <link rel="icon" type="image/svg" href="img/favicon.png">
     <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
-    <script defer src="js/parallax.js"></script>
-
+    <!-- <script defer src="js/parallax.js"></script> -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
     <!-- <script src="/js/index.js"></script> -->
 
 </head>
 
 <body class="home">
-    <div class="mainpage">
         <header class="headersgroup">
             <div class="within">
               <ul id="navbar">
                 <div id="topbar">
-                    <a href="index.html"><img class="smalllogo" src="img/logogifsmall.gif" alt="logo"></a>
+                    <a href="index.html"><img class="smalllogo" src="img/logogif2.gif" alt="logo"></a>
                     <!-- <div class="topphrase">Dark Mode Powered By Preventing</div> -->
                     <button class="topphrase" onclick="myFunction()">Dark Mode Powered By Preventing</button>
                   </div>
                 <li><a class="active" href="vents.html">Vents</a></li>
                 <li><a href="preventers.html">Preventers</a></li>
-                <!-- <li><a href="">About</a></li> -->
-            </ul>
-                    <!-- <li class="dropdown">
-                        <a class="dropbtn" href="javascript:void(0)">Categories</a>
-                        <div class="dropdown-content">
-                            <a href="#">Relationship</a>
-                            <a href="#">School</a>
-                            <a href="#">Family</a>
-                        </div>
-                    </li> -->
-                    <!-- <li><a href="">About</a></li> -->
-                </ul>
+              </ul>
             </div>
         </header>
 
-        <div id="el" class="El">
-          <div id="wrapper" class="El__wrapper">
-            <div class="El__slide">
-              <div class="El__content">
-                <h1 class="El__title">Title A</h1>
-                <h2 class="El__subtitle">Subtitle A</h2>
-              </div>
-            </div>
-            <div class="El__slide">
-              <div class="El__content">
-                <h1 class="El__title">Title B</h1>
-                <h2 class="El__subtitle">Subtitle B</h2>
-              </div>
-            </div>
-            <div class="El__slide">
-              <div class="El__content">
-                <h1 class="El__title">Title C</h1>
-                <h2 class="El__subtitle">Subtitle C</h2>
-              </div>
-            </div>
-            <div class="El__slide">
-              <div class="El__content">
-                <h1 class="El__title">Title D</h1>
-                <h2 class="El__subtitle">Subtitle D</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
         <div class="main">
-            <!-- <div class="biglogo"></div> -->
-            <h1 id ="coverheading" class="coverheading"> ..</h1>
-            <img class="biglogo" src="img/logogif.gif" alt="mainmiddlelogo">
-            <!-- <div class="biglogo"><img src="img/logogif.gif" alt="mainmiddlelogo"></div>
-            <h1 class="cover-heading">Welcome to</h1> -->
-            <p class="lead">Preventers Vent to Prevent.</p>
-            <p class="lead">Become a Preventer.</p>
+          <img class="biglogo" src="img/whitelogo.gif" alt="mainmiddlelogo">
+          <div class="horizontal">
+            <p class="lead"><span>Vent to Prevent.</span><br>Become a Preventer.</p>
             <p class="lead">
                 <h2>Why venting is good for you</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+                <p>We vent to reduce our stress levels (disclosing stress is a coping mechanism as established by Rime (2009) - venting is a two way process with the person venting and the person hearing the vent.<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
                 <button onclick="readMoreButton()" id="readMore">Read more</button>
                 </p>
                 <p class="lead">
@@ -93,29 +46,11 @@
                     <button onclick="readMoreButton1()" id="readMore1">Read more</button>
                     </p>
             <p class="lead">Created by: Josh, Sheena, Adam, Mizna [2022]</p>
-            </div>
+          </div>
+          </div>
+
     </div>
     <script>
-        // When the user scrolls the page, execute myFunction
-        window.onscroll = function() {myFunction()};
-        
-        // Get the navbar
-        // var navbar = document.getElementById("topbar");
-        var navbar = document.getElementById("navbar");
-        // Get the offset position of the navbar
-        var sticky = navbar.offsetTop;
-        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-        function myFunction() {
-          if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky");
-            // navbar.classList.add("stickyDown");
-          } else {
-            navbar.classList.remove("sticky");
-            // navbar.classList.remove("stickyDown");
-          }
-        } 
-
-
   function readMoreButton() {
   var dots = document.getElementById("dots");
   var moreText = document.getElementById("more");
@@ -151,7 +86,7 @@
     
         
 <script>
-const ease = window.Power4.easeInOut
+  const ease = window.Power4.easeInOut
   const el = document.querySelector('#el')
   const wrapper = document.querySelector('#wrapper')
   const slides = el.querySelectorAll('.El__slide')
@@ -195,6 +130,7 @@ const ease = window.Power4.easeInOut
       .addTo(controller2)
   })
         </script>
+    <script defer src="https://unpkg.com/@babel/standalone@7.20.4/babel.min.js"></script>
 
 </body>
 

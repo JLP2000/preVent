@@ -12,7 +12,21 @@
   filter: gray;
   filter: grayscale(100%);
 }
+body:hover{
+  cursor: url('../img/cursor.png'), pointer;    
 
+}
+.main{ 
+  display: block;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  overflow-x: hidden;
+  inline-size: 100%;
+  overflow: hidden;
+}
 #navbar {
   list-style-type:	none;
   margin:	0;
@@ -96,17 +110,6 @@ body{
   transform: scale(2);
 }
 
-.arrow {
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-}
-
-.right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
 
 .lead{
   display: flex;
@@ -140,6 +143,22 @@ body{
 .startbutton:hover{
   transition: 0.6s;
   transform: scale(1.2);
+  color: var(--reactionRed);
+  background-color: white;
+  
+
+}
+
+.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
 
 .place{
