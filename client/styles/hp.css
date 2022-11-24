@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nanum+Gothic:wght@400;700;800&display=swap');
+:root {
+  --darkerRed: #C81D25;
+  --MaxBlueGreen: #26b2bf;
+  --reactionRed:#ef233c;
+  --btnColor: #dc8c7d;
+  --topbarRed: #ce0000;
+  --offBlack: #212427;
+}
+.dark-mode {
+  filter: gray;
+  filter: grayscale(100%);
+}
+
+body{
+  width:100%;
+  margin:0;
+  font-family: 'Alfa Slab One', cursive;
+  background-color: var(--reactionRed);
+  overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainHome{
+  display: flex;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.coverheading{
+  margin: -1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Alfa Slab One', cursive;
+  /* font-size: 8em; */
+  font-size: calc(6vw + 6vh);
+  opacity: 0.2;
+  color: white;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+/* @media only screen and (max-width: 200px) {
+  .coverheading {
+    font-size: 3em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .coverheading {
+    font-size: 5em;
+  }
+} */
+
+.biglogo{
+  width: 60vw;
+  position:absolute;
+  font-size: 20px;
+  z-index: 1;
+  margin-top: 10vh;
+  
+}
+.lead{
+  display: flex;
+  justify-content: center;
+  margin: 10px 10px;
+  
+}
+.lead2{
+  display: flex;
+  justify-content: center;
+  margin-left: 50vw;
+  margin-top: 50vh;
+  position: absolute;
+}
+.startbutton{
+  position:absolute;
+  background-color: var(--reactionRed);
+  color: white;
+  background-color: white;
+  color: var(--reactionRed);
+  padding: 15px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: -4px;
+  align-items: center;
+  z-index: 1;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+.place{
+  font-family: 'Alfa Slab One', cursive;
+  font-weight: 2000;
+  
+}
+/* .biglogo img{
+  width: 200px;
+  height: 100px;
+  position: absolute;
+} */
+
+
+
+
+#more {display: none;}
+
+#more1 {display: none;}

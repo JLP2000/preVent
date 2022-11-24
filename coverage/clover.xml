@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1669059726841" clover="3.2.0">
-  <project timestamp="1669059726841" name="All files">
-    <metrics statements="88" coveredstatements="88" conditionals="8" coveredconditionals="8" methods="21" coveredmethods="21" elements="117" coveredelements="117" complexity="0" loc="88" ncloc="88" packages="3" files="4" classes="4"/>
+<coverage generated="1669301052527" clover="3.2.0">
+  <project timestamp="1669301052528" name="All files">
+    <metrics statements="89" coveredstatements="85" conditionals="10" coveredconditionals="8" methods="21" coveredmethods="21" elements="120" coveredelements="114" complexity="0" loc="89" ncloc="89" packages="3" files="4" classes="4"/>
     <package name="server">
-      <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="app.js" path="C:\Users\Adam - Laptop\OneDrive\Desktop\kamkwambra\LAP_1\project_week\preVent\server\app.js">
-        <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="app.js" path="C:\Users\Miz\Desktop\Kamkwamba\assignments\group1\tryagain\preVent\server\app.js">
+        <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
+        <line num="6" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
@@ -21,54 +21,55 @@
         <line num="20" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
       </file>
-      <file name="data.js" path="C:\Users\Adam - Laptop\OneDrive\Desktop\kamkwambra\LAP_1\project_week\preVent\server\data.js">
+      <file name="data.js" path="C:\Users\Miz\Desktop\Kamkwamba\assignments\group1\tryagain\preVent\server\data.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
       </file>
     </package>
     <package name="server.models">
-      <metrics statements="32" coveredstatements="32" conditionals="4" coveredconditionals="4" methods="13" coveredmethods="13"/>
-      <file name="entries.js" path="C:\Users\Adam - Laptop\OneDrive\Desktop\kamkwambra\LAP_1\project_week\preVent\server\models\entries.js">
-        <metrics statements="32" coveredstatements="32" conditionals="4" coveredconditionals="4" methods="13" coveredmethods="13"/>
+      <metrics statements="33" coveredstatements="32" conditionals="4" coveredconditionals="3" methods="13" coveredmethods="13"/>
+      <file name="entries.js" path="C:\Users\Miz\Desktop\Kamkwamba\assignments\group1\tryagain\preVent\server\models\entries.js">
+        <metrics statements="33" coveredstatements="32" conditionals="4" coveredconditionals="3" methods="13" coveredmethods="13"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="5" count="9" type="stmt"/>
-        <line num="6" count="9" type="stmt"/>
-        <line num="7" count="9" type="stmt"/>
-        <line num="8" count="9" type="stmt"/>
-        <line num="9" count="9" type="stmt"/>
-        <line num="10" count="9" type="stmt"/>
-        <line num="11" count="9" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="20" count="4" type="stmt"/>
-        <line num="21" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="24" count="3" type="stmt"/>
-        <line num="25" count="3" type="stmt"/>
-        <line num="29" count="3" type="stmt"/>
-        <line num="30" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="33" count="2" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
+        <line num="5" count="16" type="stmt"/>
+        <line num="6" count="16" type="stmt"/>
+        <line num="7" count="16" type="stmt"/>
+        <line num="8" count="16" type="stmt"/>
+        <line num="9" count="16" type="stmt"/>
+        <line num="10" count="16" type="stmt"/>
+        <line num="11" count="16" type="stmt"/>
+        <line num="12" count="16" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="22" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="30" count="9" type="stmt"/>
+        <line num="31" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
         <line num="39" count="1" type="stmt"/>
         <line num="40" count="1" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
         <line num="47" count="1" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
         <line num="49" count="1" type="stmt"/>
         <line num="50" count="1" type="stmt"/>
-        <line num="54" count="2" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
-        <line num="73" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="55" count="5" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
       </file>
     </package>
     <package name="server.routes">
-      <metrics statements="40" coveredstatements="40" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
-      <file name="entries.js" path="C:\Users\Adam - Laptop\OneDrive\Desktop\kamkwambra\LAP_1\project_week\preVent\server\routes\entries.js">
-        <metrics statements="40" coveredstatements="40" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
+      <metrics statements="40" coveredstatements="37" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="6"/>
+      <file name="entries.js" path="C:\Users\Miz\Desktop\Kamkwamba\assignments\group1\tryagain\preVent\server\routes\entries.js">
+        <metrics statements="40" coveredstatements="37" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="6"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -92,11 +93,11 @@
         <line num="33" count="2" type="stmt"/>
         <line num="34" count="2" type="stmt"/>
         <line num="35" count="2" type="stmt"/>
-        <line num="36" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
+        <line num="36" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
         <line num="49" count="1" type="stmt"/>
         <line num="50" count="1" type="stmt"/>
         <line num="51" count="1" type="stmt"/>

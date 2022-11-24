@@ -1,9 +1,9 @@
 userEntries = [
     {
         id: 1,
-        gif: "https://media.giphy.com/media/3o6ZtaiPZNzrmRQ6YM/giphy.gif",
+        gif: "https://media4.giphy.com/media/60yTQLK9O7XlS/giphy.gif",
         category: "general",
-        entry: "I work on weekends",
+        entry: "I hate working on weekends",
         emoji: {
             happy: 0,
             amused: 0,
@@ -11,14 +11,14 @@ userEntries = [
             angry: 0,
             sad:0
         },
-        dnt: "yesterday",
+        dnt: "13/11/2022, 16:00:36",
         comments: []
     },
     {
         id: 2,
-        gif: "https://media.giphy.com/media/RKS1pHGiUUZ2g/giphy.gif",
+        gif: "https://media2.giphy.com/media/5q3NyUvgt1w9unrLJ9/giphy.gif",
         category: "relationships",
-        entry: "I just bored",
+        entry: "my girlfriend takes too long to get ready",
         emoji: {
             happy: 0,
             amused: 0,
@@ -26,14 +26,14 @@ userEntries = [
             angry: 0,
             sad:0
         },
-        dnt: "today",
-        comments: ["lol", "Try being entertained????"]
+        dnt: "17/11/2022",
+        comments: ["mine too", "ikr"]
     },
     {
         id: 3,
-        gif: "https://media.giphy.com/media/mTvM5tmcZa99s6IdOJ/giphy.gif",
+        gif: "https://media4.giphy.com/media/KbpqQxx5GVEbQ3RAPb/giphy.gif",
         category: "school",
-        entry: "Random data chicken nuggets mildred mildred",
+        entry: "that kid in class actually asked for homework! who asks for homework?!!",
         emoji: {
             happy: 0,
             amused: 0,
@@ -41,14 +41,14 @@ userEntries = [
             angry: 0,
             sad:0
         },
-        dnt: "yesterday",
-        comments: ["this is so sad","i feel sorry for you", "random data i have no cleue waht to write i really need to have better creativity something oskemthing something not sire", "hello yall"]
+        dnt: "21/11/2022 15:45:49",
+        comments: ["lool","i feel sorry for you", "nerd", "it'll help you get smarter"]
     },
     {
         id: 4,
-        gif: "https://media.giphy.com/media/iGYMk6qdeYby5uVqOe/giphy.gif",
+        gif: "https://media0.giphy.com/media/l4EoLIkCuS3zMjisE/giphy.gif",
         category: "family",
-        entry: "Family",
+        entry: "my mum keeps singing out loud throughout the day. it sounds like cats are fucking screaming",
         emoji: {
             happy: 0,
             amused: 0,
@@ -56,8 +56,8 @@ userEntries = [
             angry: 0,
             sad:0
         },
-        dnt: "yesterday",
-        comments: ["this is so sad","i feel sorry for you", "random data i have no cleue waht to write i really need to have better creativity something oskemthing something not sire", "hello yall"]
+        dnt: "24/11/2022, 11:38:23",
+        comments: ["free concert?","lmao", "just tell her to be quite"]
     },
 ]
 

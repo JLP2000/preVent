@@ -1,96 +1,114 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
-* {
-  font-family: 'Nanum Gothic', sans-serif;
-}/* 
-blue: #182633
-lightblue: 506872
-yellow: #e9cd00 
-orange: #f4a902
-white: rgb(245, 245, 245);
-red: e93d3d;
-*/
-body{
-    width:100%;
-    margin:0;
-    /* background-color: white; */
-    /* background: linear-gradient(#ffffff39,#e9ce007b),
-    url(../img/bg.jpg) */
-    font-family: 'Source Code Pro', monospace;
-    
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nanum+Gothic:wght@400;700;800&display=swap');
+:root {
+  --darkerRed: #C81D25;
+  --MaxBlueGreen: #26b2bf;
+  --reactionRed:#ef233c;
+  --btnColor: #dc8c7d;
+  --topbarRed: #ce0000;
+  --offBlack: #212427;
 }
 
-.main{ 
-  margin-top: 150px;
-  text-align: center;
+.dark-mode {
+  filter: gray;
+  filter: grayscale(80%);
+  /* filter: hue-rotate(180deg); */
+  filter: contrast(90%);
+
+  background-color: black;
+}
+
+* {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+body{
+  width:100%;
+  margin:0;
+  font-family: 'Alfa Slab One', cursive;
+  background-color:var(--reactionRed);
+  
+}
+.topphrase {
+	font-size:	10px;
+  margin: 15px;
+	color:	var(--reactionRed);
+	padding: 10px 10px 10px 10px;
+	float: right;
   
 }
 
+.main{ 
+  display: flex;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  overflow-x: hidden;
+  inline-size: 100%;
+  overflow: hidden;
+
+}
+
+#topbar li {
+  justify-self: center;
+}
 
 #topbar {
-	height:			20px;
-  background-color: #e93d3d;;
+	height:			10px;
+  background-color: var(--reactionRed);
   margin-left: 0;
-	
 
+}
+.place{
+  font-weight: 1000;
 }
 
 .smalllogo {
-	width:	95px;
-	height:	70px;
+  margin-top: 10px;
+	width:	60px;
+	height: 45px;
 	float:	left;
-  margin-left: 10px;
-}
-
-
-.topphrase {
-	
-	font-size:		10px;
-	color:			rgb(244, 2, 2);
-	padding-top:	40px;
-	padding-right:	40px;
-	float: 			right;
+  margin-left: 30px;
 }
 
 #navbar {
-    
     list-style-type:	none;
-    margin:				0;
-    padding:			0;
-    background-color: 	rgba(254, 254, 254, 0.926);
+    margin:	0;
+    padding:0;
+    background-color: white;
     font-size: 0;
     width: 100%;
     top: 0; left: 0;
     text-align: center;
     transition: height 0.35s ease, padding 0.35s ease;
-
+    /* justify-items: center; */
   }
 
 li {
-  
     display: 	inline-block;
 }
 
-/* li a.active {
-	background-color: 	rgb(239, 239, 239);
-} */
 
 li a, .dropbtn {
-    display:			inline-block;
-    color:				#e9cd00;
-    text-align:			center;
-    padding:			15px 15px;
-    text-decoration:	none;
+  display:			inline-block;
+  color:				var(--offBlack);
+  text-align:			center;
+  padding:			15px 15px;
+  text-decoration:	none;
 	width:				100px;
-    font-size: initial;
-
+  font-size: initial;
 }
+
 .dropbtn{
   color: #e93d3d;
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-    color:	#506872ca;
+    color:	var(--darkerRed);
     transition: 0.6s;
+    font-weight: bolder;
 }
 
 .dropdown {
@@ -110,7 +128,7 @@ li a:hover, .dropdown:hover .dropbtn {
 }
 
 .dropdown-content a {
-    color: #e93d3d;
+    color: var(--darkerRed);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -135,38 +153,10 @@ li a:hover, .dropdown:hover .dropbtn {
   top: 0;
   width: 100%;
   transition: 0.3s;
-
-  /* opacity: 0.86; */
   
 }
 
-
-
-
-/* .smalllogo {
-    margin-left: 10px;
-    width: 55px;
-    height: 20px;
-    background: url("../img/logosmall.png");
-    background-size: cover;                     
-    background-repeat: no-repeat;
-    background-position: center center; 
-}
-.smalllogo:hover {
-    background: url("../img/logogifsmall.gif");
-    background-size: cover;                     
-    background-repeat: no-repeat;
-    background-position: center center; 
-} */
-
-.biglogo{
-    margin: auto;
-    width: 50%;
-    padding: 10px 10px 10px 10px;
-    margin-top: 10px;
-}
-.biglogo img{
-    width: 400px;
-    height: 100px;
-
+.topphrase {
+  top: 4px;
+  border: none;
 }

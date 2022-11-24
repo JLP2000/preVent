@@ -29,7 +29,6 @@ async function originalData(id) {
       return data;
 }
  
-
 //loading original data
 window.addEventListener("load", async () => {
   allEntries = await allData();
@@ -37,6 +36,7 @@ window.addEventListener("load", async () => {
   openComment()
   postComment()
   updateEmojiCount()
+  console.log(allEntries)
 })
 
 
@@ -74,7 +74,7 @@ async function openComment() {
         else{
           form.style.display = 'block';
           commentContainerDiv.style.display = "block";
-          // document.getElementByClass("comments").style.dislay = "visible";
+          commentContainerDiv.style.backgroundColor = "#26b2bf"
         }
       }
     )
@@ -431,7 +431,7 @@ async function filterCategory(){
     const divCardsContainer = document.getElementById("cardContainer")
     while(divCardsContainer.querySelector('.card')){
       divCardsContainer.querySelector('.card').remove();
-    
+
     }
   
     loadAll(data);
@@ -446,6 +446,3 @@ async function filterCategory(){
           })
           return data;
   }
-
-  
-  
