@@ -63,7 +63,6 @@ function giphyapipleasework(){
                     result.removeChild(img)
                     results.style.display = 'flex'
                     results.append(img)
-
                 }  
             })
         })

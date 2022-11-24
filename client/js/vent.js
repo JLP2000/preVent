@@ -13,6 +13,7 @@ const form = document.getElementById("formpost");
 const cover = document.querySelector("main.inner");
 const postText = document.getElementById("post")
 const baseURL = "https://preventfutureproof.herokuapp.com/entries/"
+// const baseURL = "http://localhost:3000/entries/"
 
 
 // event listeners
