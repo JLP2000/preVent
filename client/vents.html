@@ -54,6 +54,7 @@
     <span class="close">&times;</span>
     <div class="postform">
         <form id="formpost">
+            <div class = "wraptext">
             <section id="title">
                 <label for="titleinput">Choose Category of the post:</label>
                 <select name="options" id="selectCategories">
@@ -64,11 +65,12 @@
                     <option value="family">Family</option>
                 </select>
             </section>
-    
+
+            
             <section id="post-gif">
                 <label for="gifinput" id="giftitle">Choose a GIF</label>
                 <br>
-                <input type="text" id="search" placeholder="Search for GIF">
+                <input type="text" class="gifbox" id="search" placeholder="Search for GIF">
                 <div id="giphydivbuttons">
                     <button id="giphygetbutton">Get gif</button>
                     <button id="btnremove">Change gif</button>
@@ -77,14 +79,14 @@
             <div id="results"> </div>
             <div id="result"> </div>
 
-            <div class = "wraptext">
+
             <section id="postinput">
                 <label for="post" id="textareainput">Vent it out:</label>
-                <br>
                 <textarea name="post" class="innermodebox" id="post" placeholder="400 characters max." maxlength="400" style="resize:none" required></textarea>
                 <p id="remainingChar">400</p>
+                <input type="submit" value="post" id="sendInForm">
             </section>
-            <input type="submit" value="post" id="sendInForm">
+        </div>
         </form>
     </div>
   </div>
@@ -143,14 +145,23 @@
 
 
 <script>
+    // let t1 = anime({
+    // targets: ['.container'],
+    // borderRadius: '8px',
+    // translateY: [100, 0],
+    // translateZ: 0,
+    // opacity: [0, 1],
+    // easing: "easeOutExpo",
+    // duration: 2500
+    // });
     let t1 = anime({
     targets: ['.container'],
     borderRadius: '8px',
-    translateY: [100, 0],
-    translateZ: 0,
+    translateX: [-600, 0],
+    translateZ: 100,
     opacity: [0, 1],
     easing: "easeOutExpo",
-    duration: 2500
+    duration: 3000
     });
 </script> 
 <script>

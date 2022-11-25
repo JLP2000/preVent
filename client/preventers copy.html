@@ -34,17 +34,21 @@
         <div class="main">
           <img class="biglogo" src="img/whitelogo.gif" alt="mainmiddlelogo">
           <div class="horizontal">
-            <p class="lead"><span>When people vent, they may not need a verbal response. They want someone to listen. For a moment, stop and think about the last time you actual felt heard; give others a comment and emoji. </span></p>
             <p class="lead"><span>Vent to Prevent.</span><br>Become a Preventer.</p>
-            <div class="lead">
-                <h2>Why venting is good for you</h2>
-                <p>One of the main reasons why we vent is to reduce our stress levels. Rime (2009) states that disclosing stress is a coping mechanism. Venting is a 2-way process: the person venting and the person hearing the vent. <span id="dots">...</span><span id="more">As a matter of fact, positive venting can reduce stress, but negative venting can lead to heightened stress and physical health concerns. It is not just about the person venting, but equally important, the person who is hearing the vent. Research has shown that the difference between positive and negative venting can be focused on the ways in which the person hearing the vent responds, both through speech and action (Bodie et al., 2015; Goldsmith, 2004) . This research supports numerous counseling theories and models that focus on active listening, empathy, and safety.</span></p>
-                <button onclick="readMoreButton()" id="readMore">Read more</button>
-            </div>
             <p class="lead">
-                <h2>Documentation</h2>
-            </p>
-                <button id="preventerstryitbutton" onclick="divRemove()">Try it</button>
+                <h2>Why venting is good for you</h2>
+                <p>We vent to reduce our stress levels (disclosing stress is a coping mechanism as established by Rime (2009) - venting is a two way process with the person venting and the person hearing the vent.<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+                <button onclick="readMoreButton()" id="readMore">Read more</button>
+                </p>
+                <p class="lead">
+                    <h2>Documentation</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel
+                      <span id="dots1">...</span>
+                      <span id="more1">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+                    
+                    <button onclick="readMoreButton1()" id="readMore1">Read more</button>
+                    </p>
+                    <button onclick="divRemove()">Try it</button>
 
             <div id="myDIV">
               <h1 id="preventers-present-prevent">PREVENTERS present preVent</h1>
@@ -321,6 +325,9 @@
               
             </div>
 
+            <p><b>Note:</b> The element will not take up any space when the display property set to "none".</p>
+
+
             <p class="lead">Created by: Josh, Sheena, Adam, Mizna [2022]</p>
           </div>
           </div>
@@ -340,12 +347,26 @@
     dots.style.display = "none";
     btnText.innerHTML = "Read less"; 
     moreText.style.display = "inline";
-    moreText.classList.add("addingtextclass");
   }
   }
+
+  function readMoreButton1() {
+  var dots = document.getElementById("dots1");
+  var moreText = document.getElementById("more1");
+  var btnText = document.getElementById("readMore1");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
 </script>
 <script>
-  
   function divRemove() {
     var x = document.getElementById("myDIV");
     if (x.style.display === "none") {

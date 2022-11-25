@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 * {
   font-family: 'Nanum Gothic', sans-serif;
+
 }
 
 :root {
@@ -12,8 +13,19 @@
   --topbarRed: #ce0000;
   --offBlack: #212427;
   --lightSlateGray:#798f9d;
+  --weirdyellow: rgb(196, 186, 0);
 }
-
+.main{ 
+  display: block;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  overflow-x: hidden;
+  inline-size: 100%;
+  overflow: hidden;
+}
 .inner {
   margin: 15px 5%;
 }
@@ -22,29 +34,40 @@
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(212, 12, 12, 0.4); /* Black w/ opacity */
+
+}
+
+.modal{
+  float: left;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
 /* Modal Content/Box */
 .modalmain {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: auto;
+  margin-top: 10%;
   padding: 20px;
-  border: 1px solid rgb(212, 160, 3);
+  border: 2px solid rgb(9, 9, 9);
   width: 60%; /* Could be more or less, depending on screen size */
   align-items: center;
+  position: relative;
+  
 }
+
 
 
 /* The Close Button */
 .close {
-  color: #aaa;
+  color: var(--weirdyellow);
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -65,11 +88,12 @@
   align-items: center;
   justify-content: center;
   color: black;
+
 }
 
 
 #myBtn{
-  background-color: #0B3954;
+  background-color: var(--weirdyellow);
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -98,48 +122,113 @@
 }
 
 #search {
-  width: 350px;
-  height: 25px;
+  width: 100%;
+  height: 30px;
   border: none;
   padding-left: 5px;
   margin-bottom: 5px;
-  margin-top: -15px;
   background-color: white;
   color: black;
+  display: inline-block;
+  border: 1px solid #ccc; 
 }
 
-#postinput{
-  margin-right: 80%;
-  display: flex;
-  width: 120%;
-  height: 10vw;
-  justify-content: space-around;
+.wraptext{
+  left:0;
   align-items: center;
 }
 
+#postinput{
+  width: 100%;
+  height: 10vw;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 0;
+}
+
+
+#textareainput{
+  display: inline-block;
+
+  
+}
+
 #remainingChar {
-  margin-left: 20px;
+  position: relative;
+  margin: 0px;
+  color: var(--reactionRed)
+  
 }
 
 #giphydivbuttons {
   display: flex;
   justify-content: space-around;
-  margin: 20px;
+  margin: 30px;
   height: 30px !important;
   align-items: center;
-  
-}
 
-#giphygetbutton {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
 }
 
 #btn-remove {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-/* CARD STYLING */
+@media only screen and (max-width: 700px) {
+  .modal {
+    background-color: black;
+    
+    
+  }
+}
 
+#giphygetbutton{
+  
+  border-radius: 10px;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: var(--MaxBlueGreen);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+}
+
+#giphygetbutton:hover{
+  transition: 0.6s;
+  color:white;
+  background-color: var(--reactionRed);
+
+}
+#btnremove{
+  background-color: var(--weirdyellow);
+  border-radius: 10px;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+}
+
+#btnremove:hover {
+  transition: 0.6s;
+  color: white;
+  background-color: var(--reactionRed);
+}
+
+.gifbox{
+  box-shadow: 5px 5px #888888;
+
+}
+/* CARD STYLING */
 .container .card, .container .cardQuotes{
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
   padding: 20px;
@@ -251,6 +340,7 @@ cursor: pointer;
   margin-bottom: 10px;
   width: 100%;
   display: none;
+ 
 }
 
 .writeComment textarea {
@@ -281,6 +371,7 @@ cursor: pointer;
 .postGify {
   width: 100%;
   margin-bottom: 3%;
+
 }
 
 #sortingdiv{
@@ -297,13 +388,48 @@ cursor: pointer;
 #post, select, #post textarea {
   width: 100%;
   padding: 12px;
-  border: 10px solid #FF8A8E;
-  border-radius: none;
+  border: 2px solid var(--reactionRed);
   resize: vertical;
+  
+}
+#post textarea{
+  box-shadow: 5px 5px #888888;
+  border: 2px solid;
+  padding: 20px; 
+  width: 300px;
+  resize: both;
+  overflow: auto;
+}
+#selectCategories{
+  box-shadow: 5px 5px #888888;
+}
+
+#sendInForm{
+
+  border-radius: 10px;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 2px;
+  cursor: pointer;
+  background-color: var(--reactionRed);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+
+
+}
+
+#sendInForm:hover{
+  transition: 0.6s;
+  color:var(--offBlack);
+  background-color: var(--weirdyellow);
 }
 
 label {
-  padding: 12px 12px 12px 0;
+  margin-top: 10px;
+  padding: 12px 12px 12px 12px;
   display: inline-block;
 }
 
@@ -323,39 +449,4 @@ input[type=submit]:hover {
   font-weight: bold;
 }
 
-#giphygetbutton{
-  border-radius: 10px;
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  background-color: var(--MaxBlueGreen);
-}
 
-#giphygetbutton:hover{
-  transition: 0.6s;
-  color:white;
-
-}
-#btnremove{
-  background-color: var(--lightSlateGray);
-  border-radius: 10px;
-  border: none;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-#btnremove:hover {
-  transition: 0.6s;
-  color: white;
-}

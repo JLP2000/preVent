@@ -7,12 +7,12 @@
   --btnColor: #dc8c7d;
   --topbarRed: #ce0000;
   --offBlack: #212427;
+  --weirdyellow: rgb(196, 186, 0);
 }
 
 .dark-mode {
   filter: gray;
   filter: grayscale(80%);
-  /* filter: hue-rotate(90deg); */
   filter: contrast(80%);
   background-color: black;
 }
@@ -30,17 +30,20 @@ body{
 }
 .topphrase {
 	font-size:	10px;
-  margin: 15px;
+  margin: 20px;
 	color:	var(--reactionRed);
 	padding: 10px 10px 10px 10px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 10px;
   border-radius: 5px;
   float: right;
 }
 
+.topphrase:hover{
+  transition: 0.6s;
+  background-color: black;
+}
 #topbar li {
   justify-self: center;
 }
@@ -48,9 +51,12 @@ body{
 #topbar {
 	height:			10px;
   background-color: var(--reactionRed);
+  /* background-color: black; */
+
   margin-left: 0;
 
 }
+
 .place{
   font-weight: 1000;
 }
@@ -68,18 +74,21 @@ body{
     margin:	0;
     padding:0;
     background-color: white;
+    background-color: var(--reactionRed);
     font-size: 0;
     width: 100%;
     top: 0; left: 0;
     text-align: center;
     align-items: center;
     transition: height 0.35s ease, padding 0.35s ease;
+
   }
 
 li {
   align-items: center;
     display: 	inline-block;
 }
+
 
 
 li a, .dropbtn {
@@ -93,14 +102,16 @@ li a, .dropbtn {
 }
 
 .dropbtn{
-  color: #e93d3d;
+  color: white;
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-    color:	var(--darkerRed);
-    transition: 0.6s;
-    font-weight: bolder;
+  color: var(--offBlack);
+  transition: 0.6s;
+  font-weight: bolder;
+  
 }
+
 
 .dropdown {
     display:	inline-block;
@@ -119,7 +130,7 @@ li a:hover, .dropdown:hover .dropbtn {
 }
 
 .dropdown-content a {
-    color: var(--darkerRed);
+    color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -129,14 +140,16 @@ li a:hover, .dropdown:hover .dropbtn {
 }
 
 .dropdown-content a:hover {
-	background-color: 	#e9ce00de;
+	background-color: 	var(--MaxBlueGreen);
   transition: 0.6s;
-  color: #e93d3d;
+  color: black;
 }
 
 .dropdown:hover .dropdown-content {
     display:	block;
+    color: var(--MaxBlueGreen);
 }
+
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .sticky {
@@ -149,3 +162,9 @@ li a:hover, .dropdown:hover .dropbtn {
 .topphrase {
   border: none;
 }
+
+@media  (max-width: 566px) {
+  li a {
+ 
+  }
+  }

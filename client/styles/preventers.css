@@ -1,33 +1,123 @@
+
 body {
     width: 100%;
+    color: white;
 }
-
+.dark-mode {
+    filter: gray;
+    filter: grayscale(100%);
+    background-color: black;
+    color: white;
+    
+  }
 #more {display: none;}
 
 #more1 {display: none;}
 
+#myDIV {
+    display: none;
+    width: 100vw;
+    padding: 50px 0;
+    text-align: center;
+    background-color: white;
+    margin-top: 20px;
+    width: 100%;
+    /* aspect-ratio: 100 / 29; */
+    color: black;
+    
+  }
+
+
 .main {
+    /* width:100%; */
     padding: 5%;
 }
 
-.biglogo {
+#myDIV img, .biglogo {
     width: 500px;
-    height: 160px;
+    height: 183px;
 }
+
+  .biglogo:hover{
+    transition: 0.6s;
+    transform: scale(2);
+  }
 
 .horizontal {
     display: inline-block;
+    max-width: 100%
 }
 
 @media  (max-width: 1030px) {
-    .biglogo {
-        width: 250px;
-        height: 180px;
+    #myDIV img, .biglogo {
+        width: 333px;
+        height: 122px;
     }
     }
     
-    @media (max-width: 650px){
-    .container {
-          column-count: 1;
+@media (max-width: 650px){
+    #myDIV img, .biglogo {
+        width: 234px;
+        height: 61px;
     }
-    }
+}
+
+#readMore{
+    border: solid 10px transparent;
+    background-color: white;
+    color: var(--reactionRed);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: -4px;
+    align-items: center;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+#preventerstryitbutton{
+    border: solid 10px transparent;
+    background-color: white;
+    color: var(--reactionRed);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: -4px;
+    align-items: center;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+    margin-bottom: 5%;
+}
+
+
+h1{
+    color: var(--reactionRed);
+}
+
+#myDIV {
+    margin: auto;
+    width: 80%;
+    align-items: center;
+    align-content: center;
+   
+}
+
+
+/* .lead {
+    width: 50%;
+    padding-right: 0px;
+} */
+
+.addingtextclass{
+    width: 50%;
+}
+
+h1{
+    color: white;
+}
