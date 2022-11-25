@@ -48,7 +48,7 @@ userEntries = [
         id: 4,
         gif: "https://media0.giphy.com/media/l4EoLIkCuS3zMjisE/giphy.gif",
         category: "family",
-        entry: "my mum keeps singing out loud throughout the day. it sounds like cats are fucking screaming",
+        entry: "my mum keeps singing out loud throughout the day. it sounds like cats are ####ing screaming",
         emoji: {
             happy: 0,
             amused: 0,
