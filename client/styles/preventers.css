@@ -12,12 +12,17 @@ body {
 #more {display: none;}
 #more1 {display: none;}
 #myDIV {
-    width: 100%;
+    display: none;
+    width: 100vw;
     padding: 50px 0;
     text-align: center;
     background-color: white;
     margin-top: 20px;
+    width: 100%;
+    aspect-ratio: 100 / 29;
   }
+
+
 .main {
     padding: 5%;
 }
@@ -26,6 +31,11 @@ body {
     width: 500px;
     height: 183px;
 }
+
+  .biglogo:hover{
+    transition: 0.6s;
+    transform: scale(2);
+  }
 
 .horizontal {
     display: inline-block;

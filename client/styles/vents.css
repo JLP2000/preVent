@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 * {
   font-family: 'Nanum Gothic', sans-serif;
+
 }
 
 :root {
@@ -339,6 +340,7 @@ cursor: pointer;
   margin-bottom: 10px;
   width: 100%;
   display: none;
+ 
 }
 
 .writeComment textarea {
