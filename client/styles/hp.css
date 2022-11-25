@@ -7,14 +7,18 @@
   --btnColor: #dc8c7d;
   --topbarRed: #ce0000;
   --offBlack: #212427;
+  --weirdyellow: rgb(196, 186, 0);
 }
+
+
 .dark-mode {
   filter: gray;
   filter: grayscale(100%);
   
 }
 body:hover{
-  cursor: url('../img/favicon.png'), pointer;    
+  cursor: url('../img/favicon.png'), pointer;   
+  
 
 }
 .main{ 
@@ -87,6 +91,7 @@ body{
   margin-left: auto;
   margin-right: auto;
   filter: drop-shadow(16px 16px 20px rgba(0, 0, 0, 0.536));
+  /* -webkit-text-stroke: 4px rgb(101, 8, 8); */
 
 }
 /* @media only screen and (max-width: 200px) {
@@ -131,9 +136,11 @@ body{
 .startbutton{
   position:absolute;
   border: solid 10px transparent;
-  border-right-color: var(--reactionRed);
-
+  /* border-top-color: black; */
+  /* border-right-color: black; */
   background-color: var(--reactionRed);
+
+
   color: white;
   padding: 15px 40px;
   text-align: center;
@@ -150,6 +157,7 @@ body{
   transition: 0.6s;
   transform: scale(1.2);
   color: var(--reactionRed);
+  border-right-color: var(--reactionRed);
   background-color: black;
   box-shadow:
   0 0 100vh 100vw white,  
