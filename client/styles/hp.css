@@ -16,7 +16,7 @@
   filter: grayscale(100%);
   
 }
-body:hover{
+html:hover{
   cursor: url('../img/favicon.png'), pointer;   
   
 

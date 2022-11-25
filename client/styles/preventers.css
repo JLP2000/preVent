@@ -1,5 +1,6 @@
 body {
     width: 100%;
+    color: white;
 
 }
 .dark-mode {
@@ -19,7 +20,9 @@ body {
     background-color: white;
     margin-top: 20px;
     width: 100%;
-    aspect-ratio: 100 / 29;
+    /* aspect-ratio: 100 / 29; */
+    color: black;
+    
   }
 
 
@@ -55,3 +58,38 @@ body {
     }
 }
 
+#readMore{
+    border: solid 10px transparent;
+    background-color: white;
+    color: var(--reactionRed);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: -4px;
+    align-items: center;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+#preventerstryitbutton{
+    border: solid 10px transparent;
+    background-color: white;
+    color: var(--reactionRed);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: -4px;
+    align-items: center;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+h1{
+    color: var(--reactionRed);
+}
