@@ -81,13 +81,17 @@ body{
     text-align: center;
     align-items: center;
     transition: height 0.35s ease, padding 0.35s ease;
-
+    justify-content: center;
   }
 
 li {
   align-items: center;
-    display: 	inline-block;
+  display: 	inline-block;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5%;
 }
+
 
 
 
@@ -163,8 +167,12 @@ li a:hover, .dropdown:hover .dropbtn {
   border: none;
 }
 
-@media  (max-width: 566px) {
-  li a {
- 
+
+@media  (min-width: 300px) {
+  #navbar{
+    
+  }
+  li {
+    padding: 0;
   }
   }

@@ -182,7 +182,7 @@ We also used anime.js to make the transitions on the page much smoother.
 
 On the nav bar; we also have a filter option as a dropdown menu, which will filter out the data based on their category. There is also a pop-up window for new post entries. Here, you can choose a gif from the GIPHY API to go with your post; the user has the ability to change the GIF as well in case they want to change it.
 
-Lastly is the Preventers page, which simply tells you more about the group and the purpose of the website. 
+Lastly is the Preventers page, which simply tells you more about the group and the purpose of the website. We plan to add more to this page. 
 
 All pages have a dark mode function, that turns the color scale to grey (this is a simple css filter functionality).
 
