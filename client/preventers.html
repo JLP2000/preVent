@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>preVent</title>
-    <link rel="stylesheet" href="styles/preventers.css">
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/preventers.css">
     <link rel="icon" type="image/svg" href="img/favicon.png">
     <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
     <!-- <script defer src="js/parallax.js"></script> -->
@@ -84,53 +84,12 @@
 }
 </script>
     
-        
 <script>
-  const ease = window.Power4.easeInOut
-  const el = document.querySelector('#el')
-  const wrapper = document.querySelector('#wrapper')
-  const slides = el.querySelectorAll('.El__slide')
-  const amount = slides.length
-  const controller = new window.ScrollMagic.Controller()
-  const horizontalMovement = new window.TimelineMax()
-
-  const controller2 = new window.ScrollMagic.Controller({
-    vertical: false
-  })
-
-  horizontalMovement
-    .add([
-      window.TweenMax.to(wrapper, 1, { x: `-${(100 / amount) * (amount - 1)}%` })
-    ])
-
-  new window.ScrollMagic.Scene({
-    triggerElement: el,
-    triggerHook: 'onLeave',
-    duration: `${amount * 100}%`
-  })
-    .setPin(el)
-    .setTween(horizontalMovement)
-    .addTo(controller)
-
-  slides.forEach((item, index) => {
-    const title = item.querySelector('h1')
-    const subtitle = item.querySelector('h2')
-    const tween = new window.TimelineMax()
-
-    tween
-      .fromTo(title, 1, { x: 0 }, { x: 500 }, 0)
-      .fromTo(subtitle, 1, { x: 600 }, { x: 500 }, 0)
-
-    new window.ScrollMagic.Scene({
-      triggerElement: item,
-      triggerHook: 1,
-      duration: '100%'
-    })
-      .setTween(tween)
-      .addTo(controller2)
-  })
-        </script>
-    <script defer src="https://unpkg.com/@babel/standalone@7.20.4/babel.min.js"></script>
+  function myFunction() {
+     var element = document.body;
+     element.classList.toggle("dark-mode");
+  }
+  </script>
 
 </body>
 

@@ -1,7 +1,14 @@
 body {
     width: 100%;
+
 }
 
+.dark-mode {
+    filter: gray;
+    filter: grayscale(100%);
+    background-color: black;
+    color: white;
+  }
 #more {display: none;}
 
 #more1 {display: none;}
@@ -12,7 +19,7 @@ body {
 
 .biglogo {
     width: 500px;
-    height: 160px;
+    height: 183px;
 }
 
 .horizontal {
@@ -21,13 +28,15 @@ body {
 
 @media  (max-width: 1030px) {
     .biglogo {
-        width: 250px;
-        height: 180px;
+        width: 333px;
+        height: 122px;
     }
     }
     
-    @media (max-width: 650px){
-    .container {
-          column-count: 1;
+@media (max-width: 650px){
+    .biglogo {
+        width: 234px;
+        height: 61px;
     }
-    }
+}
+

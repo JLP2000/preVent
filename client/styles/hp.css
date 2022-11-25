@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nanum+Gothic:wght@400;700;800&display=swap');
 :root {
   --darkerRed: #C81D25;
-  --MaxBlueGreen: #26b2bf;
+  --MaxBlueGreen: hsl(185, 67%, 45%);
   --reactionRed:#ef233c;
   --btnColor: #dc8c7d;
   --topbarRed: #ce0000;
@@ -11,9 +11,10 @@
 .dark-mode {
   filter: gray;
   filter: grayscale(100%);
+  
 }
 body:hover{
-  cursor: url('../img/cursor.png'), pointer;    
+  cursor: url('../img/favicon.png'), pointer;    
 
 }
 .main{ 
@@ -59,6 +60,7 @@ body{
   overflow: hidden;
     align-items: center;
     justify-content: center;
+   
 }
 
 .mainHome{
@@ -84,7 +86,8 @@ body{
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  
+  filter: drop-shadow(16px 16px 20px rgba(0, 0, 0, 0.536));
+
 }
 /* @media only screen and (max-width: 200px) {
   .coverheading {
@@ -127,6 +130,9 @@ body{
 }
 .startbutton{
   position:absolute;
+  border: solid 10px transparent;
+  border-right-color: var(--reactionRed);
+
   background-color: var(--reactionRed);
   color: white;
   padding: 15px 40px;
@@ -144,8 +150,11 @@ body{
   transition: 0.6s;
   transform: scale(1.2);
   color: var(--reactionRed);
-  background-color: white;
-  
+  background-color: black;
+  box-shadow:
+  0 0 100vh 100vw white,  
+  0 0 50vh 50vh var(--reactionRed), 
+  0 0 20vh 20vh black;
 
 }
 
