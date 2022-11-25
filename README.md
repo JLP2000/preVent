@@ -174,13 +174,17 @@ During this, the backend team also made a test suite that had 100% coverage for 
 
 We created the pages of the website using HTML and used a combination of vanilla CSS and Javascript to style and add animations and interactive elements to the pages.
 
-For the homepage we used TypeIt.js to create a typewriting effect, making the page much more interesting.
+For the homepage we used TypeIt.js to create a typewriting effect, making the page much more interesting and fun to look at.
 
-The vents page contains all the posts for our app in the form of cards in a masonry grid layout, inspired by the popular journaling app, Tumblr. The cards would pull data from the API and create new cards as posts are added. You can also comment on each post, and the cards will display the newest three comments. In addition, they can also react to the post with an emoji, which will also count the number of reactions it has received. We also have a card that retrieves motivational quotes from an API. We also used anime.js to make the transitions on the page much smoother.
+The vents page contains all the posts for our app in the form of cards in a masonry grid layout, inspired by the popular journaling app, Tumblr. The cards would pull data from the API and create new cards as posts are added. You can also comment on each post, and the cards will display the newest three comments. In addition, they can also react to the post with an emoji, which will also count the number of reactions it has received. We also have a card that retrieves motivational quotes from an API. 
 
-On the nav bar; we also have a filter option as a dropdown menu, which will filter out the data based on their category. There is also a pop-up window for new post entries. Here, you can choose a gif from the GIPHY API to go with your post.
+We also used anime.js to make the transitions on the page much smoother.
 
-Lastly is the Preventers page, which simply tells you more about the group and the purpose of the website. All pages have a mark mode function, that turns the color scale to grey.
+On the nav bar; we also have a filter option as a dropdown menu, which will filter out the data based on their category. There is also a pop-up window for new post entries. Here, you can choose a gif from the GIPHY API to go with your post; the user has the ability to change the GIF as well in case they want to change it.
+
+Lastly is the Preventers page, which simply tells you more about the group and the purpose of the website. 
+
+All pages have a dark mode function, that turns the color scale to grey (this is a simple css filter functionality).
 
 ### Combine
 

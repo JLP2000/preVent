@@ -36,16 +36,15 @@
           <div class="horizontal">
             <p class="lead"><span>When people vent, they may not need a verbal response. They want someone to listen. For a moment, stop and think about the last time you actual felt heard; give others a comment and emoji. </span></p>
             <p class="lead"><span>Vent to Prevent.</span><br>Become a Preventer.</p>
-            <p class="lead">
+            <div class="lead">
                 <h2>Why venting is good for you</h2>
                 <p>One of the main reasons why we vent is to reduce our stress levels. Rime (2009) states that disclosing stress is a coping mechanism. Venting is a 2-way process: the person venting and the person hearing the vent. <span id="dots">...</span><span id="more">As a matter of fact, positive venting can reduce stress, but negative venting can lead to heightened stress and physical health concerns. It is not just about the person venting, but equally important, the person who is hearing the vent. Research has shown that the difference between positive and negative venting can be focused on the ways in which the person hearing the vent responds, both through speech and action (Bodie et al., 2015; Goldsmith, 2004) . This research supports numerous counseling theories and models that focus on active listening, empathy, and safety.</span></p>
                 <button onclick="readMoreButton()" id="readMore">Read more</button>
-                </p>
-                <p class="lead">
-                    <h2>Documentation</h2>
-        
-                    </p>
-                    <button id="preventerstryitbutton" onclick="divRemove()">Try it</button>
+            </div>
+            <p class="lead">
+                <h2>Documentation</h2>
+            </p>
+                <button id="preventerstryitbutton" onclick="divRemove()">Try it</button>
 
             <div id="myDIV">
               <h1 id="preventers-present-prevent">PREVENTERS present preVent</h1>
@@ -341,6 +340,7 @@
     dots.style.display = "none";
     btnText.innerHTML = "Read less"; 
     moreText.style.display = "inline";
+    moreText.classList.add("addingtextclass");
   }
   }
 </script>
